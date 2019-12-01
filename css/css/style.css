@@ -3,5 +3,10 @@ html {
 }
 body {
     width: 80vw;
-    background: yellow;
+    background: orange;
+}
+ul.top-ul {
+    background-color: pink;
+    text-transform: uppercase;
+    text-decoration: wavy;
 }
