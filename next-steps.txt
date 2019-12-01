@@ -1,2 +1,2 @@
-- "REFACTOR" branch > change to ReactJS
-- 
+- create "REFACTOR" branch > change to ReactJS
+- flesh out animation projects | forms projects | node projects
