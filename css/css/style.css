@@ -3,9 +3,9 @@ html {
 }
 body {
     width: 80vw;
-    background: lightgray;
+    background: peachpuff;
 }
-ul.top-ul {
+ul .top-ul {
     background-color: pink;
     text-transform: uppercase;
     text-decoration: wavy;
