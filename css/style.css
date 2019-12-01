@@ -1,4 +1,13 @@
+html {
+    background-color: black;
+}
 body {
-    width: 80vww;
-    background: yellow;
+    width: 80vw;
+    background: peachpuff;
+}
+.top-ul {
+    background-color: green;
+    color: pink;
+    text-transform: uppercase;
+    text-decoration: wavy;
 }
