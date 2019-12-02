@@ -11,3 +11,6 @@ body {
     text-transform: uppercase;
     text-decoration: wavy;
 }
+.hide {
+    display: none;
+}
