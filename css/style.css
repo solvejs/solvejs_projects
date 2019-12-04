@@ -2,6 +2,7 @@ html {
     background-color: black;
 }
 body {
+    margin: auto;
     width: 80vw;
     background: peachpuff;
 }
@@ -13,4 +14,14 @@ body {
 }
 .hide {
     display: none;
+}
+.highlight {
+    text-transform: uppercase;
+    color: blue;
+    background-color: deepskyblue;
+}
+.reject {
+    text-decoration-line: line-through;
+    color: darkolivegreen;
+    background-color: darkgray;
 }
