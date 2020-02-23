@@ -1,0 +1,20 @@
+NOTES:
+>> ADD COMMENTS TO UNDERSTAND CODE BETTER IF REVIEWED LATER <<
+bumper sizes:
+Select a size
+ 7.5" x 3.75"
+ 11.5" x 3"
+ 15" x 3.75"
+ Custom size
+
+• On car graphic
+• Flip intro
+• Choice > size and shape > on rendered page
+  Hover slide showing multiple stickers with option to click one
+  (see onenote page for image)
+
+The Bootstrap grid system has four classes:
+• xs (for phones - screens less than 768px wide)
+• sm (for tablets - screens equal to or greater than 768px wide)
+• md (for small laptops - screens equal to or greater than 992px wide)
+lg (for laptops and desktops - screens equal to or greater than 1200px wide)
