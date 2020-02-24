@@ -1,0 +1,20 @@
+{
+  "name": "solvejs.com",
+  "version": "1.0.0",
+  "description": "solvejs.com tools site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/solvejs/solvejs.com.git"
+  },
+  "author": "SolveJS James",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/solvejs/solvejs.com/issues"
+  },
+  "homepage": "https://github.com/solvejs/solvejs.com#readme",
+  "dependencies": {}
+}
