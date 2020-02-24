@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 *.vscode/
 *node_modules/
-=======
-node_modules/
->>>>>>> e534543e3f87eea7e15f533be01ed386798772ab
