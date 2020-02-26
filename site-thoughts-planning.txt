@@ -9,6 +9,18 @@ solvejs.com/apps
 solvejs.com/
 solvejs.com/
 
+learn schema:
+ex. (
+    => "IDEAS for PROGRESSION in LEARNING" only <=
+    => will need to change /bs per iteration <=
+    solvejs.com/bs <= js, css, html *FE only* <= iteration 1
+    solvejs.com/bs <= js, css, html + nodejs | mongodb <= iteration 2
+    solvejs.com/bs <= refactor: js, css, html, nodejs, mongodb + reactjs  <= iteration 3
+    solvejs.com/bs <= js, css, html, nodejs, + postgresql, - mongodb, react <= iteration 4
+    solvejs.com/bs <= js, css, html, nodejs, + postgresql/mongodb integrated, react <= iteration 5
+    solvejs.com/bs <= js, css, html, nodejs, + postgresql/mongodb integrated, react <= *security review iteration 6*
+)
+
 thoughts:
 - how can i put the pieces of the site together?
     modular (pieces of a puzzle)
