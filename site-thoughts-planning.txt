@@ -1,0 +1,15 @@
+next steps:
+- create "REFACTOR" branch > change to ReactJS
+- flesh out animation projects | forms projects | node projects
+
+ideas:
+solvejs.com/bs bumper stickers
+solvejs.com/ts t-shirts
+solvejs.com/apps
+solvejs.com/
+solvejs.com/
+
+thoughts:
+- how can i put the pieces of the site together?
+    modular (pieces of a puzzle)
+- how else might this code be improved?
