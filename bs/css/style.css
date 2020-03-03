@@ -45,7 +45,8 @@ li.nav-menu-item a { /* remove underline from nav items */
     width: 100%;
 }
 
-.content-left {
+/* content left & right settings below causing limited width */
+/* .content-left {
     display: flex;
     flex-wrap: wrap;
     width: 65%;
@@ -57,7 +58,7 @@ li.nav-menu-item a { /* remove underline from nav items */
     align-content: space-around;
     width: 30%;
     float: right;
-}
+} */
 .bumper {
     display: flex;
     margin: 10px 5px 0px;

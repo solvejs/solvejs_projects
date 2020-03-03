@@ -1,4 +1,56 @@
-/* .body-grid {
+
+
+/* GRID TO ENTIRE PAGE; FLEXBOX TO CONTENT SECTIONS */
+/* MEDIA QUERIES | VARIABLES FOR COMMON ITEMS */
+/* need to fix widths and determine width ranges for diff scrn sizes */
+/* need to compartamentalize grid vs flex css file placement */
+/* currently, flex css config is in style.css file and here */
+
+/* body */
+
+#body {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
+    /* grid-template-areas coupled with grid-area of elements */
+    /* need to divide up header section to account for search */
+    /* likely will add search to left side of menu bar for ease */
+    grid-template-areas: 
+    "h h h h h h h h h h"
+    "c c c c c c c a a a"
+    "c c c c c c c a a a"
+    "f f f f f f f f f f";
+    /* will need to understand grid better to get auto-fit work
+    grid-template-columns: minmax(100px, 1fr); */
+}
+
+/* header */
+
+.site-header {
+    /* no quotes needed around grid area */
+    grid-area: h;
+}
+/* menu */
+
+/* miscellaneous */
+
+/* main content */
+
+main {
+    grid-area: c;
+}
+.content-left {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* sidebar */
+
+aside {
+    grid-area: a;
+}
+
+/* footer */
+
+footer {
+    /* need to work on auto align footer items */
+    grid-area: f;
+}

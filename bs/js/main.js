@@ -1,7 +1,7 @@
 ;
 // attempting to require db-connect.js >> import './db-connect.js';
-import { send } from './db-connect.js';
-send();
+/* import { send } from './db-connect.js';
+send(); */
 
 // to build items
 // move bumper stickers to array then to database calls
