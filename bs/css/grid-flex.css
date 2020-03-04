@@ -30,6 +30,16 @@
 }
 /* menu */
 
+/* NAV */
+
+.nav-menu-flex ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px solid pink;
+    box-sizing: border-box;
+}
+
 /* miscellaneous */
 
 /* main content */
@@ -37,6 +47,15 @@
 main {
     grid-area: c;
 }
+
+.bumper-flex {
+    display: flex;
+    margin: 10px 5px 0px;
+    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
+}
+
 .content-left {
     display: flex;
     flex-wrap: wrap;
@@ -50,7 +69,14 @@ aside {
 
 /* footer */
 
+/* FOOTER */
+
 footer {
     /* need to work on auto align footer items */
     grid-area: f;
+}
+.footer-flex {
+    display: flex;
+    clear: both; /* clear both temporarily */
+    justify-content: flex-start;
 }

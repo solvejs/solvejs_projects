@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bumper Stickers</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/grid.css">
+    <link rel="stylesheet" href="css/grid-flex.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="body">
     <!-- later user involvement item: "create own bumper" -->
     <!-- add automobile fade in with bumper attached -->
     <header class="header site-header">
-        <div class="header">
+        <div class="header nav-menu-flex ">
             <nav class="nav-menu">
                 <ul>
                     <li class="nav-menu-item"><a href="#">Home</a></li>
                     <li class="nav-menu-item"><a href="#">Categories</a></li>
                     <li class="nav-menu-item"><a href="#">About</a></li>
                     <li class="nav-menu-item"><a href="#">Contact</a></li>
+                    <li class="nav-menu-item"><a href="#">Account</a></li>
+                    <li class="nav-menu-item"><a href="#">Cart</a></li>
+                    <li class="nav-menu-item"><a href="#">FAQ</a></li>                    
                 </ul>
+                <div class="search">
+                    <label for="search">Search</label>
+                    <input type="search" id="search" placeholder="Search Bumpers">
             </nav>
             <h1>Bumper Stickers - Choose Wisely</h1>
-            <div class="search">
-                <label for="search">Search</label>
-                <input type="search" id="search" placeholder="Search Bumpers">
             </div>
         </div>
     </header>
@@ -33,7 +36,7 @@
             will also need to set up JS template to generate the bumpers from the database and paginate -->
             <!-- need to also work on auto-fit of bumpers of different sizes as they are auto-generated -->
         <div class="content-grid" id="main-wrapper">
-            <div class="content-left">
+            <div id="bumper-left" class="content-left bumper-flex">
                     <div class="bumper bumper-long">Bumber - 1</div>
                     <div class="bumper bumper-long">Bumber - 2</div>
                     <div class="bumper bumper-long">Bumber - 3</div>
@@ -84,7 +87,7 @@
         </div>
     </aside>
     <footer class="footer">
-        <div class="footer">
+        <div class="footer footer-flex">
             <ul>
                 <li class="footer-item">&copy;2020 SolveJS</li>
                 <li class="footer-item"><a href="#">Terms</a></li>
@@ -96,5 +99,6 @@
 
 
     <script src="js/main.js"></script>
+    <script src="js/bumpers.js"></script>
 </body>
 </html>
