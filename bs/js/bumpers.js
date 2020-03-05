@@ -34,6 +34,7 @@ let bumperStickers = [
     'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',
     'Nice Sunday drive behind me, right?',
     'Microwave onboard',
+    'Careful of Ingrates in Your Life',
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;

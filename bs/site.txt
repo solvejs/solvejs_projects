@@ -1,12 +1,16 @@
 NOTES:
 >> coding conventions (html vs css vs js) | file-naming conventions |  <<
 >> ADD COMMENTS TO UNDERSTAND CODE BETTER IF REVIEWED LATER <<
+mobile and responsive css redesign after first iteration of site
+pagination
+
 bumper sizes:
 Select a size
  7.5" x 3.75"
  11.5" x 3"
  15" x 3.75"
  Custom size
+ Custom bumpers
 
 • On car graphic
 • Flip intro
@@ -14,6 +18,7 @@ Select a size
   Hover slide showing multiple stickers with option to click one
   (see onenote page for image)
 
+- sanitize user input | sanitize get requests | cookies management
 - database: categories list and selection tool; image or background and placement; 
 - hover and click effects;
 - pages | "add to cart" on bumpers;

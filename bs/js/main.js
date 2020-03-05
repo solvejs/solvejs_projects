@@ -12,14 +12,26 @@ send(); */
 // categories to database
 
 let contactUsFormHide = () => {
-    let contactUsNav = document.getElementById('contact-form-nav');
-    let contactUsForm = document.getElementById('contact-form-div');
-    let body = document.getElementById('body');
-    contactUsNav.addEventListener('click', () => {
+    let contactHideClicks = document.querySelectorAll('.click-hide-contact-us');
+    // let contactUsNav = document.getElementById('contact-form-nav');
+    let contactUsForm = document.getElementById('contact-wrapper');
+    // let body = document.getElementById('body');
+    // let cancelContactForm = document.getElementById('cancel-form-button');
+    for(item of contactHideClicks){
+        item.addEventListener('click', () => contactUsForm.classList.toggle('hide-element'));
+    };
+/*     cancelContactForm.addEventListener('click', () => contactUsForm.classList.toggle('hide-element'));
+    contactUsNav.addEventListener('click', () => { */
+        // e.preventDefault();
         // do i need this? >> e.preventDefault() > seems i don't
         // needed to set if() as could only get this to work by setting style directly on body element
-        //document.getElementsByTagName('form').toggle.classList('hide-element');
+        // document.querySelector('form').setAttribute('class', 'show-element');
+        // contactUsFormEl.classList.toggle('hide-element');
+        // display grid overriding display: none when set on #contact-wrapper > had to move grid to form > then toggle on wrapper works
+        // next: shorten this function > class to form hide button and link
         //contactUsForm.classList.toggle('hide-element');
-    })
-}
+        console.log(contactHideClicks);
+    }
+// }
+
 contactUsFormHide();
