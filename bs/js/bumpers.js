@@ -20,7 +20,20 @@ let bumperStickers = [
     'How are the fumes??',
     'Want me to plug your wife\'s nose?',
     'Can i smoke your passenger\'s BUTT??',
-    'Got a hole? May I?'
+    'Got a hole? May I?',
+    'Bumper Sticker',
+    'C U N T.he Mirror',
+    'Caution!! Taking an online test.',
+    'Please don\'t read this...',
+    'Adults onboard',
+    'Reading. Please stay back.',
+    'Bumper cars. Expect heavy braking. :-)',
+    'Watch out for loose screws.',
+    'Let\'s switch places. Pass me.',
+    'Call Me. 305-555-0000',
+    'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',
+    'Nice Sunday drive behind me, right?',
+    'Microwave onboard',
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;

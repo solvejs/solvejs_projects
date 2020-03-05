@@ -14,6 +14,10 @@ Select a size
   Hover slide showing multiple stickers with option to click one
   (see onenote page for image)
 
+- database: categories list and selection tool; image or background and placement; 
+- hover and click effects;
+- pages | "add to cart" on bumpers;
+
 The Bootstrap grid system has four classes:
 • xs (for phones - screens less than 768px wide)
 • sm (for tablets - screens equal to or greater than 768px wide)

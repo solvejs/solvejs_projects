@@ -29,6 +29,45 @@ li.nav-menu-item a { /* remove underline from nav items */
     text-decoration: none;
 }
 
+/* set display grid to sort form */
+#contact-form-div {
+    display: grid;
+    width: 40vw;
+    min-height: 500px; /* height here to control auto-height for form */
+    max-height: 900px;
+    margin: 10px auto 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+form#toggle-contact-form {
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: -4px 4px 5px 1px #161616;
+    padding: 20px;
+    grid-template-columns: 1fr;
+}
+#toggle-contact-form input,button, select {
+    display: block;
+}
+textarea#email-message {
+    margin-top: 10px;
+    background-color: whitesmoke;
+    font-size: 110%;
+    font-weight: bold;
+    border-radius: 5px;
+    min-width: 200px; /* width auto-size not working here */
+    max-width: 500px; /* on small screens height does not adjust */
+    overflow: scroll;
+    scroll-behavior: smooth;
+}
+form > label {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
 /* BODY */
 
 
@@ -90,4 +129,8 @@ li.nav-menu-item a { /* remove underline from nav items */
 }
 .footer-item a {
     text-decoration: none;
+}
+.hide-element { /* toggle handled in main.js */ 
+    display: none; /* not working but js sets the classlist  */
+    /* background-color: red; */
 }

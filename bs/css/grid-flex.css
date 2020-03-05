@@ -15,6 +15,7 @@
     /* likely will add search to left side of menu bar for ease */
     grid-template-areas: 
     "h h h h h h h h h h"
+    ". . cf cf cf cf cf cf . ."
     "c c c c c c c a a a"
     "c c c c c c c a a a"
     "f f f f f f f f f f";
@@ -23,6 +24,10 @@
 }
 
 /* header */
+
+#toggle-contact-form {
+    grid-area: cf;
+}
 
 .site-header {
     /* no quotes needed around grid area */

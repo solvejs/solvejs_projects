@@ -18,7 +18,7 @@
                     <li class="nav-menu-item"><a href="#">Home</a></li>
                     <li class="nav-menu-item"><a href="#">Categories</a></li>
                     <li class="nav-menu-item"><a href="#">About</a></li>
-                    <li class="nav-menu-item"><a href="#">Contact</a></li>
+                    <li id='contact-form-nav' class="nav-menu-item"><a href="#">Contact</a></li>
                     <li class="nav-menu-item"><a href="#">Account</a></li>
                     <li class="nav-menu-item"><a href="#">Cart</a></li>
                     <li class="nav-menu-item"><a href="#">FAQ</a></li>                    
@@ -26,7 +26,26 @@
                 <div class="search">
                     <label for="search">Search</label>
                     <input type="search" id="search" placeholder="Search Bumpers">
-            </nav>
+                </nav>
+                <div id="contact-form-div" class="hide-element">
+                    <form id='toggle-contact-form' class="center">
+                        <label for="email-contact-name" class="center">Contact Name</label>
+                        <input type="text" id="email-contact-name"  placeholder="Name" required>
+                        <label for="email-contact">Contact Email</label>
+                        <input type="email" id='email-contact' placeholder="contact email" required>
+                        <label for="contact-email-category">Select Category</label>
+                        <select id="contact-email-category">
+                            <optgroup>
+                                <option value="email-contact-cat-general" selected>General</option>
+                                <option value="email-contact-cat-website">Website</option>
+                                <option value="email-contact-cat-order">Order</option>
+                                <option value="email-contact-cat-other">Other</option>
+                            </optgroup>
+                        </select>
+                        <textarea id="email-message" minlength="50" maxlength="1800" cols="" rows="20" placeholder="Please type your message here before sending." required></textarea>
+                        <button type="submit" value="Send">Send Message</button>
+                    </form>
+                </div>
             <h1>Bumper Stickers - Choose Wisely</h1>
             </div>
         </div>
@@ -37,33 +56,9 @@
             <!-- need to also work on auto-fit of bumpers of different sizes as they are auto-generated -->
         <div class="content-grid" id="main-wrapper">
             <div id="bumper-left" class="content-left bumper-flex">
-                    <div class="bumper bumper-long">Bumber - 1</div>
-                    <div class="bumper bumper-long">Bumber - 2</div>
-                    <div class="bumper bumper-long">Bumber - 3</div>
-                    <div class="bumper bumper-long">Bumber - 4</div>
-                    <div class="bumper bumper-long">Bumber - 5</div>
-                    <div class="bumper bumper-short">Bumper - 6</div>
-                    <div class="bumper bumper-short">Bumper - 7</div>
+                  <!--   <div class="bumper bumper-long">Bumber - 1</div>
                     <div class="bumper bumper-short">Bumper - 8</div>
-                    <div class="bumper bumper-short">Bumper - 9</div>
-                    <div class="bumper bumper-long">Bumber - 1</div>
-                    <div class="bumper bumper-long">Bumber - 2</div>
-                    <div class="bumper bumper-long">Bumber - 3</div>
-                    <div class="bumper bumper-long">Bumber - 4</div>
-                    <div class="bumper bumper-long">Bumber - 5</div>
-                    <div class="bumper bumper-short">Bumper - 6</div>
-                    <div class="bumper bumper-short">Bumper - 7</div>
-                    <div class="bumper bumper-short">Bumper - 8</div>
-                    <div class="bumper bumper-short">Bumper - 9</div>
-                    <div class="bumper bumper-long">Bumber - 1</div>
-                    <div class="bumper bumper-long">Bumber - 2</div>
-                    <div class="bumper bumper-long">Bumber - 3</div>
-                    <div class="bumper bumper-long">Bumber - 4</div>
-                    <div class="bumper bumper-long">Bumber - 5</div>
-                    <div class="bumper bumper-short">Bumper - 6</div>
-                    <div class="bumper bumper-short">Bumper - 7</div>
-                    <div class="bumper bumper-short">Bumper - 8</div>
-                    <div class="bumper bumper-short">Bumper - 9</div>
+                    <div class="bumper bumper-short">Bumper - 9</div> -->
             </div>
         </div>
     </main>
