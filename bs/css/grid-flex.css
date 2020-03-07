@@ -15,7 +15,8 @@
     /* likely will add search to left side of menu bar for ease */
     grid-template-areas: 
     "h h h h h h h h h h"
-    "w w w w w w w w w w"
+    "c-w c-w c-w c-w c-w c-w c-w c-w c-w c-w"
+    "h1 h1 h1 h1 h1 h1 h1 h1 h1 h1"
     "c c c c c c c a a a"
     "c c c c c c c a a a"
     "f f f f f f f f f f";
@@ -30,6 +31,10 @@
     /* no quotes needed around grid area */
     grid-area: h;
 }
+h1 {
+    grid-area: h1;
+}
+
 /* menu */
 
 /* NAV */
@@ -38,14 +43,13 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 3px solid pink;
     box-sizing: border-box;
 }
 
 /* miscellaneous */
 
 #contact-wrapper {
-    grid-area: w;
+    grid-area: c-w;
 }
 /* #contact-form-div {
     grid-area: w;

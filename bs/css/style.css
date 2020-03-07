@@ -12,6 +12,7 @@ html {
 body {
     /* background-color: rgba(18, 243, 74, 0.9); */
     /* background-color: #f1ff00; */
+    box-sizing: border-box;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
     max-width: 1600px;
@@ -38,7 +39,9 @@ to be filled out later
     padding: 5px;
     box-sizing: border-box;
 }
-
+.nav-menu ul {
+    height: 40px;
+}
 .nav-menu-item {
     list-style: none;
     text-decoration: none;
@@ -47,13 +50,45 @@ li.nav-menu-item a { /* remove underline from nav items */
     text-decoration: none;
 }
 
+ul#hamburger {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    justify-items: center;
+    align-items: center;
+    height: 40%;
+    color: var(--main-text-color);
+    box-sizing: border-box;
+}
+#hamburger:hover {
+    cursor: pointer;
+}
+div.hamburger-list {    
+    width: 10px;
+    height: 2px;
+    transform: scaleX(2);
+    background-color: var(--main-text-color);
+    box-sizing: border-box;
+    max-height: 100%;
+}
+.hamburger-hide {
+    display: none;
+}
+.hamburger-redisplay {
+    background-color: orange;
+}
+
+h1 {
+    margin: 5px auto;
+    box-shadow: -1px 1px 2px 2px var(--secondary-highlight-color);
+}
 /* set display grid to sort form */
 #contact-wrapper {
     width: 40vw;
     min-height: 200px; /* height here to control auto-height for form */
     max-height: 900px;
     margin: 10px auto 20px;
-    border: 1px solid pink;
 }
 
 #contact-form-div {
@@ -181,6 +216,7 @@ textarea#email-message {
     background-color: steelblue;
     margin: 10px 5px 0px;
 }
+
 /* FOOTER */
 
 .footer ul li {
