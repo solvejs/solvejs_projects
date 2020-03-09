@@ -2,7 +2,31 @@ NOTES:
 >> coding conventions (html vs css vs js) | file-naming conventions |  <<
 >> ADD COMMENTS TO UNDERSTAND CODE BETTER IF REVIEWED LATER <<
 mobile and responsive css redesign after first iteration of site
-pagination
+
+******************************
+******************************
+OPEN SITE CONFIGURATION AREAS:
+- pagination
+- menu reveal >> may place all menu hide/reveal in oject with methods and properties to clean code
+- bumper sizes
+• On car graphic
+• Flip intro
+- database: categories list and selection tool; image or background and placement; 
+- hover and click effects;
+- pages | "add to cart" on bumpers;
+• Choice > size and shape > on rendered page
+• Hover slide showing multiple stickers with option to click one
+- site logic:
+	- admin page connected to database for generation
+	- bumper actions and auto-creation per specs
+	- account login/logout
+	- sanitize user input | sanitize get requests | cookies management
+	- shopping cart > number items; cookies management;
+	- admin link hidden unless user is admin
+	- automatic page generation > set title load if different than main page or admin
+
+******************************
+******************************
 
 bumper sizes:
 Select a size
@@ -12,16 +36,9 @@ Select a size
  Custom size
  Custom bumpers
 
-• On car graphic
-• Flip intro
 • Choice > size and shape > on rendered page
   Hover slide showing multiple stickers with option to click one
   (see onenote page for image)
-
-- sanitize user input | sanitize get requests | cookies management
-- database: categories list and selection tool; image or background and placement; 
-- hover and click effects;
-- pages | "add to cart" on bumpers;
 
 The Bootstrap grid system has four classes:
 • xs (for phones - screens less than 768px wide)
@@ -34,12 +51,6 @@ SolveJS Sketch
 Saturday, February 15, 2020
 11:27
 
-Bumper stickers
-
-	• On car graphic
-	• Flip intro
-	• Choice > size and shape > on rendered page
-	• Hover slide showing multiple stickers with option to click one
 
 
 

@@ -32,7 +32,11 @@ body {
 to be filled out later
 */
 /* HEADER */
-
+h1, h2, h3 {
+    font-family: 'Cabin Sketch', cursive;
+    /* font-family: 'Londrina Sketch', cursive; */
+    font-weight: 500;
+}
 /* NAV */
 .nav-menu {
     width: 100%;

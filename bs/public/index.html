@@ -7,13 +7,14 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid-flex.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Londrina+Sketch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="body">
     <!-- later user involvement item: "create own bumper" -->
     <!-- add automobile fade in with bumper attached -->
     <header class="header site-header">
-        <div class="header nav-menu-flex ">
+        <div class="header nav-menu-flex">
             <nav class="nav-menu">
                 <ul>
                         <li class="nav-menu-item to-hide"><a href="/">Home</a></li>
@@ -21,6 +22,7 @@
                         <li class="nav-menu-item to-hide"><a href="#">About</a></li>
                         <li id='contact-form-nav' class="nav-menu-item click-hide-contact-us to-hide"><a href="#">Contact</a></li>
                         <li class="nav-menu-item to-hide"><a href="#">Account</a></li>
+                        <li class="nav-menu-item to-hide admin"><a href="admin.html">Admin</a></li>
                     <ul id="hamburger">
                         <div class="nav-menu-item hamburger-list"></div>
                         <div class="nav-menu-item hamburger-list"></div>
@@ -36,7 +38,7 @@
         </div>
     </header>
     <h1>Bumper Stickers - Choose Wisely</h1>
-    <div id="contact-wrapper" class="">
+    <div id="contact-wrapper" class="hide-element">
         <div id="contact-form-div">
             <form id='toggle-contact-form' class="">
                 <label for="email-contact-name" class="f-l-i">Contact Name</label>

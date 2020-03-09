@@ -46,16 +46,25 @@ function hideMenu() {
     let body = document.getElementById('body');
     //body.addEventListener('resize', () => {
         navHideArea.forEach(item => {
-            console.log(item, 'beginning of code');
+            // console.log(item, 'beginning of code');
             if(window.innerWidth <= 800) {
                 item.classList.add('hamburger-hide');
-                console.log(item, 'added');
+                // console.log(item, 'added');
             } else {
                 item.classList.remove('hamburger-hide');
-                console.log(item, 'removed');
+                // console.log(item, 'removed');
             }
-            console.log(window.innerWidth);
+            // console.log(window.innerWidth);
             })
+        // temp hide if(navHideArea[0].classList.contains('hamburger-hide')) {
+            if(window.innerWidth > 800) {
+            // direct styling to ensure this action happens since display flex already on and likely preventing
+            navHambHide.setAttribute('style', 'display:none')
+            console.log('added display: none > to id hamburger');
+        } else {
+            navHambHide.removeAttribute('style', 'display:none')
+            console.log('removed display:none > to id hamburger');
+        }
     //})
     /* {
         if(window.innerWidth <= 800) {
@@ -80,10 +89,24 @@ function hideMenu() {
 };
 hideMenu();
 
-function menuReveal() { // listens hamburger click; responds based on hide status of menu items
+function menuReveal() { 
+    // listens hamburger click; responds based on hide status of menu items
+    // default: hidden on larger screens > achieve via hideMenu()
+    // reveal via same function or >> call this function when hidden and clicked    
     navHambHide.addEventListener('click', () => {
+        // next: set toggle to array and add under id hamburger position
         if(navHideArea[0].classList.contains('hamburger-hide')) {
-            document.querySelector('nav.nav-menu').setAttribute('class', 'hamburger-redisplay');
+            let navMenu = document.querySelector('nav.nav-menu');
+            navMenu.setAttribute('style', 'display: grid');
+            navMenu.setAttribute('style', 'grid-template-columns: 1fr');
+            navHideArea[0].classList.toggle('hamburger-hide');
+            navHideArea[1].classList.toggle('hamburger-hide');
+            navHideArea[2].classList.toggle('hamburger-hide');
+            navHideArea[3].classList.toggle('hamburger-hide');
+            navHideArea[4].classList.toggle('hamburger-hide');
+            navHideArea[5].classList.toggle('hamburger-hide');
+            navHideArea[6].classList.toggle('hamburger-hide');
+
         }
     })
 }
