@@ -21,7 +21,11 @@
                         <li class="nav-menu-item to-hide"><a href="#">Categories</a></li>
                         <li class="nav-menu-item to-hide"><a href="#">About</a></li>
                         <li id='contact-form-nav' class="nav-menu-item click-hide-contact-us to-hide"><a href="#">Contact</a></li>
-                        <li class="nav-menu-item to-hide"><a href="#">Account</a></li>
+                        <ul class="login-containter">
+                            <li class="nav-menu-item to-hide login"><a href="#">Login</a></li>
+                            <li class="nav-menu-item to-hide login"><a href="#">Register</a></li>
+                            <li class="nav-menu-item to-hide login"><a href="#">Reset</a></li>
+                        </ul>
                         <li class="nav-menu-item to-hide admin"><a href="admin.html">Admin</a></li>
                     <ul id="hamburger">
                         <div class="nav-menu-item hamburger-list"></div>
@@ -60,6 +64,21 @@
             <button id="cancel-form-button" class="click-hide-contact-us">Cancel</button>
         </form>
     </div>
+</div>
+<div id="login-wrapper">
+    <form action="/" class="login-form" onsubmit="holdAll">
+        <label for="login-name">Name</label>
+        <input type="text" id="login-name" placeholder="Name" minlength="2">
+        <label for="login-name">Name</label>
+        <input type="text" id="login-test" placeholder="Name" minlength="2" value="test">
+        <label for="login-email-input">Email Address</label>
+        <input type="email" name="login-email-input" id="login-email-input" class="login-email" placeholder="Email Address" value="cliff@gmail.com">
+        <label for="login-password-input">Password</label>
+        <input type="password" name="login-password-input" id="login-password-input" class="login-password" placeholder="Create Password" value="hash1111" minlength="8" required>
+        <label for="login-password-input-re-enter">Re-Enter</label>
+        <input type="password" name="login-password-input-re-enter" id="login-password-input-re-enter" class="login-password" placeholder="Re-enter password" value="hash1111" minlength="8" required>
+        <button type="submit" id="login-button">Submit</button>
+    </form>
 </div>
     <main class="main-content">
         <!-- next: move to database for auto-fill;
@@ -104,7 +123,8 @@
     </footer>
     
     
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
     <script src="js/bumpers.js"></script>
+    <script src="js/users.js"></script>
 </body>
 </html>

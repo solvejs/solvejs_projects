@@ -53,6 +53,18 @@ h1, h2, h3 {
 li.nav-menu-item a { /* remove underline from nav items */
     text-decoration: none;
 }
+li.login {
+    font-size: small;
+}
+li.login::after {
+    content: '\00A0';
+}
+#login-wrapper { /* will work on placement and auto-hide later */
+    width: 20vw;
+    min-height: 100px; /* height here to control auto-height for form */
+    max-height: 500px;
+    margin: 10px auto 20px;
+}
 
 ul#hamburger {
     display: flex;

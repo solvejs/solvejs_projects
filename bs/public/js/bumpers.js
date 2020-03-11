@@ -1,7 +1,12 @@
 // add bumpers here until move to database
 
 // later will be added to database
-let bumperStickers = [
+const bumperStickerObj = [
+    {
+        // will have categories, color, etc. then be generated via admin portal page
+    }
+]
+const bumperStickers = [
     "Almost ready to explode",
     'Looking for a reason...keep tailing',
     'Lost everything today. Come closer',
@@ -52,3 +57,5 @@ bumperStickers.forEach(item => {
     // bumperDiv.innerHTML append(bumperText);
 
 })
+
+// export { bumperStickers }; will add later; currently syntax error
