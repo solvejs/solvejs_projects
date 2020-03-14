@@ -44,14 +44,14 @@ const bumperStickers = [
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;
 
+const bumperDiv = document.getElementById('bumper-left');
 bumperStickers.forEach(item => {
-    let bumperDiv = document.getElementById('bumper-left');
     let newBumperDiv = document.createElement('div');
     newBumperDiv.setAttribute('class', 'bumper bumper-long')
-    let test = bumperDiv.appendChild(newBumperDiv);
+    let pushBumper = bumperDiv.appendChild(newBumperDiv);
   //  newBumperDiv = document.createElement('div');
    // let test = document.createTextNode(`<div class="bumper bumper-long">${item}</div>`);
-    test.innerHTML = item;
+    pushBumper.innerHTML = item;
 //    newBumperDiv.innerHTML = `<div class="bumper bumper-long">${item}</div>`;
 //    bumperDiv.innerHTML = bump;
     // bumperDiv.innerHTML append(bumperText);

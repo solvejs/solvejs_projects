@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Londrina+Sketch&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body id="body">
+<body id="body" class="">
     <!-- later user involvement item: "create own bumper" -->
     <!-- add automobile fade in with bumper attached -->
     <header class="header site-header">
@@ -22,8 +22,36 @@
                         <li class="nav-menu-item to-hide"><a href="#">About</a></li>
                         <li id='contact-form-nav' class="nav-menu-item click-hide-contact-us to-hide"><a href="#">Contact</a></li>
                         <ul class="login-containter">
-                            <li class="nav-menu-item to-hide login"><a href="#">Login</a></li>
-                            <li class="nav-menu-item to-hide login"><a href="#">Register</a></li>
+                            <li class="nav-menu-item to-hide login"><a href="#">Login</a>
+                                <div id="login-wrapper">
+                                    <h3>---login form---</h3>
+                                    <form action="/" class="login-form">
+                                        <label for="login-name">Name</label>
+                                        <input type="text" id="login-name" placeholder="Name" minlength="2">
+                                        <label for="login-email-input">Email Address</label>
+                                        <input type="email" name="login-email-input" id="login-email-input" class="login-email" placeholder="Email Address" value="cliff@gmail.com">
+                                        <label for="login-password-input">Password</label>
+                                        <input type="password" name="login-password-input" id="login-password-input" class="login-password" placeholder="Create Password" value="hash1111" minlength="8" required>
+                                        <button type="submit" id="login-button">Submit</button>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="nav-menu-item to-hide login"><a href="#">Register</a>
+                                <div id="register-wrapper">
+                                    <h3>---register form---</h3>
+                                    <form action="/" class="register-form" onsubmit="holdAll">
+                                        <label for="register-name">Name</label>
+                                        <input type="text" id="register-name" placeholder="Name" minlength="2">
+                                        <label for="register-email-input">Email Address</label>
+                                        <input type="email" name="register-email-input" id="register-email-input" class="register-email" placeholder="Email Address">
+                                        <label for="register-password-input">Password</label>
+                                        <input type="password" name="register-password-input" id="register-password-input" class="register-password" placeholder="Create Password" value="hash1111" minlength="8" required>
+                                        <label for="register-password-input-re-enter">Re-Enter</label>
+                                        <input type="password" name="register-password-input-re-enter" id="register-password-input-re-enter" class="register-password" placeholder="Re-enter password" value="hash1111" minlength="8" required>
+                                        <button type="submit" id="register-button">Register</button>
+                                    </form>
+                                </div>
+                            </li>
                             <li class="nav-menu-item to-hide login"><a href="#">Reset</a></li>
                         </ul>
                         <li class="nav-menu-item to-hide admin"><a href="admin.html">Admin</a></li>
@@ -32,7 +60,7 @@
                         <div class="nav-menu-item hamburger-list"></div>
                         <div class="nav-menu-item hamburger-list"></div>
                     </ul>
-                    <li class="nav-menu-item" alt="shopping-cart"><a href="#">&#x1F6D2;</a></li>
+                    <li id="shopping-cart" class="nav-menu-item" alt="shopping-cart"><a href="#">&#x1F6D2;</a></li>
                     <li class="search">
                         <label for="search">Search</label>
                         <input type="search" id="search" placeholder="Search Bumpers">
@@ -64,21 +92,6 @@
             <button id="cancel-form-button" class="click-hide-contact-us">Cancel</button>
         </form>
     </div>
-</div>
-<div id="login-wrapper">
-    <form action="/" class="login-form" onsubmit="holdAll">
-        <label for="login-name">Name</label>
-        <input type="text" id="login-name" placeholder="Name" minlength="2">
-        <label for="login-name">Name</label>
-        <input type="text" id="login-test" placeholder="Name" minlength="2" value="test">
-        <label for="login-email-input">Email Address</label>
-        <input type="email" name="login-email-input" id="login-email-input" class="login-email" placeholder="Email Address" value="cliff@gmail.com">
-        <label for="login-password-input">Password</label>
-        <input type="password" name="login-password-input" id="login-password-input" class="login-password" placeholder="Create Password" value="hash1111" minlength="8" required>
-        <label for="login-password-input-re-enter">Re-Enter</label>
-        <input type="password" name="login-password-input-re-enter" id="login-password-input-re-enter" class="login-password" placeholder="Re-enter password" value="hash1111" minlength="8" required>
-        <button type="submit" id="login-button">Submit</button>
-    </form>
 </div>
     <main class="main-content">
         <!-- next: move to database for auto-fill;
@@ -126,5 +139,6 @@
     <script type="module" src="js/main.js"></script>
     <script src="js/bumpers.js"></script>
     <script src="js/users.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 </html>

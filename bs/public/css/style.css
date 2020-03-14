@@ -18,8 +18,14 @@ body {
     max-width: 1600px;
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
+    z-index: 1;
 }
-
+.cover-div {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 2;
+}
 :root {
     --main-bg-color: #F1FF00;
     --main-text-color: #0E00FF;
@@ -59,11 +65,17 @@ li.login {
 li.login::after {
     content: '\00A0';
 }
-#login-wrapper { /* will work on placement and auto-hide later */
-    width: 20vw;
-    min-height: 100px; /* height here to control auto-height for form */
-    max-height: 500px;
-    margin: 10px auto 20px;
+#login-wrapper {
+    display: inline-block;
+    width: 400px;
+    position: absolute;
+    top: calc(50vh - 50px); /* still working on positioning */
+}
+#shopping-cart {
+    font-size: large;
+}
+#shopping-cart:hover {
+    font-size: xx-large;
 }
 
 ul#hamburger {
@@ -105,12 +117,13 @@ h1 {
     min-height: 200px; /* height here to control auto-height for form */
     max-height: 900px;
     margin: 10px auto 20px;
+    /* transform: translate(360deg, 360deg); */
+    transition: ease-in-out 1s;
 }
 
 #contact-form-div {
     /* max-width: 50%; */
     margin: auto;
-    border: 1px solid blue;
     height: 90%; /* need to address height and padding */
     min-height: 500px;
     max-height: 900px;
@@ -129,7 +142,6 @@ form#toggle-contact-form {
     min-width: 300px;
     max-width: 1200px;
     margin: 10px auto 20px;
-    border: 1px solid grey;
     border-radius: 20px;
     box-shadow: -4px 4px 5px 1px #161616;
     padding: 20px;
@@ -173,9 +185,38 @@ textarea#email-message {
 /* .show-element {
     display: none;
 } */
-.hide-element { /* toggle handled in main.js */ 
-    display: none;
+#register-wrapper { /* problem: hamburger status shows no register */
+    /* margin-top: 100px; */
+    position: absolute;
+    top: calc(5vh + 5px);
+    left: calc(50vw - 150px);
+    display: inline-block;
+    width: 300px;
+    height: 200px;
     background-color: red;
+    /* min-height: 100px; */ /* height here to control auto-height for form */
+    margin: 10px auto 20px;
+} */
+#register-wrapper label {
+    width: 30%;
+    display: block;
+}
+#register-wrapper form {
+    margin-bottom: 20px;
+}
+#register-wrapper input {
+    float: right;
+}
+li.register { /* check this for issue with register form position */
+    position: relative;
+}
+.hide-element { /* toggle handled in main.js */ 
+    position: absolute;
+    top: -1200px;
+    /* opacity: 0; */
+    transform: translate(-3800px, -1400px) rotateX(360deg);
+    /* transition: 10ms; */
+    /* display: none; */
 }
 
 /* BODY */
@@ -216,10 +257,19 @@ textarea#email-message {
     box-sizing: border-box;
 }
 .bumper-long:hover {
-    transform: scale(1.2);
+    position: relative;
+    top: 40px;
+    transform: scale(2);
     cursor: pointer;
     border: 2px solid black;
 }
+/* div.add-to-cart {
+    // controlling via js
+    position: relative;
+    display: block;
+    font-size: small;
+    color: red;
+} */
 .bumper-short {
     width: 175px;
     height: 50px;

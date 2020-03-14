@@ -1,10 +1,10 @@
 /* user template > temp until db integration
 
 {
-'firstName': 'string',
-'email': 'string',
-'password': 'hash1111',
-'favCategories': [] // will push if user views certain # in a category
+    'firstName': 'string',
+    'email': 'string',
+    'password': 'hash1111',
+    'favCategories': [] // will push if user views certain # in a category
 }
 
 */
@@ -34,48 +34,52 @@ const users = [
         'password': 'hash1111',
         'favCategories': [] // will push if user views certain # in a category
     },
-
-]
-function holdAll() {
-// quick flash for console.log > not sure why > still not scripting correctly for pw check, etc.
-// passwords seem to show correctly via alerts
-// sees password via checks
-    let userEmail = document.querySelector('#login-email-input').value;
-    let submitLogin = document.querySelector('#login-button');
-    let password = document.querySelector('#login-password-input');
-    let password2 = document.querySelector('#login-password-input-re-enter');
-        document.write('nodevalue login-test: ', document.querySelector('#login-password-input').value + '...');
-        document.write('user email: ', userEmail.value);
-    submitLogin.addEventListener('click', () => {
-        if(password.value === '' || password2.value === '') {
-            alert('please enter password in both fields')
-        } else {
-            passwordInputCheck(dbCheckUserPass);
-        }
-    });
     
-    function passwordInputCheck(callback) { // adding callback to get next function
-        if((password.value !== password2.value ) && (password !== '' && password2 !== '')) {
-        alert('start 1 > pw', 'passwords do not match. please re-enter')
-        } else {
+]
+
+
+function holdAll() {
+    // quick flash for console.log > not sure why > still not scripting correctly for pw check, etc.
+    // passwords seem to show correctly via alerts
+    // sees password via checks
+    const userEmail = document.querySelector('#login-email-input');
+    const submitlogin = document.querySelector('#login-button');
+    const password = document.querySelector('#login-password-input');
+    
+    console.log('nodevalue login-test: ', (document.querySelector('#login-password-input').value));
+    console.log('user email: ', userEmail.value);
+// had to add .value for new info to be populated on submission
+// otherwise old info is stored and works even if user input changed
+submitlogin.addEventListener('click', () => {
+    if(password.value === '') {
+        alert('password can not be empty. please enter password')
+    } else {
+        passwordInputCheck(dbCheckUserPass);
+    }
+});
+
+function passwordInputCheck(callback) { // adding callback to get next function
+    if(password.value === '') { // redundant
+        alert('start 1 > pw', 'passwords can not be empty. please re-enter')
+    } else {
         callback();
-        }
+    }
 }
 
 // need to set post data for user / pass; also need to set hash for passwords with salt
 // need to determine reason .value not working if placed inside this function and removed from password / password2 above
-    function dbCheckUserPass() {
-        // let password = document.getElementById('login-password-input').value;
+function dbCheckUserPass() {
+    // let password = document.getElementById('login-password-input').value;
         // next > set loop through database to check user
         for(user of users) {
-            if((user.email === userEmail) && (user.password === password.value)) {
-                alert('you are logged in')
+            if((user.email === userEmail.value) && (user.password === password.value)) {
+                return alert('you are logged in');
                 // usersLoggedIn();
-            } else {
-                // prompt to log in
-            }
+            } 
         }
- /*        alert('start 2')
+        // had to place right outside to not get multiple alerts
+        alert('username and/or password incorrect. please try again')               
+        /*        alert('start 2')
         if(users[2].email === (userEmail)) {
             document.write('dbcheck > if', 'please select "login" and enter your email and password', userEmail);
         } else if(users.includes(userEmail.value && users.password)) {
@@ -89,13 +93,67 @@ holdAll();
 
 const usersLoggedIn = function(users) {
     for(user of users) {
-        // need to add login form to check against for login
+        // need to add login form to check against for login status
     }
 }
+
 // next: how to determine if user is logged in
 let loginEls = document.querySelectorAll('.login');
 for(login of loginEls) {
     if(usersLoggedIn === true) {
-
+        
     }
+}
+
+
+const passwordReg = document.querySelector('#register-password-input');
+const passwordReg2 = document.querySelector('#register-password-input-re-enter');
+const userEmailReg = document.querySelector('#register-email-input');
+const submitRegister = document.querySelector('#register-button');
+submitRegister.addEventListener('click', () => {
+    registration();
+    // had to place function inside arrow > was not working otherwise
+})
+
+function registration() {
+    
+    // register items > push to db
+    
+    // redundant above > need to dry
+    /* function passwordInputCheck() { // adding callback to get next function
+        if(passwordReg.value === '') { // redundant
+            alert('start 1 > pw', 'passwords can not be empty. please re-enter')
+        } else {
+            dbCheckUserPass();
+        }
+    }
+    function dbCheckUserPass() { // redundant
+        // let password = document.getElementById('login-password-input').value;
+        // next > set loop through database to check user
+        for(user of users) {
+            if((user.email === userEmail.value) && (user.password === passwordReg.value)) {
+                return alert('you are logged in');
+                // usersLoggedIn();
+            } 
+        } */
+        
+        
+        /* console.log('infopw1', passwordReg.value)
+        console.log('user reg email: ', userEmailReg.value); */
+        if((passwordReg.value === '' || passwordReg2.value === '') || userEmailReg.value === '') {
+        alert('password and email required')
+    } else if(passwordReg.value !== passwordReg2.value) {
+        alert('passwords do not match. try again.')
+    } else {
+        checkUserExist();
+    }
+    // if user doesn't exist first 
+    function checkUserExist() {
+                for(user of users) {
+                    if(user.email === userEmailReg.value) {
+                        return alert(user.firstName)
+                        // 'unable to create account. do you need to reset your password?'
+                    } continue;
+        }
+    }                
 }
