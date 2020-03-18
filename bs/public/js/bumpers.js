@@ -620,7 +620,6 @@ function paging() {
                     // add functionality to highlight e.target.value
 
                     // -1 b/c of 0-based indexing
-                    //let defaultBumpers = document.createElement('div').innerHTML = bumperGenerator();
                     console.log(e.target.value); // not -1 to get value
                     console.log(bumper50EachArray[bumpersArrIndex][0]);
                     // console.log(bumper50EachArray[e.target.value])
