@@ -22,35 +22,9 @@
                         <li class="nav-menu-item to-hide"><a href="#">About</a></li>
                         <li id='contact-form-nav' class="nav-menu-item click-hide-contact-us to-hide"><a href="#">Contact</a></li>
                         <ul class="login-containter">
-                            <li class="nav-menu-item to-hide login"><a href="#">Login</a>
-                                <div id="login-wrapper">
-                                    <h3>---login form---</h3>
-                                    <form action="/" class="login-form">
-                                        <label for="login-name">Name</label>
-                                        <input type="text" id="login-name" placeholder="Name" minlength="2">
-                                        <label for="login-email-input">Email Address</label>
-                                        <input type="email" name="login-email-input" id="login-email-input" class="login-email" placeholder="Email Address" value="cliff@gmail.com">
-                                        <label for="login-password-input">Password</label>
-                                        <input type="password" name="login-password-input" id="login-password-input" class="login-password" placeholder="Create Password" value="hash1111" minlength="8" required>
-                                        <button type="submit" id="login-button">Submit</button>
-                                    </form>
-                                </div>
+                            <li id="login-li" class="nav-menu-item to-hide login"><a href="#">Login</a>
                             </li>
-                            <li class="nav-menu-item to-hide login"><a href="#">Register</a>
-                                <div id="register-wrapper">
-                                    <h3>---register form---</h3>
-                                    <form action="/" class="register-form" onsubmit="holdAll">
-                                        <label for="register-name">Name</label>
-                                        <input type="text" id="register-name" placeholder="Name" minlength="2">
-                                        <label for="register-email-input">Email Address</label>
-                                        <input type="email" name="register-email-input" id="register-email-input" class="register-email" placeholder="Email Address">
-                                        <label for="register-password-input">Password</label>
-                                        <input type="password" name="register-password-input" id="register-password-input" class="register-password" placeholder="Create Password" value="hash1111" minlength="8" required>
-                                        <label for="register-password-input-re-enter">Re-Enter</label>
-                                        <input type="password" name="register-password-input-re-enter" id="register-password-input-re-enter" class="register-password" placeholder="Re-enter password" value="hash1111" minlength="8" required>
-                                        <button type="submit" id="register-button">Register</button>
-                                    </form>
-                                </div>
+                            <li id="register-li" class="nav-menu-item to-hide login"><a href="#">Register</a>
                             </li>
                             <li class="nav-menu-item to-hide login"><a href="#">Reset</a></li>
                         </ul>
@@ -69,6 +43,29 @@
             </nav>
         </div>
     </header>
+    <!-- <div id="reg-wrapper-div"> -->
+    <form action="/" id="register-wrapper" class="register-form hide-element">
+        <label for="register-name">Name</label>
+        <input type="text" id="register-name" placeholder="Name" minlength="2">
+        <label for="register-email-input">Email Address</label>
+        <input type="email" name="register-email-input" id="register-email-input" class="register-email" placeholder="Email Address">
+        <label for="register-password-input">Password</label>
+        <input type="password" name="register-password-input" id="register-password-input" class="register-password" placeholder="Create Password" value="hash1111" minlength="8" required>
+        <label for="register-password-input-re-enter">Re-Enter</label>
+        <input type="password" name="register-password-input-re-enter" id="register-password-input-re-enter" class="register-password" placeholder="Re-enter password" value="hash1111" minlength="8" required>
+        <button type="submit" id="register-button">Register</button>
+    </form>
+<!-- </div> -->
+    <form action="/" id="login-wrapper" class="login-form hide-element">
+        <label for="login-name">Name</label>
+        <input type="text" id="login-name" placeholder="Name" minlength="2">
+        <label for="login-email-input">Email Address</label>
+        <input type="email" name="login-email-input" id="login-email-input" class="login-email" placeholder="Email Address" value="cliff@gmail.com">
+        <label for="login-password-input">Password</label>
+        <input type="password" name="login-password-input" id="login-password-input" class="login-password" placeholder="Create Password" value="hash1111" minlength="8" required>
+        <button type="submit" id="login-button">Submit</button>
+        <a href="#" class="pw-reset">Reset Password or Username</a>
+    </form>
     <h1>Bumper Stickers - Choose Wisely</h1>
     <div id="contact-wrapper" class="hide-element">
         <div id="contact-form-div">
@@ -105,6 +102,8 @@
                 </div>
             </div>
         </main>
+        <div id="previous-page" class="page-turner">&lt; &lt; &lt; &lt;</div>
+        <div id="next-page" class="page-turner">&gt; &gt; &gt; &gt;</div>
         <aside class="sidebar">
             <div class="content-right">
                 <div class="popular-bumbers">
@@ -140,5 +139,6 @@
     <script src="js/bumpers.js"></script>
     <script src="js/users.js"></script>
     <script src="js/cart.js"></script>
+    <script src="js/pagination.js"></script>
 </body>
 </html>

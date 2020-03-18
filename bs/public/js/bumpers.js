@@ -40,22 +40,70 @@ const bumperStickers = [
     'Nice Sunday drive behind me, right?',
     'Microwave onboard',
     'Careful of Ingrates in Your Life',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING',
+    'TESTING'
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;
 
+let bumperBackflow = [];
+let bumperOverflow = [];
+
 const bumperDiv = document.getElementById('bumper-left');
-bumperStickers.forEach(item => {
-    let newBumperDiv = document.createElement('div');
-    newBumperDiv.setAttribute('class', 'bumper bumper-long')
-    let pushBumper = bumperDiv.appendChild(newBumperDiv);
-  //  newBumperDiv = document.createElement('div');
-   // let test = document.createTextNode(`<div class="bumper bumper-long">${item}</div>`);
-    pushBumper.innerHTML = item;
-//    newBumperDiv.innerHTML = `<div class="bumper bumper-long">${item}</div>`;
-//    bumperDiv.innerHTML = bump;
-    // bumperDiv.innerHTML append(bumperText);
-
-})
-
+function bumperLoad50() {
+    // move logic loop here for holding and sending 50 to page
+    bumperStickers.forEach(item => {
+        let newBumperDiv = document.createElement('div');
+        newBumperDiv.setAttribute('class', 'bumper bumper-long')
+        let pushBumper = bumperDiv.appendChild(newBumperDiv);
+      //  newBumperDiv = document.createElement('div');
+       // let test = document.createTextNode(`<div class="bumper bumper-long">${item}</div>`);
+        pushBumper.innerHTML = item;
+    //    newBumperDiv.innerHTML = `<div class="bumper bumper-long">${item}</div>`;
+    //    bumperDiv.innerHTML = bump;
+        // bumperDiv.innerHTML append(bumperText);
+    
+    })
+}
+function paging() { // function will be set to hold previous bumpers and next 50 bumpers
+    if(bumperStickers.length <= 50) {
+        bumperLoad50();
+        // return next
+    } else {
+        bumperLoad50();
+        bumperOverflow.push(bumperStickers.slice(([49]), bumperStickers.length-1));
+        console.log(bumperOverflow.length);
+        console.log('bumover', bumperOverflow);
+        console.log('bumpstic', bumperStickers.length)
+        // need to increment counter and decrement count to go forward and backwards in total bumbers > add categories later
+        // push 50 into new variable
+        // run foreach on the 50 to load to page
+        // need logic connected to prev and next pages
+    }
+}
 // export { bumperStickers }; will add later; currently syntax error

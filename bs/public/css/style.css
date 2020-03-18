@@ -57,7 +57,7 @@ h1, h2, h3 {
     text-decoration: none;
 }
 li.nav-menu-item a { /* remove underline from nav items */
-    text-decoration: none;
+    text-decoration: none;  
 }
 li.login {
     font-size: small;
@@ -65,11 +65,96 @@ li.login {
 li.login::after {
     content: '\00A0';
 }
-#login-wrapper {
-    display: inline-block;
+#previous-page {
+    font-size: xx-large;
+    font-weight: bolder;
+    font-family: 'Londrina Sketch', cursive;
+    max-width: 20px;
+    display: flex;
+    position: relative;
+    left: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#next-page {
+    font-size: xx-large;
+    font-weight: bolder;
+    font-family: 'Londrina Sketch', cursive;
+    max-width: 20px;
+    display: flex;
+    position: relative;
+    right: 40px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.page-turner:hover {
+    cursor: pointer;
+}
+form#login-wrapper {
+   /*  merge login / reg forms css */
     width: 400px;
-    position: absolute;
+    height: 150px;
     top: calc(50vh - 50px); /* still working on positioning */
+    left: calc(50vw - 200px);
+    background-color: var(--main-bg-color);
+    box-shadow: -3px 3px 10px 3px var(--main-text-color);
+    border-radius: 10px;
+    margin: 10px auto 20px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.focus-menu-item { 
+    /* using this for js to set focus on login / register li */
+    /* color: white; color property not changing    */
+    background-color: var(--secondary-highlight-color);
+}
+form#register-wrapper { /* problem: hamburger status shows no register */
+    /* margin-top: 100px; */
+    width: 400px;
+    height: 200px;
+    top: calc(5vh + 5px);
+    left: calc(50vw - 150px);
+    background-color: var(--main-bg-color);
+    box-shadow: -3px 3px 10px 3px var(--main-text-color);
+    /* min-height: 100px; */ /* height here to control auto-height for form */
+    border-radius: 10px;
+    margin: 10px auto 20px;
+    padding: 10px;
+    box-sizing: border-box;
+} 
+/* set grid for forms later */
+#login-wrapper label {
+    width: 30%;
+    float: left;
+}
+#login-wrapper input {
+    float: right;
+    width: 60%;
+}
+#login-wrapper button {
+    float: right;
+}
+#register-wrapper label {
+    width: 30%;
+    float: left;
+}
+#register-wrapper input {
+    float: right;
+    width: 60%;
+}
+#register-wrapper button {
+    float: right;
+}
+/* li.register { check this for issue with register form position
+    position: relative;
+} */
+a.pw-reset {
+    margin-top: 10px;
+    font-size: xx-small;
+    clear: both;
+    float: right;
 }
 #shopping-cart {
     font-size: large;
@@ -185,31 +270,6 @@ textarea#email-message {
 /* .show-element {
     display: none;
 } */
-#register-wrapper { /* problem: hamburger status shows no register */
-    /* margin-top: 100px; */
-    position: absolute;
-    top: calc(5vh + 5px);
-    left: calc(50vw - 150px);
-    display: inline-block;
-    width: 300px;
-    height: 200px;
-    background-color: red;
-    /* min-height: 100px; */ /* height here to control auto-height for form */
-    margin: 10px auto 20px;
-} */
-#register-wrapper label {
-    width: 30%;
-    display: block;
-}
-#register-wrapper form {
-    margin-bottom: 20px;
-}
-#register-wrapper input {
-    float: right;
-}
-li.register { /* check this for issue with register form position */
-    position: relative;
-}
 .hide-element { /* toggle handled in main.js */ 
     position: absolute;
     top: -1200px;

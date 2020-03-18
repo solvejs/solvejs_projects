@@ -105,6 +105,19 @@ for(login of loginEls) {
     }
 }
 
+// show registration / login forms via click to menu item
+const registerNavLink = document.getElementById('register-li');
+registerNavLink.addEventListener('click', (event) => {
+    /* event.stopPropagation();  */// to stop event bubbling back to li item > was not needed after setting grid area for element
+    registerNavLink.classList.toggle('focus-menu-item');
+    document.getElementById('register-wrapper').classList.toggle('hide-element');
+})
+const loginNavLink = document.getElementById('login-li');
+loginNavLink.addEventListener('click', (event) => {
+    /* event.stopPropagation();  */// to stop event bubbling back to li item > was not needed after setting grid area for element
+    loginNavLink.classList.toggle('focus-menu-item');
+    document.getElementById('login-wrapper').classList.toggle('hide-element');
+})
 
 const passwordReg = document.querySelector('#register-password-input');
 const passwordReg2 = document.querySelector('#register-password-input-re-enter');

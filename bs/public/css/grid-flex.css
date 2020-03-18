@@ -15,10 +15,12 @@
     /* likely will add search to left side of menu bar for ease */
     grid-template-areas: 
     "h h h h h h h h h h"
-    "c-w c-w c-w c-w c-w c-w c-w c-w c-w c-w"
+    "reg reg reg reg reg reg reg . . ."
+    "log log log log log log log . . ."
+    "c-w c-w c-w c-w c-w c-w c-w . . ."
     "h1 h1 h1 h1 h1 h1 h1 h1 h1 h1"
-    "c c c c c c c a a a"
-    "c c c c c c c a a a"
+    "prev-page c c c c c next-page a a a"
+    "prev-page c c c c c next-page a a a"
     "f f f f f f f f f f";
     /* will need to understand grid better to get auto-fit work
     grid-template-columns: minmax(100px, 1fr); */
@@ -37,6 +39,12 @@ h1 {
 
 /* menu */
 
+#register-wrapper {
+    grid-area: reg;
+}
+#login-wrapper {
+    grid-area: log;
+}
 /* NAV */
 
 .nav-menu-flex ul {
@@ -48,6 +56,12 @@ h1 {
 
 /* miscellaneous */
 
+#previous-page {
+    grid-area: prev-page;
+}
+#next-page {
+    grid-area: next-page;
+}
 #contact-wrapper {
     grid-area: c-w;
 }
