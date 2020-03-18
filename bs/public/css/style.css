@@ -65,6 +65,24 @@ li.login {
 li.login::after {
     content: '\00A0';
 }
+#simple-pagination {
+    font-family: 'Londrina Sketch', cursive;
+    font-size: large;
+    font-weight: bold;
+    margin: auto;
+}
+#simple-pagination ul {
+    text-decoration: none;
+    display: inline-block;
+}
+li.page-number {
+    display: inline-block;
+    margin-left: 10px;
+    list-style: none;
+}
+li.page-number:hover {
+    cursor: pointer;
+}
 #previous-page {
     font-size: xx-large;
     font-weight: bolder;

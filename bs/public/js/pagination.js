@@ -13,7 +13,7 @@ nextPage.addEventListener('mouseout', (e) => {
     e.target.innerText = '> > > >';
 })
 window.onload = () => {
-    paging(); // calling function to load bumper stickers
+    paging(); // calling function to load bumper stickers and pagination
 }
 nextPage.addEventListener('click', () => {
   //  
