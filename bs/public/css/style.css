@@ -83,11 +83,18 @@ li.page-number {
 li.page-number:hover {
     cursor: pointer;
 }
+.current-bumper-page-loaded {
+    background-color: var(--secondary-highlight-color);
+    color: #000;
+    font-weight: bolder;
+    font-size: x-large;
+    text-decoration: underline;
+}
 #previous-page {
     font-size: xx-large;
     font-weight: bolder;
     font-family: 'Londrina Sketch', cursive;
-    max-width: 20px;
+    max-width: 30px;
     display: flex;
     position: relative;
     left: 40px;
@@ -99,7 +106,7 @@ li.page-number:hover {
     font-size: xx-large;
     font-weight: bolder;
     font-family: 'Londrina Sketch', cursive;
-    max-width: 20px;
+    max-width: 30px;
     display: flex;
     position: relative;
     right: 40px;
@@ -336,13 +343,12 @@ textarea#email-message {
 }
 .bumper-long:hover {
     position: relative;
-    top: 40px;
-    transform: scale(2);
+    transform: scale(1.3);
     cursor: pointer;
     border: 2px solid black;
 }
 /* div.add-to-cart {
-    // controlling via js
+    // controlling via cart.js
     position: relative;
     display: block;
     font-size: small;

@@ -3,18 +3,20 @@ let cartText  = document.createTextNode('add to cart');
 addCartDiv.appendChild(cartText);
 
 // need to change code so double-click on add-cart not selecting text
-let listBumpers = document.querySelectorAll('.bumper');
-for(bumper of listBumpers) {
-    bumper.addEventListener('mouseenter', (event) => {
-        event.target.appendChild(addCartDiv);
-        addCartDiv.setAttribute('style', 'position: relative; font-size: small; top: 20px; color: pink');
-        // still need to position and set consistent location on bumper
-        // removing set width places bottom right inside bumper but moves bumper text left > consistent placement, though
-        // event.target.addEventListener('click', (increaseCart) => alert('test click to cart')) // works but fires multiple times
-        console.log(event);
-    })
-    continue; // not sure why this works
+function connectAddToCart() {
+    let listBumpers = document.querySelectorAll('.bumper');
+    for(bumper of listBumpers) {
+        bumper.addEventListener('mouseenter', (event) => {
+            event.target.appendChild(addCartDiv);
+            addCartDiv.setAttribute('style', 'position: relative; font-size: x-small; top: 20px; color: pink');
+            // still need to position and set consistent location on bumper
+            // removing set width places bottom right inside bumper but moves bumper text left > consistent placement, though
+            // event.target.addEventListener('click', (increaseCart) => alert('test click to cart')) // works but fires multiple times
+        })
+        continue; // not sure why this works
+    }
 }
+connectAddToCart();
 // other events to match and return to prior state
 
 // increase # to cart

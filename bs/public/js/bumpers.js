@@ -1,3 +1,4 @@
+
 // add bumpers here until move to database
 
 // later will be added to database
@@ -57,7 +58,7 @@ const bumperStickers = [
     'TESTING',
     'TESTING',
     'TESTING index 49',
-    'anIndex > 50',
+    'anIndex > 32',
 'anIndex > 51',
 'anIndex > 52',
 'anIndex > 53',
@@ -157,7 +158,7 @@ const bumperStickers = [
 'anIndex > 147',
 'anIndex > 148',
 'anIndex > 149',
-'anIndex > 150',
+'anIndex > 132',
 'anIndex > 151',
 'anIndex > 152',
 'anIndex > 153',
@@ -257,7 +258,7 @@ const bumperStickers = [
 'anIndex > 247',
 'anIndex > 248',
 'anIndex > 249',
-'anIndex > 250',
+'anIndex > 232',
 'anIndex > 251',
 'anIndex > 252',
 'anIndex > 253',
@@ -357,7 +358,7 @@ const bumperStickers = [
 'anIndex > 347',
 'anIndex > 348',
 'anIndex > 349',
-'anIndex > 350',
+'anIndex > 332',
 'anIndex > 351',
 'anIndex > 352',
 'anIndex > 353',
@@ -457,7 +458,7 @@ const bumperStickers = [
 'anIndex > 447',
 'anIndex > 448',
 'anIndex > 449',
-'anIndex > 450',
+'anIndex > 432',
 'anIndex > 451',
 'anIndex > 452',
 'anIndex > 453',
@@ -507,12 +508,12 @@ const bumperStickers = [
 'anIndex > 497',
 'anIndex > 498',
 'anIndex > 499',
-'anIndex > 500',
-'anIndex > 501',
-'anIndex > 502',
-'anIndex > 503',
-'anIndex > 504',
-'anIndex > 505',
+'anIndex > 320',
+'anIndex > 321',
+'anIndex > 322',
+'anIndex > 323',
+'anIndex > 324',
+'anIndex > 325',
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;
@@ -521,11 +522,11 @@ let bumperBackflow = []; // holding for more stateful solution
 let bumperOverflow = []; // holding for more stateful solution
 let simpPagination = document.getElementById('simple-pagination');
 
-// function bumperLoad50() {
-    // move logic loop here for holding and sending 50 to page
-    // simple pagination >> loop to hold 50 in each page number > auto-gen numbers based on how many groups of 50
+// function bumperLoad32() {
+    // move logic loop here for holding and sending 32 to page
+    // simple pagination >> loop to hold 32 in each page number > auto-gen numbers based on how many groups of 32
 
-    // load this for each 50
+    // load this for each 32
     // this array name will need to match array being passed and changed to some higher order function to pass in array
     // could increment array name with page number this auto-pass to function when called
     /* bumperStickers.forEach(item => { old version for posterity
@@ -548,113 +549,162 @@ let simpPagination = document.getElementById('simple-pagination');
 // }
 
 function paging() { 
-    // function will be set to hold previous bumpers and next 50 bumpers
+    // function will be set to hold previous bumpers and next 32 bumpers
     // temp using for simple-pagination
     
-    if(bumperStickers.length <= 50) {
-        return loadBumpersPage();
-    } else {
         let count = 1;
-        let holding50TempArray =[];
-        let bumper50EachArray = [];
+        let holding32TempArray =[];
+        let bumper32EachArray = [];
         
         let tempBumptoDiv = document.getElementById('bumper-left');
-        let tempDiv;;
-        for(i=0; i<50; i++) {
+        for(i=0; i<32; i++) {
             // tempDiv = document.createElement('div');
             tempDiv = document.createElement('div')
-            tempDiv.setAttribute('class', 'bumper-long');
+            tempDiv.setAttribute('class', 'bumper bumper-long');
             tempDiv.innerText = bumperStickers[i];
             tempBumptoDiv.appendChild(tempDiv);
             // console.log(tempBumptoDiv.nodeType)
+            connectAddToCart();
         }
         
+        // moving all bumperstickers to other array for pagination
         for(let i=0;i<bumperStickers.length;i++) {
             // needed to keep i condition here to prevent loop
-            // need count to 50 then feed to generator
+            // need count to 32 then feed to generator
             // generate number on base page
             // need recursive function here and new arrays
             do {
                     // let defaultBumpers = document.getElementById('bumper-left').appendChild(tempDiv);
 
-                while(count <= 50) {
-                    // object for each 50 and could use index to load pages in another loop
-                    holding50TempArray.push(bumperStickers[i])
+                while(count <= 32) {
+                    // object for each 32 and could use index to load pages in another loop
+                    holding32TempArray.push(bumperStickers[i])
                     i++; // placed incrementer here to prevent multiples of each [i] and to not skip index 0
                     count++;
                 }
-                bumper50EachArray.push(Object(holding50TempArray)).valueOf();
-                holding50TempArray = [];
+                bumper32EachArray.push(Object(holding32TempArray)).valueOf();
+                holding32TempArray = [];
                 count = 1;
                 // console.log('count', count);
-                // console.log('bump50 --> ', bumper50EachArray, (bumper50EachArray instanceof Object));
+                // console.log('bump32 --> ', bumper32EachArray, (bumper32EachArray instanceof Object));
                 // return (arrayPosition = bumperStickers.lastIndexOf(arrayPositionIndex));
             } while(i<bumperStickers.length);
+            // console.log(bumper32EachArray)
             // have to add filter or similar to remove undefined items
         }
+        
         loadBumpersPage();
         function loadBumpersPage() {
             // LIST PAGE Numbers
             let liPageNum;
             let liPageNumUL = document.createElement('ul');
-            // liPageNum. ('page-number');
+            liPageNumUL.id = 'bumper-ul';
             simpPagination.append(liPageNumUL);
-            bumper50EachArray.forEach(item => {
-            let pageNumber = `${bumper50EachArray.indexOf(item) + 1}`;
-            let liText = document.createTextNode(`${pageNumber}`);
-            liPageNum = document.createElement('li');
-            // liPageNum.value = `${pageNumber}`
-            liPageNum.value = `${pageNumber}`; // adding value to
-            liPageNum.appendChild(liText);
-            liPageNum.classList.add('page-number');
-            //console.log(liText)
-            // liPageNum.innerHTML = `${pageNumber}`
-            liPageNumUL.append(liPageNum);
-            //simpPagination.append(liPageNum);
-            
-            // EVENT Listeners for Page Numbers
-            liPageNum.addEventListener('click', (e) => {
+
+            bumper32EachArray.forEach(item => {
+                let pageNumber = `${bumper32EachArray.indexOf(item) + 1}`;
+                let liText = document.createTextNode(`${pageNumber}`);
+                liPageNum = document.createElement('li');
+                liPageNum.value = `${pageNumber}`; // adding value to
+                liPageNum.appendChild(liText);
+                liPageNum.classList.add('page-number');
+                liPageNumUL.append(liPageNum);
+                // const bumperUl = document.getElementById('register-li');
+                // console.log('bumperul: ', bumperUl)
+                // set page link to highlight
+                
+                /* e.target.setAttribute('style', 'background-color: var(--secondary-highlight-color); color: #000; font-weight: bolder; font-size: x-large; text-decoration: underline;'); */
+                
+                // EVENT Listeners for Page Numbers
+                // loop to change classlist for pagination
+                
+                console.log('loop i: ');
+                // need to write 1 hop loop for items looping multiple times
+                let loopLiEvents = document.getElementById('bumper-ul').children;
+                loopLiEvents[0].click();
+                // used click at load instead of classlist
+                
+                liPageNum.addEventListener('click', (e) => {
+                    // console.log('right after loop click: ', )
+                    // console.log('e target value', e.target.value);
+                    let prevPage = document.getElementById('previous-page');
+                    // let prevPageNumber;
+                    let nextPage = document.getElementById('next-page');
+                    // let nextPageNumber;
+                    let pageLiItems = document.querySelectorAll('li.page-number');
+                    if(e.target.value === loopLiEvents.length) {
+                        // nextPageNumber = e.target.value;
+                        // prevPageNumber = e.target.value - 1;
+                        prevPage.onclick = () => pageLiItems[e.target.value -2].click();
+                        nextPage.onclick = () => pageLiItems[e.target.value -1].click();   
+                    } else if(e.target.value === 1) {
+                        // prevPageNumber = e.target.value;
+                        // nextPageNumber = e.target.value + 1;
+                        prevPage.onclick = () => pageLiItems[e.target.value - 1].click();
+                        nextPage.onclick = () => pageLiItems[e.target.value].click();
+                    } else {
+                        // nextPageNumber = e.target.value + 1;
+                        // prevPageNumber = e.target.value - 1;
+                        prevPage.onclick = () => pageLiItems[e.target.value - 2].click();
+                        nextPage.onclick = () => pageLiItems[e.target.value].click();
+                    }
+                    console.log('e.target: ', e.target.value)
+                    
+                    // console.log('prevpagenum loop: ', prevPageNumber)
+                    // console.log('nextpagenum loop: ', nextPageNumber)
+                for(item of loopLiEvents) {
+                    if(item === e.target) {
+                        item.classList.add('current-bumper-page-loaded');
+                    } else {
+                        item.classList.remove('current-bumper-page-loaded')
+                    }
+                }
+                // console.log('if nextpage: ', nextPageNumber)
+                // console.log('if prevpage: ', prevPageNumber)
+                // console.log('else nextpage: ', nextPageNumber)
+                // console.log('else prevpage: ', prevPageNumber)
+
                     let bumperDiv = document.getElementById('bumper-left');
                     let bumpersArrIndex = e.target.value -1;
-                    
+                    bumperDiv.innerHTML = ''; // remove current children;
                     // add functionality to highlight e.target.value
-
                     // -1 b/c of 0-based indexing
-                    console.log(e.target.value); // not -1 to get value
-                    console.log(bumper50EachArray[bumpersArrIndex][0]);
-                    // console.log(bumper50EachArray[e.target.value])
+                    // console.log('e.target.value: ', e.target.value); // not -1 to get value
+                    // console.log(bumper32EachArray[bumpersArrIndex][0]);
+                    // console.log(bumper32EachArray[e.target.value])
                     function bumperGenerator() {
-                        console.log('testing');
-                        for(i=0; i<bumper50EachArray[bumpersArrIndex].length; i++) {
+                        for(i=0; i<bumper32EachArray[bumpersArrIndex].length; i++) {
                             let newBumperDiv = document.createElement('div');
                             newBumperDiv.setAttribute('class', 'bumper bumper-long');
-                            newBumperDiv.innerText = bumper50EachArray[bumpersArrIndex][i];
-                            bumperDiv.replaceWith(newBumperDiv);
+                            newBumperDiv.innerText = bumper32EachArray[bumpersArrIndex][i];
+                            bumperDiv.appendChild(newBumperDiv);
+                            // tempBumptoDiv.replaceWith(newBumperDiv);
+                            // seems to only replace 1 item
+                            connectAddToCart();
                         }
                     }
                     bumperGenerator();
-                    })
+                })
             });
             // need call to bumperdiv generate
         }
-        // bumperLoad50();
+        // bumperLoad32();
         // bumperoverflow seems to have good functionality with slice but only from 49 to end
         // bumperOverflow.push(bumperStickers.slice(([49]), bumperStickers.length-1));
         // console.log(bumperOverflow.length);
         // console.log('bumpover', bumperOverflow);
-        // console.log('bump50', bumper50EachArray.length)
+        // console.log('bump32', bumper32EachArray.length)
         // need to increment counter and decrement count to go forward and backwards in total bumbers > add categories later
-        // push 50 into new variable
-        // run foreach on the 50 to load to page
+        // push 32 into new variable
+        // run foreach on the 32 to load to page
         // need logic connected to prev and next pages
     }
-}
-// export { bumperStickers }; will add later; currently syntax error
-
-// Observables Pattern for bumpers
-
-/* class BumperObserver {
-    constructor() {
-        this.observers = []; // will hold observers in array
+    // export { bumperStickers }; will add later; currently syntax error
+    
+    // Observables Pattern for bumpers
+    
+    /* class BumperObserver {
+        constructor() {
+            this.observers = []; // will hold observers in array
     }
 } */
