@@ -1,7 +1,35 @@
 const express = require('express');
 const app = express();
 const json = express.json(); // for parsing application/json
-const port = 3000;
+const port = process.env.PORT || 3000;
+const mustacheExpress = require('mustache-express');
+app.engine('html', mustacheExpress());
+
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+
+const WebSocket = require('ws');
+const wss = new WebSocket.Server({
+    port: 8080,
+    perMessageDeflate: {
+        zlibDeflateOptions: {
+            chunkSize: 1024,
+            memLevel: 7,
+            level: 3
+        },
+        zlibInflateOptions: {
+            chunkSize: 10 * 1024
+        },
+        clientNoContextTakeover: true,
+        serverNoContextTakeover: true,
+        serverMaxWindowBits: 10,
+        concurrencyLimit: 10,
+        threshold: 1024
+    }
+});
+
+const router = require('./controllers/site_routes');
+app.use(router);
 
 app.use(express.static('public'))
 app.use(express.json()); // needed to add express. since has built-in body parser
@@ -15,10 +43,11 @@ app.get('/', (req, res) => {
     res.body.json('success');
     console.log('did not work');
 })
-app.get('/admin.html', (req, res) => {
+app.get('/admin.html', (req, res) => {  
     // logic will check if user is logged in && user is in admin group before loading the page
     // otherwise, a message (permission denied) will populate and load home page with bumper stickers
     console.log(req.body);
+    res.send('test')
     try {
         if(req.body.user === 'test') {
         // if(user != null) {
@@ -31,6 +60,14 @@ app.get('/admin.html', (req, res) => {
     }
 })
 
+app.get('/tester2', (req, res) => {
+    try {
+        res.render('tester2');
+    } catch {
+        res.send('/tester2 page did not work')
+    }
+})
+
 app.get('/profile', (req, res) => {
     try {
         console.log(req.body.id, res.body.id);
@@ -38,7 +75,6 @@ app.get('/profile', (req, res) => {
         res.send('did not work.')
     }
 })
-console.log('outside app.get');
 
 // will need to set page param to auto-generate pages and change the url path on changes
 
