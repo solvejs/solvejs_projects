@@ -6,7 +6,7 @@ ideas:
 solvejs.com/bs bumper stickers
 solvejs.com/ts t-shirts
 solvejs.com/apps
-solvejs.com/
+solvejs.com/db website overlay drawing board that moves with page and can be saved
 solvejs.com/
 
 learn schema:

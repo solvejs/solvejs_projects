@@ -27,10 +27,10 @@ body {
     z-index: 2;
 }
 :root {
-    --main-bg-color: #F1FF00;
-    --main-text-color: #0E00FF;
-    --main-highlight-color: #FF0071;
-    --secondary-highlight-color: #00FF8E;
+    --main-bg-color: #0839CC;
+    --main-text-color: #31C3D5;
+    --main-highlight-color: #2274B2;
+    --secondary-highlight-color: #F3F333;
 }
 /* MEDIA SCREEN */
 
@@ -56,7 +56,7 @@ h1, h2, h3 {
     list-style: none;
     text-decoration: none;
 }
-li.nav-menu-item a { /* remove underline from nav items */
+li.nav-menu-item > a { /* remove underline from nav items */
     text-decoration: none;  
 }
 li.login {
@@ -82,6 +82,9 @@ li.page-number {
 }
 li.page-number:hover {
     cursor: pointer;
+}
+a[href] {
+    color: #fff;
 }
 .current-bumper-page-loaded {
     background-color: var(--secondary-highlight-color);
@@ -333,11 +336,11 @@ textarea#email-message {
     justify-content: center;
 }
 .bumper-long {
-    width: 275px;
-    height: 50px;
-    background-color: white;
+    width: 400px;
+    height: 100px;
+    background-color: #efe;
     margin: 5px 5px 10px;
-    border: 3px solid black;
+    border: 3px solid var(--secondary-highlight-color);
     padding: 5px;
     box-sizing: border-box;
 }

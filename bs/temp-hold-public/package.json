@@ -2,10 +2,11 @@
   "name": "solvejs-bumper-stickers",
   "version": "1.0.0",
   "description": "bumper stickers site",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
+    "proxy": "http://localhost:3000",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "node index.js"
   },
   "keywords": [
     "bumper",
@@ -13,9 +14,6 @@
   ],
   "author": "James C Hardy",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "pg": "^7.18.2",
-    "ws": "^7.2.3"
-  }
+  "dependencies": {},
+  "devDependencies": {}
 }
