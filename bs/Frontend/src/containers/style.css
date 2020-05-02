@@ -20,6 +20,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     z-index: 1;
 }
+
+.testing {
+    background-color: red;
+    color: orange;
+}
 .cover-div {
     width: 100vw;
     height: 100vh;
@@ -37,7 +42,13 @@ body {
 /* @media 
 to be filled out later
 */
+
 /* HEADER */
+
+h1 {
+    margin: 5px auto;
+    box-shadow: -1px 1px 2px 2px var(--secondary-highlight-color);
+}
 h1, h2, h3 {
     font-family: 'Cabin Sketch', cursive;
     /* font-family: 'Londrina Sketch', cursive; */
@@ -220,10 +231,6 @@ div.hamburger-list {
     background-color: orange;
 }
 
-h1 {
-    margin: 5px auto;
-    box-shadow: -1px 1px 2px 2px var(--secondary-highlight-color);
-}
 /* set display grid to sort form */
 #contact-wrapper {
     width: 40vw;
@@ -278,10 +285,14 @@ input.f-l-i {
 input.f-l-i::placeholder {
     color: var(--main-text-color);
 }
-button[type=submit] {
+button[type=submit], button[type=reset] {
     margin-top: 5px;
     width: 150px;
     color: var(--main-text-color);
+}
+button[type=reset] {
+    width: 70px;
+    color: 'red'
 }
 textarea#email-message {
     margin-top: 10px;
@@ -333,12 +344,12 @@ textarea#email-message {
 
 .bumper {
     text-align: center;
-    justify-content: center;
+    vertical-align: center;
 }
 .bumper-long {
     width: 400px;
     height: 100px;
-    background-color: #efe;
+    background-color: #fff;
     margin: 5px 5px 10px;
     border: 3px solid var(--secondary-highlight-color);
     padding: 5px;
@@ -350,13 +361,16 @@ textarea#email-message {
     cursor: pointer;
     border: 2px solid black;
 }
-/* div.add-to-cart {
-    // controlling via cart.js
+button.add-to-cart {
     position: relative;
-    display: block;
-    font-size: small;
-    color: red;
-} */
+    /* display: block; */
+    float: right;
+    font-size: x-small;
+    color: var(--main-highlight-color);
+    background-color: var(--secondary-highlight-color);
+    /* text-align: right; */
+    top: 1px;
+}
 .bumper-short {
     width: 175px;
     height: 50px;

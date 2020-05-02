@@ -5,14 +5,29 @@ export default class Footer extends React.Component {
         super(props);
         this.state = {}
     }
+    footerEls = [
+        {
+            linkAddr: '#',
+            linkName: '&copy; &#169; 2020 SolveJS'
+        },
+        {
+            linkAddr: '#',
+            linkName: 'Terms'
+        },
+        {
+            linkAddr: '#',
+            linkName: 'Cookies'
+        },
+        {
+            linkAddr: '#',
+            linkName: 'FAQs'
+        }
+    ]
     render() {
         return (
             <footer className="footer">
             <div className="footer footer-flex">
-            <PrintFooter text = '&copy;2020 SolveJS' />
-            <PrintFooter code = '#' text = 'Terms' />
-            <PrintFooter code = '#' text = 'Cookies' />
-            <PrintFooter code = '#' text = 'FAQs' />
+            <PrintFooter footerEls = {this.footerEls} />
             </div>
             </footer>
             )
@@ -21,8 +36,10 @@ export default class Footer extends React.Component {
 
 function PrintFooter(props) {
     return (
-        <li className="footer-item">
-        <a href ={props.code}>{props.text}</a>
-        </li>
+        props.footerEls.map((item, index) => {
+            return <li key = {index} className="footer-item">
+            <a href ={item.linkAddr}>{item.linkName}</a>
+            </li>
+        })
     )
 }

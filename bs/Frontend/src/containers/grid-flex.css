@@ -82,10 +82,10 @@ main {
     margin: 10px 5px 0px;
     justify-content: space-evenly;
     justify-content: center;
-    align-items: center;
+    align-items: center;    
 }
 
-.content-left {
+.content-left { 
     display: flex;
     flex-wrap: wrap;
 }

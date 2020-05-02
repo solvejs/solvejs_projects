@@ -58,6 +58,12 @@ export class Menu extends Component {
                         'linkName': 'Reset',
                         'linkAddr': '#',
                         'className': 'nav-menu-item to-hide login'
+                    },
+                    {
+                        'type': 'li',
+                        'linkName': '&#x1f6d2;',
+                        'linkAddr': '&copy;',
+                        'className': 'nav-menu-item to-hide login'
                     }
                 ]
             },
@@ -84,11 +90,12 @@ render() {
             <li className={this.state.menuArr[0].className}><a href={this.state.menuArr[0].linkAddr}>{this.state.menuArr[0].linkName}</a></li>
             <li className={this.state.menuArr[1].className}><a href={this.state.menuArr[1].linkAddr}>{this.state.menuArr[1].linkName}</a></li>
             <li className={this.state.menuArr[2].className}><a href={this.state.menuArr[2].linkAddr}>{this.state.menuArr[2].linkName}</a></li>
-            <li className={this.state.menuArr[3].className}><a href={this.state.menuArr[3].linkAddr}>{this.state.menuArr[3].linkName}</a></li>
+            <li className={this.state.menuArr[3].className} onClick={this.props.handleContactFormClick}><a href={this.state.menuArr[3].linkAddr}>{this.state.menuArr[3].linkName}</a></li>
             <ul>
-                <li id={this.state.menuArr[4].submenu[0].id} className={this.state.menuArr[4].submenu[0].className}><a href={this.state.menuArr[4].submenu[0].linkAddr}>{this.state.menuArr[4].submenu[0].linkName}</a></li>
-                <li id={this.state.menuArr[4].submenu[1].id} className={this.state.menuArr[4].submenu[1].className}><a href={this.state.menuArr[4].submenu[1].linkAddr}>{this.state.menuArr[4].submenu[1].linkName}</a></li>
+                <li id={this.state.menuArr[4].submenu[0].id} className={this.state.menuArr[4].submenu[0].className}><a href={this.state.menuArr[4].submenu[0].linkAddr} onClick={this.props.handleLogFormClick}>{this.state.menuArr[4].submenu[0].linkName}</a></li>
+                <li id={this.state.menuArr[4].submenu[1].id} className={this.state.menuArr[4].submenu[1].className} onClick={this.props.handleRegFormClick}><a href={this.state.menuArr[4].submenu[1].linkAddr}>{this.state.menuArr[4].submenu[1].linkName}</a></li>
                 <li className={this.state.menuArr[4].submenu[2].className}><a href={this.state.menuArr[4].submenu[2].linkAddr}>{this.state.menuArr[4].submenu[2].linkName}</a></li>
+                <li className={this.state.menuArr[4].submenu[3].className}><a href={this.state.menuArr[4].submenu[3].linkAddr}>{this.state.menuArr[4].submenu[3].linkName}</a></li>
             </ul>
             <li className={this.state.menuArr[5].className}><a href={this.state.menuArr[5].linkAddr}>{this.state.menuArr[5].linkName}</a></li>
             </ul>
