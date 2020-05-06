@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import Login from './Login';
 import Registration from './Register';
 import Contact from '../Contact';
 import {users} from '../users/users';
 
-export class Menu extends Component {
+export class MenuTestOnly extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +34,7 @@ export class Menu extends Component {
             {
                 'type': 'li',
                 'linkName': 'Contact',
-                'linkAddr': '/',
+                'linkAddr': '#',
                 'className': 'nav-menu-item click-hide-contact-us to-hide',
                 'submenu': {}
             },
@@ -48,26 +47,26 @@ export class Menu extends Component {
                         'type': 'li',
                         'id': 'login-li',
                         'linkName': 'Login',
-                        'linkAddr': '/',
+                        'linkAddr': '#',
                         'className': 'nav-menu-item to-hide login'
                     },
                     {
                         'type': 'li',
                         'id': 'register-li',
                         'linkName': 'Register',
-                        'linkAddr': '/',
+                        'linkAddr': '#',
                         'className': 'nav-menu-item to-hide login'
                     },
                     {
                         'type': 'li',
                         'linkName': 'Reset',
-                        'linkAddr': '/',
+                        'linkAddr': '#',
                         'className': 'nav-menu-item to-hide login'
                     },
                     {
                         'type': 'li',
-                        'linkName': String.fromCharCode(128722),
-                        'linkAddr': '/',
+                        'linkName': '&#x1f6d2;',
+                        'linkAddr': '&copy;',
                         'className': 'nav-menu-item to-hide login'
                     }
                 ]
@@ -89,6 +88,7 @@ export class Menu extends Component {
       this.handleContactFormClick = this.handleContactFormClick.bind(this);
       this.handleInputChange = this.handleInputChange.bind(this);
       this.checkUserDB = this.checkUserDB.bind(this);
+    //   this.listMenuLoop = this.listMenuLoop.bind(this);
     }
     handleRegFormClick() {
       this.state.regFormHide === 'register-form' ? this.setState({
@@ -143,6 +143,7 @@ export class Menu extends Component {
     }
     }
 // start = 'this.state.menuArr';
+
 render() {
         return (
             <header className="header site-header">
@@ -152,17 +153,7 @@ render() {
             {/* console.log({holder}) */}
             {/* <CreateTestListPass list = {twoReturn()} /> */}
             <ul>
-            <li className={this.state.menuArr[0].className}><Link to={this.state.menuArr[0].linkAddr}>{this.state.menuArr[0].linkName}</Link></li>
-            <li className={this.state.menuArr[1].className}><Link to={this.state.menuArr[1].linkAddr}>{this.state.menuArr[1].linkName}</Link></li>
-            <li className={this.state.menuArr[2].className}><Link to={this.state.menuArr[2].linkAddr}>{this.state.menuArr[2].linkName}</Link></li>
-            <li className={this.state.menuArr[3].className} onClick={this.handleContactFormClick}><Link to={this.state.menuArr[3].linkAddr}>{this.state.menuArr[3].linkName}</Link></li>
-            <ul>
-                <li id={this.state.menuArr[4].submenu[0].id} className={this.state.menuArr[4].submenu[0].className}><Link to={this.state.menuArr[4].submenu[0].linkAddr} onClick={this.handleLogFormClick}>{this.state.menuArr[4].submenu[0].linkName}</Link></li>
-                <li id={this.state.menuArr[4].submenu[1].id} className={this.state.menuArr[4].submenu[1].className} onClick={this.handleRegFormClick}><Link to={this.state.menuArr[4].submenu[1].linkAddr}>{this.state.menuArr[4].submenu[1].linkName}</Link></li>
-                <li className={this.state.menuArr[4].submenu[2].className}><Link to={this.state.menuArr[4].submenu[2].linkAddr}>{this.state.menuArr[4].submenu[2].linkName}</Link></li>
-                <li className={this.state.menuArr[4].submenu[3].className}><Link to={this.state.menuArr[4].submenu[3].linkAddr}>{this.state.menuArr[4].submenu[3].linkName}</Link></li>
-            </ul>
-            <li className={this.state.menuArr[5].className}><Link to={this.state.menuArr[5].linkAddr}>{this.state.menuArr[5].linkName}</Link></li>
+            <ListMenuLoop menuItems = {this.state.menuArr} />
             </ul>
             </nav>
             <Contact className={this.state.contactFormHide}/>
@@ -173,5 +164,28 @@ render() {
             )
         }
     }
- 
-export default Menu;
+    function ListMenuLoop(props) {
+        let push = [];
+        let subHolder = [];
+        props.menuItems.forEach(item => {
+                switch(item.type) {
+                    case 'li':
+                        push.push(`<${item.type} className="${item.className}"><a href="${item.linkAddr}">${item.linkName}</a></${item.type}>`)
+                    break;
+                    case 'ul':
+                        let subArr = item.submenu;
+                        console.log(subArr)
+                        return (<ul className="test">
+                        {subArr.forEach(sub => {
+                        subHolder.push(`<li>${sub.linkName}<a href="${sub.linkAddr}">${sub.linkName}</a></li>`)
+                        })}
+                        {push.push(subHolder)}
+                        </ul>)
+                        break;
+                    default:
+                        push.push('<li>tester tester tester tester </li>')
+                }
+            });
+            return(push)
+    }
+export default MenuTestOnly;

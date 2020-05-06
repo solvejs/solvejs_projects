@@ -40,11 +40,11 @@ export class Pagination extends React.Component {
         /* return this.state.pageNums.indexOf(); */
     }
     render() {
-        const pageNumClass = {
-            basic: "page-number",
-            select: "page-number current-bumper-page-loaded"
-        }
-        const { basic, select } = pageNumClass
+        // const pageNumClass = {
+        //     basic: "page-number",
+        //     select: "page-number current-bumper-page-loaded"
+        // }
+        // const { basic, select } = pageNumClass
         return (
             <div id="simple-pagination">
             <ul id='bumper-ul'>

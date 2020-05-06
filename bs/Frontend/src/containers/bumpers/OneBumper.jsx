@@ -8,6 +8,7 @@ class OneBumper extends Component {
         this.state = {
             className: 'bumper bumper-long',
             bumpersPaged: this.generatePagesWithBumpers,
+            // need to refactor this.generatePagesWithBumpers as it is setting state from other than inside constructor
             pages: this.counter,
             currentPageNumber: 1,
             currentBumpersOnPage: ['OneBumper', 'currentBumpersOnPage', 'need to loop these', ' > pages working <', '> clicks working <']
@@ -37,6 +38,7 @@ class OneBumper extends Component {
             })
     }
     bumper32 = () => {
+        // candidate for memoization
         let bumpArrLength = this.bumper32EachArray.length;
         let pages = Math.floor((bumpArrLength/32) +1);
         let count = [];

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {users} from '../users/users';
 
 export default class Login extends Component {
     constructor(props) {

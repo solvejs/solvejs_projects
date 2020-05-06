@@ -189,6 +189,10 @@ form#register-wrapper { /* problem: hamburger status shows no register */
 /* li.register { check this for issue with register form position
     position: relative;
 } */
+
+div.about {
+    background-color: white;
+}
 a.pw-reset {
     margin-top: 10px;
     font-size: xx-small;
@@ -285,6 +289,15 @@ input.f-l-i {
 input.f-l-i::placeholder {
     color: var(--main-text-color);
 }
+div#categories, #categories > h2 {
+    margin: auto;
+}
+input[name="bumpers-cat-radio"] {
+    margin-left: 10px;
+}
+label[class="bumpers-label-radio"] {
+    margin-right: 10px;
+}
 button[type=submit], button[type=reset] {
     margin-top: 5px;
     width: 150px;
@@ -313,7 +326,7 @@ textarea#email-message {
     position: absolute;
     top: -1200px;
     /* opacity: 0; */
-    transform: translate(-3800px, -1400px) rotateX(360deg);
+    transform: translate(0px, -1400px) rotateX(360deg);
     /* transition: 10ms; */
     /* display: none; */
 }

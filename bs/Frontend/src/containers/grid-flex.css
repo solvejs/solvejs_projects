@@ -15,6 +15,9 @@
     /* likely will add search to left side of menu bar for ease */
     grid-template-areas: 
     "h h h h h h h h h h"
+    "cat cat cat cat cat cat cat . . ."
+    "adm adm adm adm adm adm adm . . ."
+    "about about about about about about about . . ."
     "reg reg reg reg reg reg reg . . ."
     "log log log log log log log . . ."
     "c-w c-w c-w c-w c-w c-w c-w . . ."
@@ -39,7 +42,16 @@ h1 {
 }
 
 /* menu */
-
+div#categories {
+    grid-area: cat;
+}
+div#admin {
+    grid-area: adm;
+    margin: auto;
+}
+div.about {
+    grid-area: about;
+}
 #register-wrapper {
     grid-area: reg;
 }

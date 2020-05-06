@@ -17,7 +17,7 @@ class Bumpers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            totalPages: 1,
+            // totalPages: 1,
             // className: 'bumper bumper-long',
             bumpersPaged: {},
             pages: [],
