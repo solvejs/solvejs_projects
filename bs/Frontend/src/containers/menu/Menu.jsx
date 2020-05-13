@@ -69,7 +69,13 @@ export class Menu extends Component {
                         'linkName': String.fromCharCode(128722),
                         'linkAddr': '/',
                         'className': 'nav-menu-item to-hide login'
-                    }
+                    },
+                    {
+                      'type': 'li',
+                      'linkName': 'Created',
+                      'linkAddr': '/created',
+                      'className': 'nav-menu-item to-hide login'
+                  }
                 ]
             },
             {
@@ -161,6 +167,7 @@ render() {
                 <li id={this.state.menuArr[4].submenu[1].id} className={this.state.menuArr[4].submenu[1].className} onClick={this.handleRegFormClick}><Link to={this.state.menuArr[4].submenu[1].linkAddr}>{this.state.menuArr[4].submenu[1].linkName}</Link></li>
                 <li className={this.state.menuArr[4].submenu[2].className}><Link to={this.state.menuArr[4].submenu[2].linkAddr}>{this.state.menuArr[4].submenu[2].linkName}</Link></li>
                 <li className={this.state.menuArr[4].submenu[3].className}><Link to={this.state.menuArr[4].submenu[3].linkAddr}>{this.state.menuArr[4].submenu[3].linkName}</Link></li>
+                <li className={this.state.menuArr[4].submenu[4].className}><Link to={this.state.menuArr[4].submenu[4].linkAddr}>{this.state.menuArr[4].submenu[4].linkName}</Link></li>
             </ul>
             <li className={this.state.menuArr[5].className}><Link to={this.state.menuArr[5].linkAddr}>{this.state.menuArr[5].linkName}</Link></li>
             </ul>

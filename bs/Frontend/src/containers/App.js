@@ -18,6 +18,7 @@ import Contact from './Contact';
 import About from '../components/About';
 import Categories from '../components/Categories';
 import Admin from '../containers/bumpers/Admin';
+import {BumpersCreator, BumperContextProvider} from './bumpers/BumpersFuncTest';
 
 class App extends Component {
   constructor(props) {
@@ -88,23 +89,26 @@ class App extends Component {
   render() {
    return (
      <div id="body">
+     <BumperContextProvider>
      {<Menu handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} />}
      {/* <MenuTestOnly  handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} /> */}
      <Title />
      <BumpersDiv />
-    <Footer />
+     <Footer style/>
       {/* <Route path='/' component={Home} /> */}
       <Switch>
       <Route exact path='/about' component={About} />
       <Route exact path='/categories' component={Categories} />
       <Route exact path='/contact' component={Contact} />
       <Route exact path='/admin' component={Admin} />
+      <Route path='/created' component={BumpersCreator} />
       </Switch>
       <Switch>
       {/* need to refactor forms to be able to switch properly */}
-      <Route exact path='#' component={Login} />
-      <Route exact path='#' component={Registration} />
+      <Route path='#' component={Login} />
+      <Route path='#' component={Registration} />
       </Switch>
+      </BumperContextProvider>
     </div>
     )
   }

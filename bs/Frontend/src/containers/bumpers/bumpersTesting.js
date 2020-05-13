@@ -7,73 +7,207 @@
     }
 ] */
 export const bumperStickers = [
-    'Almost ready to explode',
-    'Looking for a reason...keep tailing',
-    'Lost everything today. Come closer',
-    'Texting and driving',
-    'How is my driving?',
-    'I love your wife',
-    'Looking at your wife',
-    'I had your wife, too. LOL.',
-    'Brake check. 3, 2, 1...',
-    'Get closer. I like insurance',
-    'Almost sane. Come to me.',
-    'i\'m following you',
-    'kidnapper onboard',
-    'eat my [BLANK]',
-    'suck my $*@#, man',
-    'How are the fumes??',
-    'Want me to plug your wife\'s nose?',
-    'Can i smoke your passenger\'s BUTT??',
-    'Got a hole? May I?',
-    'Bumper Sticker',
-    'C U N T.he Mirror',
-    'Caution!! Taking an online test.',
-    'Please don\'t read this...',
-    'Adults onboard',
-    'Reading. Please stay back.',
-    'Bumper cars. Expect heavy braking. :-)',
-    'Watch out for loose screws.',
-    'Let\'s switch places. Pass me.',
-    'Call Me. 305-555-0000',
-    'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',
-    'Nice Sunday drive behind me, right?',
-    'Microwave onboard',
-    'Careful of Ingrates in Your Life',
-    'anIndex > 33',
-    'anIndex > 34',
-    'anIndex > 35',
-    'anIndex > 36',
-    'anIndex > 37',
-    'anIndex > 38',
-    'anIndex > 39',
-    'anIndex > 40',
-    'anIndex > 41',
-    'anIndex > 42',
-    'anIndex > 43',
-    'anIndex > 44',
-    'anIndex > 45',
-    'anIndex > 46',
-    'anIndex > 47',
-    'anIndex > 48',
-    'anIndex > 49',
-    'anIndex > 50',
-    'anIndex > 51',
-    'anIndex > 52',
-    'anIndex > 53',
-    'anIndex > 54',
-    'anIndex > 55',
-    'anIndex > 56',
-    'anIndex > 57',
-    'anIndex > 58',
-    'anIndex > 59',
-    'anIndex > 60',
-    'anIndex > 61',
-    'anIndex > 62',
-    'anIndex > 63',
-    'anIndex > 64',
-    'anIndex > 65',
-    'anIndex > 66',
+    { 
+        title: 'Almost ready to explode', category: 'political'
+    },
+    { 
+        title: 'Looking for a reason...keep tailing', category: 'political'
+    },
+    { 
+        title: 'Lost everything today. Come closer', category: 'inappropriate'
+    },
+    { 
+        title: 'Texting and driving', category: 'inappropriate'
+    },
+    { 
+        title: 'How is my driving?', category: 'inappropriate'
+    },
+    { 
+        title: 'I love your wife', category: 'inappropriate'
+    },
+    { 
+        title: 'Looking at your wife', category: 'inappropriate'
+    },
+    { 
+        title: 'I had your wife, too. LOL.', category: 'inappropriate'
+    },
+    { 
+        title: 'Brake check. 3, 2, 1...', category: 'inappropriate'
+    },
+    { 
+        title: 'Get closer. I like insurance', category: 'political'
+    },
+    { 
+        title: 'Almost sane. Come to me.', category: 'inappropriate'
+    },
+    { 
+        title: 'i\'m following you', category: 'inappropriate'
+    },
+    { 
+        title: 'kidnapper onboard', category: 'inappropriate'
+    },
+    { 
+        title: 'eat my [BLANK]', category: 'inappropriate'
+    },
+    { 
+        title: 'suck my $*@#, man', category: 'inappropriate'
+    },
+    { 
+        title: 'How are the fumes??', category: 'inappropriate'
+    },
+    { 
+        title: 'Want me to plug your wife\'s nose?', category: 'inappropriate'
+    },
+    { 
+        title: 'Can i smoke your passenger\'s BUTT??', category: 'political'
+    },
+    { 
+        title: 'Got a hole? May I?', category: 'inappropriate'
+    },
+    { 
+        title: 'Bumper Sticker', category: 'inappropriate'
+    },
+    { 
+        title: 'C U N T.he Mirror', category: 'inappropriate'
+    },
+    { 
+        title: 'Caution!! Taking an online test.', category: 'inappropriate'
+    },
+    { 
+        title: 'Please don\'t read this...', category: 'inappropriate'
+    },
+    { 
+        title: 'Adults onboard', category: 'inappropriate'
+    },
+    { 
+        title: 'Reading. Please stay back.', category: 'political'
+    },
+    { 
+        title: 'Bumper cars. Expect heavy braking. :-)', category: 'inappropriate'
+    },
+    { 
+        title: 'Watch out for loose screws.', category: 'inappropriate'
+    },
+    { 
+        title: 'Let\'s switch places. Pass me.', category: 'inappropriate'
+    },
+    { 
+        title: 'Call Me. 305-555-0000', category: 'inappropriate'
+    },
+    { 
+        title: 'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',category: 'inappropriate'
+    },
+    { 
+        title: 'Nice Sunday drive behind me, right?', category: 'inappropriate'
+    },
+    { 
+        title: 'Microwave onboard', category: 'political'
+    },
+    { 
+        title: 'Careful of Ingrates in Your Life', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 33', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 34', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 35', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 36', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 37', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 38', category: 'political'
+    },
+    { 
+        title: 'anIndex > 39', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 40', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 41', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 42', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 43', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 44', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 45', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 46', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 47', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 48', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 49', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 50', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 51', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 52', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 53', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 54', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 55', category: 'political'
+    },
+    { 
+        title: 'anIndex > 56', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 57', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 58', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 59', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 60', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 61', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 62', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 63', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 64', category: 'inappropriate'
+    },
+    { 
+        title: 'anIndex > 65', category: 'political'
+    },
+    { 
+        title: 'anIndex > 66', category: 'inappropriate'
+    },
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;

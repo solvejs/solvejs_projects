@@ -1,4 +1,5 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component, Children, Fragment } from 'react';
+import BumpersContext from './BumpersFuncTest';
 
 class Admin extends Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class Admin extends Component {
                 {
                     Title: "Bumpers Creation",
                     submenu: [
-                            "Text", "Layout", "Images", "Categories"
+                            "Text", "Layout", "Images", "Categories", "Font", "Size"
                         ]
                 },
                 {
@@ -24,27 +25,72 @@ class Admin extends Component {
             <div className="admin" id="admin">
             <h2>Admin Console</h2>
             <p>This will be a form that controls any and all of the follow items.
+            </p>
             <ul>
             <li>Bumper Creation</li>
-                <ul>
-                <li>Text</li>
-                <li>Layout: Color | Font | Images | Size</li>
-                <li>Images</li>
-                <li>Categories</li>
-                </ul>
             <li>Categories</li>
             : should be auto-generated when labeled
             </ul>
-            </p>
             <AdminMenuItem />
             </div>
         )
     }
 }
-const AdminMenuItem = (props) => {
-    return (
-        <div>empty</div>
-    )
+class AdminMenuItem extends Component {
+    render() {
+        return (
+            <div>
+            <PagesLoaded />
+            <PagesLoaded2 />
+            </div>
+        )
+    }
 }
+
+const PagesLoaded = () =>
+    (
+        <BumpersContext.Consumer>
+        {
+            context => (
+                <Button contextVal={context.sidebarCurrBumpers}>
+                {Children}
+                </Button>
+            )
+        }
+        </BumpersContext.Consumer>
+    )
+    const PagesLoaded2 = () => 
+    (
+        <BumpersContext.Consumer>
+        {
+            context2 => (
+                <Pages contextPagesVal={context2.sidebarCurrBumpersPages} handlePageChange={context2.handlePageChange}>
+                {Children}
+                </Pages>
+            )
+        }
+        </BumpersContext.Consumer>
+    )
+
+    const Button = (props) => {
+        return (
+            <Fragment>
+            {props.contextVal.map(item => <button key={item.id}>{item.title}</button>)}
+            </Fragment>
+            )
+    }
+
+    const Pages = (props) => {
+        return (
+                <div>
+                <Fragment>
+                {props.contextPagesVal.map(item => <button key={item} onClick={props.handlePageChange}>{item}</button>)}
+                </Fragment>
+                </div>
+                // <Pages contextPagesVal={context.sidebarCurrBumpersPages}>
+                // {Children}
+                // </Pages>
+            )
+        }
 
 export default Admin;
