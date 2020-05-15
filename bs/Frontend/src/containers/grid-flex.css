@@ -22,6 +22,7 @@
     "log log log log log log log . . ."
     "c-w c-w c-w c-w c-w c-w c-w . . ."
     "h1 h1 h1 h1 h1 h1 h1 h1 h1 h1"
+    "cat-r cat-r cat-r cat-r cat-r cat-r cat-r . . ."
     "prev-page c c c c c next-page a a a"
     "prev-page c c c c c next-page a a a"
     ". . sp sp sp . . . . ."
@@ -44,6 +45,9 @@ h1 {
 /* menu */
 div#categories {
     grid-area: cat;
+}
+div#cat-items-rendered {
+    grid-area: cat-r;
 }
 div#admin {
     grid-area: adm;

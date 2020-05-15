@@ -18,7 +18,7 @@ import Contact from './Contact';
 import About from '../components/About';
 import Categories from '../components/Categories';
 import Admin from '../containers/bumpers/Admin';
-import {BumpersCreator, BumperContextProvider} from './bumpers/BumpersFuncTest';
+import {/* BumpersCreator */ BumperContextProvider} from './bumpers/BumpersFuncTest';
 
 class App extends Component {
   constructor(props) {
@@ -101,7 +101,7 @@ class App extends Component {
       <Route exact path='/categories' component={Categories} />
       <Route exact path='/contact' component={Contact} />
       <Route exact path='/admin' component={Admin} />
-      <Route path='/created' component={BumpersCreator} />
+      {/* <Route path='/created' component={BumpersCreator} /> */}
       </Switch>
       <Switch>
       {/* need to refactor forms to be able to switch properly */}

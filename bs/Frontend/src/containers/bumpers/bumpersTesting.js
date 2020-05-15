@@ -86,13 +86,13 @@ export const bumperStickers = [
         title: 'Bumper cars. Expect heavy braking. :-)', category: 'inappropriate'
     },
     { 
-        title: 'Watch out for loose screws.', category: 'inappropriate'
+        title: 'Watch out for loose screws.', category: 'family'
     },
     { 
         title: 'Let\'s switch places. Pass me.', category: 'inappropriate'
     },
     { 
-        title: 'Call Me. 305-555-0000', category: 'inappropriate'
+        title: 'Call Me. 305-555-0000', category: 'family'
     },
     { 
         title: 'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',category: 'inappropriate'
@@ -107,7 +107,7 @@ export const bumperStickers = [
         title: 'Careful of Ingrates in Your Life', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 33', category: 'inappropriate'
+        title: 'anIndex > 33', category: 'family'
     },
     { 
         title: 'anIndex > 34', category: 'inappropriate'
@@ -143,7 +143,7 @@ export const bumperStickers = [
         title: 'anIndex > 44', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 45', category: 'inappropriate'
+        title: 'anIndex > 45', category: 'family'
     },
     { 
         title: 'anIndex > 46', category: 'inappropriate'
@@ -155,7 +155,7 @@ export const bumperStickers = [
         title: 'anIndex > 48', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 49', category: 'inappropriate'
+        title: 'anIndex > 49', category: 'drive-traffic'
     },
     { 
         title: 'anIndex > 50', category: 'inappropriate'
@@ -164,7 +164,7 @@ export const bumperStickers = [
         title: 'anIndex > 51', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 52', category: 'inappropriate'
+        title: 'anIndex > 52', category: 'thought-provoking'
     },
     { 
         title: 'anIndex > 53', category: 'inappropriate'
@@ -176,13 +176,13 @@ export const bumperStickers = [
         title: 'anIndex > 55', category: 'political'
     },
     { 
-        title: 'anIndex > 56', category: 'inappropriate'
+        title: 'anIndex > 56', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 57', category: 'inappropriate'
+        title: 'anIndex > 57', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 58', category: 'inappropriate'
+        title: 'anIndex > 58', category: 'thoughtful'
     },
     { 
         title: 'anIndex > 59', category: 'inappropriate'
@@ -191,13 +191,13 @@ export const bumperStickers = [
         title: 'anIndex > 60', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 61', category: 'inappropriate'
+        title: 'anIndex > 61', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 62', category: 'inappropriate'
+        title: 'anIndex > 62', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 63', category: 'inappropriate'
+        title: 'anIndex > 63', category: 'thoughtful'
     },
     { 
         title: 'anIndex > 64', category: 'inappropriate'
@@ -206,7 +206,7 @@ export const bumperStickers = [
         title: 'anIndex > 65', category: 'political'
     },
     { 
-        title: 'anIndex > 66', category: 'inappropriate'
+        title: 'anIndex > 66', category: 'thoughtful'
     },
 ]
 // attempting to get auto-generated div for each of the bumper stickers

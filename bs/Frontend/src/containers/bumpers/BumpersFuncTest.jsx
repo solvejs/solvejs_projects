@@ -1,6 +1,7 @@
-import React, { createContext, Children, Component, Fragment } from 'react';
+import React, { createContext, Component, Fragment } from 'react';
 import { bumperStickers } from '../bumpers/bumpersTesting';
 //import { SoloBumper } from './SoloBumper';
+import { catsRadioArrForForm } from '../../components/Categories'
 
 const BumpersContext = createContext();
 
@@ -10,33 +11,38 @@ export class BumperContextProvider extends Component {
         this.state = {
             // will need to provide control here for admin logged-in page
             // prevBumpers: {}, may not need this
-            currBumpers: createPages().pages[0],
-            currBumpersPages: createPages().pages[0].pageNumbersArr,
+            // will need to clean up state
+            currBumpers: [createPages().pages[0]],
+            currBumpersPages: pageNumbersArr,
             sidebarPrevBumpers: '',
-            sidebarCurrBumpers: createPages(10).pages[0],
+            sidebarCurrBumpers: [{title: 'test'}, {title: 'test'}, {title: 'test'}, {title: 'handleradcatchange'}],
             sidebarCurrBumpersPages: pageNumbersArr,
             //handlePageChange: this.handlePageChange,
             currBumpersPages: pages,
             sidebarPages: pages,
             bumGenLoad: createPages,
-            radioCatSelected: 'family',
-            radioPagesFiltered: createPages(10, 'family').pages // need function to call this
+            // manually setting start page due to page build in componentdidmount > pulling from pageforcats after mount
+            radioCatSelectedPageNums: createPages(20, 'all').pageNumbersArr,
+            radioCatSelected: 'all',
+            radioPagesFiltered: createPages(20, 'all').pages[0], // need function to call this,
         }
         this.handlePageChange = this.handlePageChange.bind(this);
         this.handlePageChangeCat = this.handlePageChangeCat.bind(this);
         this.handleRadioCatChange = this.handleRadioCatChange.bind(this);
     }
+
     handlePageChange(e) {
         this.setState({
-            sidebarCurrBumpers: (pages[e.target.innerText])
+            sidebarCurrBumpers: pagesForCats['thoughtful'].pages[0]
+            // this is not fixed
         })
     }
-    handlePageChangeCat(e) {
-        console.log('test worked', e.currentTarget)
-        // console.log(e.target.innerText)
-        // this.setState({
-        //     currBumpers: (pages[e.target.innerText])
-        // })
+    handlePageChangeCat(event) {
+        console.log('test click worked', event.currentTarget.attributes)
+        this.setState({
+            radioPagesFiltered: pagesForCats[event.target.getAttribute('customcattag')].pages[event.currentTarget.value-1]
+            // -1 to match +1 of push from temp num array in loop
+        })
     }
     handleRadioCatChange(event) {
         event.stopPropagation();
@@ -44,7 +50,8 @@ export class BumperContextProvider extends Component {
         console.log('handleRadioCatChange: ', event.currentTarget.value);
         this.setState({
             radioCatSelected: event.target.value,
-            radioPagesFiltered: createPages(10, event.currentTarget.value)
+            radioCatSelectedPageNums: pagesForCats[event.currentTarget.value].pageNumbersArr,
+            radioPagesFiltered: pagesForCats[event.currentTarget.value].pages[0]
         })
     }
 render() {
@@ -57,13 +64,18 @@ render() {
             sidebarCurrBumpers: this.state.sidebarCurrBumpers,
             sidebarCurrBumpersPages: this.state.sidebarCurrBumpersPages,
             radioCatSelected: this.state.radioCatSelected,
+            radioCatSelectedPageNums: this.state.radioCatSelectedPageNums,
             radioPagesFiltered: this.state.radioPagesFiltered,
             handlePageChange: this.handlePageChange,
+            handlePageChangeCat: this.handlePageChangeCat,
             handleRadioCatChange: this.handleRadioCatChange
         }}>
             {this.props.children}
         </BumpersContext.Provider>
     )
+    }
+    componentDidMount() {
+        loopThroughBumperCatMapToPages() // add category pages after load
     }
 }
 
@@ -82,17 +94,80 @@ const bumperIDAdd = () => {
 }
 bumperIDAdd()
 
+const pagesForCats = []; // placeholder for bumperCatMapToPages generation of pages
+
+async function loopThroughBumperCatMapToPages() {
+    for(let item of catsRadioArrForForm) {
+            bumperCatMapToPages(item.value)
+        }
+        console.log(pagesForCats, 'pagesForCats')
+        return pagesForCats;
+    }
+
+async function bumperCatMapToPages(catPassed) {
+    // generate bumpers categories pages
+    let data;
+    function switchGenCreate(passedFromSwitch) {
+                createPages(20, passedFromSwitch);
+                data = createPages(20, passedFromSwitch);
+                pagesForCats[passedFromSwitch] = data;
+                console.log(data, 'data passed via switch statement to function <<<')
+                console.log(pagesForCats[passedFromSwitch], 'data.passedfromswitch ????')
+    }
+        switch (catPassed) { 
+        // need to automate this for cat changes > forEach or while
+            case 'all':
+                switchGenCreate(catPassed);
+                break;
+            case 'inappropriate':
+                switchGenCreate(catPassed);
+                break;
+            case 'drive-traffic':
+                switchGenCreate(catPassed);
+                break;
+            case 'political':
+                switchGenCreate(catPassed);
+                break;
+            case 'family':
+                switchGenCreate(catPassed);
+                break;
+            case 'thoughtful':
+                switchGenCreate(catPassed);
+                break;
+            case 'thought-provoking':
+                switchGenCreate(catPassed);
+                break;
+            default:
+                break;
+            }
+    }
+
 let pageNumbersArr = [];
-let pageNumbersArrTemp = [0,1];
+let pageNumbersArrTemp = [];
 let pages = [];
-export function createPages(perPage = 16, itemCat = undefined) {
+
+// export function holder(category) {
+//     let catsPulled = () => {
+//         const catsListedArr = [];
+//         catsRadioArrForForm.map(item => catsListedArr.push(item));
+//         return catsListedArr;
+//     }
+//     const catFunc = () => {
+        // catsRadioArrForForm.filter((item) => {
+        //     item.value === 'test';
+        // })
+//     }
+// }
+
+export function createPages(perPage = 16, itemCat) {
     pages = []; // pushing pages from pageNumGen()
-    let holder = [];
+    // pagesForCats = []; // reset to ensure not duplicated
+    
     // function init() {
 
-        const catFilter = (itemCat) => {
+        function catFilter() {
             // filtering based on category string passed
-            return itemCat === undefined
+            return itemCat === (undefined || 'all')
             ? {
                 bumpersFiltered: bumperStickers,
                 bumpSelectedLength: bumperStickers.length,
@@ -104,9 +179,12 @@ export function createPages(perPage = 16, itemCat = undefined) {
                 pageNumbersArr: pageNumbersArr
                 }
         }
-
+        // console.log('cat filter family: ', catFilter('family').bumpSelectedLength);
+        // console.log('cat filter all bumps: >>>>> filtering not working <<<<< ', catFilter(10).bumpSelectedLength);
+        // console.log('cat filter inappropriate: ', catFilter('inappropriate').bumpSelectedLength)
         // figuring number of pages
-        let bLength = catFilter(itemCat).bumpSelectedLength;
+        let bLength = catFilter().bumpSelectedLength;
+        // console.log(bumperStickers.filter(item => item.category === 'family'), '<< blength')
         let numberOfPages = (Number.isInteger(bLength / perPage)) ? bLength / perPage : (parseInt(bLength / perPage) + 1);
 
         // console.log('totalCatBumpers political: #### ', catFilter('political'));
@@ -140,20 +218,21 @@ export function createPages(perPage = 16, itemCat = undefined) {
                     objTemp = objBumpersTempLoader();
                     pages[i] = objTemp;
                     pushPage(i);
-                    console.log('page array : ', pageNumbersArrTemp);
+                    // console.log('page array : ', pageNumbersArrTemp);
                     // let tempObj = {};
                     // Object.defineProperties(tempObj, i, objBumpersTempLoader())
                     // pages.push(tempObj);
                     temp = [];
                     // objTemp = {};
                 }
-                pageNumbersArr = pageNumbersArrTemp.slice(0);
+                pageNumbersArr = pageNumbersArrTemp.map(item => item+1);
+                // pageNumbersArr = pageNumbersArrTemp.slice(0);
                 pageNumbersArrTemp = [];
         }
-        pageNumGen()
+        pageNumGen();
         return {
             numberOfPages,
-            pageNumsAndBumpers: [],
+            //pageNumsAndBumpers: [],
             pages,
             pageNumbersArr
             }
@@ -165,7 +244,8 @@ const CreateBumpers = (numberPages, obj, cat='political' ) => {
     // console.log('pages: ', createPages(15,).pages);
     numberPages = createPages(32).numberOfPages;
     return bumperStickers.filter(item => item.category === cat)
-    .map(item => <button key={item.id}>{item.title}</button>)
+    .map(item => <button key={item.id}>{item.title}</button>);
+    // need to add pages bottom of each current loop cat
     // return bumperStickers.map((bumper) => <button>{bumper.title}</button>)
 }
 
