@@ -12,10 +12,10 @@ export class BumperContextProvider extends Component {
             // will need to provide control here for admin logged-in page
             // prevBumpers: {}, may not need this
             // will need to clean up state
-            currBumpers: [createPages().pages[0]],
-            currBumpersPages: pageNumbersArr,
+            // currBumpers: [createPages().pages[0]],
+            // currBumpersPages: pageNumbersArr,
             sidebarPrevBumpers: '',
-            sidebarCurrBumpers: [{title: 'test'}, {title: 'test'}, {title: 'test'}, {title: 'handleradcatchange'}],
+            sidebarCurrBumpers: [{title: "test"}, {title: "test"}],
             sidebarCurrBumpersPages: pageNumbersArr,
             //handlePageChange: this.handlePageChange,
             currBumpersPages: pages,
@@ -33,7 +33,7 @@ export class BumperContextProvider extends Component {
 
     handlePageChange(e) {
         this.setState({
-            sidebarCurrBumpers: pagesForCats['thoughtful'].pages[0]
+            sidebarCurrBumpers: [{title: "test"}, {title: "test"}]
             // this is not fixed
         })
     }
@@ -75,13 +75,16 @@ render() {
     )
     }
     componentDidMount() {
-        loopThroughBumperCatMapToPages() // add category pages after load
+        loopThroughBumperCatMapToPages(); // add category pages after load
+        this.setState({
+            sidebarCurrBumpers: pagesForCats['all'].pages[1]
+        })
     }
 }
 
 export const BumpersCreator = () => {
     return (
-       <CreateBumpers /> 
+       {/* <CreateBumpers /> */} 
     )
 }
 const bumperIDAdd = () => {

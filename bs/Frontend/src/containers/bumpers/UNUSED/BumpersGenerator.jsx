@@ -1,6 +1,7 @@
 import React, {Component } from 'react';
 import {bumperStickers} from './bumpers';
 import {OneBumper} from './OneBumper';
+import {Categories} from '../../components/Categories';
 import Pagination from './Pagination';
 //import {SoloBumper} from './codeplayground';
 
@@ -66,8 +67,9 @@ class Bumpers extends Component {
         return (
             <div className="content-grid" id="main-wrapper" key={5}>
             <div id="bumper-left" className="content-left bumper-flex" key={7}>
-            <OneBumper bumpers = {this.props.bumpers} updateParent={this.callParentStateUpdate} currBumpers={this.state.currentBumpersOnPage} id={this.props.id} {...this.state} /* load32Bumpers={this.load32Bumpers} */>
-            </OneBumper>
+            {/* <Categories /> */}
+            {/* <OneBumper bumpers = {this.props.bumpers} updateParent={this.callParentStateUpdate} currBumpers={this.state.currentBumpersOnPage} id={this.props.id} {...this.state}>
+            </OneBumper> */}
             </div>
             <aside className="sidebar">
             <div key={4} id="bumper-right" className="content-right bumper-flex">
@@ -77,7 +79,7 @@ class Bumpers extends Component {
             </div>
             </div>
             </aside>
-            {<Pagination {...this.state} pageFlip={this.pageClickToBumpersPage} className={this.state.pages} />}
+            {/* <Pagination {...this.state} pageFlip={this.pageClickToBumpersPage} className={this.state.pages} /> */}
             </div>
         )
     }

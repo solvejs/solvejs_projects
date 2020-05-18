@@ -44,12 +44,22 @@ export class Categories extends Component {
 
 const CatFormToggleBumpers = (props) => {
     return (
-        <div id="cat-items-rendered">
+        /* <div className="content-grid" id="main-wrapper" key={5}>
+        <div id="cat-items-rendered"> */
+        <main className="main-content">
+        <div id="main-wrapper" className="content-grid">
+        <div id="bumper-left" className="content-left bumper-flex" key={7}>
         <Fragment>
-        {props.contextForm.map(item => <SoloBumper key={item.id}>{item.title}</SoloBumper>)}
+        {props.contextForm.map(item => 
+            <SoloBumper> <div key={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>)
+        }
         {/* props.contextForm.map(item => <button key={item.id}>{item.title}</button>) */}
         </Fragment>
         </div>
+        </div>
+        </main>
+        /* </div>
+        </div> */
     )
 }
 const CatPagesArr = (props) => {

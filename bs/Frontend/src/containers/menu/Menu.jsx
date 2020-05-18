@@ -20,13 +20,6 @@ export class Menu extends Component {
             },
             {
                 'type': 'li',
-                'linkName': 'Categories',
-                'linkAddr': '/categories',
-                'className': 'nav-menu-item to-hide',
-                'submenu': {}
-            },
-            {
-                'type': 'li',
                 'linkName': 'About',
                 'linkAddr': '/about',
                 'className': 'nav-menu-item to-hide',
@@ -160,16 +153,15 @@ render() {
             <ul>
             <li className={this.state.menuArr[0].className}><Link to={this.state.menuArr[0].linkAddr}>{this.state.menuArr[0].linkName}</Link></li>
             <li className={this.state.menuArr[1].className}><Link to={this.state.menuArr[1].linkAddr}>{this.state.menuArr[1].linkName}</Link></li>
-            <li className={this.state.menuArr[2].className}><Link to={this.state.menuArr[2].linkAddr}>{this.state.menuArr[2].linkName}</Link></li>
-            <li className={this.state.menuArr[3].className} onClick={this.handleContactFormClick}><Link to={this.state.menuArr[3].linkAddr}>{this.state.menuArr[3].linkName}</Link></li>
+            <li className={this.state.menuArr[2].className} onClick={this.handleContactFormClick}><Link to={this.state.menuArr[2].linkAddr}>{this.state.menuArr[2].linkName}</Link></li>
             <ul>
-                <li id={this.state.menuArr[4].submenu[0].id} className={this.state.menuArr[4].submenu[0].className}><Link to={this.state.menuArr[4].submenu[0].linkAddr} onClick={this.handleLogFormClick}>{this.state.menuArr[4].submenu[0].linkName}</Link></li>
-                <li id={this.state.menuArr[4].submenu[1].id} className={this.state.menuArr[4].submenu[1].className} onClick={this.handleRegFormClick}><Link to={this.state.menuArr[4].submenu[1].linkAddr}>{this.state.menuArr[4].submenu[1].linkName}</Link></li>
-                <li className={this.state.menuArr[4].submenu[2].className}><Link to={this.state.menuArr[4].submenu[2].linkAddr}>{this.state.menuArr[4].submenu[2].linkName}</Link></li>
-                <li className={this.state.menuArr[4].submenu[3].className}><Link to={this.state.menuArr[4].submenu[3].linkAddr}>{this.state.menuArr[4].submenu[3].linkName}</Link></li>
-                <li className={this.state.menuArr[4].submenu[4].className}><Link to={this.state.menuArr[4].submenu[4].linkAddr}>{this.state.menuArr[4].submenu[4].linkName}</Link></li>
+                <li id={this.state.menuArr[3].submenu[0].id} className={this.state.menuArr[3].submenu[0].className}><Link to={this.state.menuArr[3].submenu[0].linkAddr} onClick={this.handleLogFormClick}>{this.state.menuArr[3].submenu[0].linkName}</Link></li>
+                <li id={this.state.menuArr[3].submenu[1].id} className={this.state.menuArr[3].submenu[1].className} onClick={this.handleRegFormClick}><Link to={this.state.menuArr[3].submenu[1].linkAddr}>{this.state.menuArr[3].submenu[1].linkName}</Link></li>
+                <li className={this.state.menuArr[3].submenu[2].className}><Link to={this.state.menuArr[3].submenu[2].linkAddr}>{this.state.menuArr[3].submenu[2].linkName}</Link></li>
+                <li className={this.state.menuArr[3].submenu[3].className}><Link to={this.state.menuArr[3].submenu[3].linkAddr}>{this.state.menuArr[3].submenu[3].linkName}</Link></li>
+                <li className={this.state.menuArr[3].submenu[3].className}><Link to={this.state.menuArr[3].submenu[3].linkAddr}>{this.state.menuArr[3].submenu[3].linkName}</Link></li>
             </ul>
-            <li className={this.state.menuArr[5].className}><Link to={this.state.menuArr[5].linkAddr}>{this.state.menuArr[5].linkName}</Link></li>
+            <li className={this.state.menuArr[4].className}><Link to={this.state.menuArr[4].linkAddr}>{this.state.menuArr[4].linkName}</Link></li>
             </ul>
             </nav>
             <Contact className={this.state.contactFormHide}/>

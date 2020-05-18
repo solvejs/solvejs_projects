@@ -10,13 +10,13 @@ import Title from '../components/Title';
 import Menu from './menu/Menu';
 // import MenuTestOnly from './menu/MenuTestOnly';
 import Footer from '../components/Footer';
-import BumpersDiv from './bumpers/BumpersGenerator';
 import Registration from './menu/Register';
 import Login from './menu/Login';
 import {users} from './users/users';
 import Contact from './Contact';
 import About from '../components/About';
 import Categories from '../components/Categories';
+import Aside from './aside/Aside';
 import Admin from '../containers/bumpers/Admin';
 import {/* BumpersCreator */ BumperContextProvider} from './bumpers/BumpersFuncTest';
 
@@ -89,26 +89,29 @@ class App extends Component {
   render() {
    return (
      <div id="body">
-     <BumperContextProvider>
+     
      {<Menu handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} />}
      {/* <MenuTestOnly  handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} /> */}
      <Title />
-     <BumpersDiv />
+     {/* <BumpersDiv /> */}
      <Footer style/>
-      {/* <Route path='/' component={Home} /> */}
-      <Switch>
+     {/* <Route path='/' component={Home} /> */}
+     <Switch>
+     <BumperContextProvider>
+     <Aside />      
       <Route exact path='/about' component={About} />
-      <Route exact path='/categories' component={Categories} />
+      {/* <Route exact path='/categories' component={Categories} /> */}
+      <Route exact path='/' component={Categories} />
       <Route exact path='/contact' component={Contact} />
       <Route exact path='/admin' component={Admin} />
       {/* <Route path='/created' component={BumpersCreator} /> */}
+      </BumperContextProvider>
       </Switch>
       <Switch>
       {/* need to refactor forms to be able to switch properly */}
       <Route path='#' component={Login} />
       <Route path='#' component={Registration} />
       </Switch>
-      </BumperContextProvider>
     </div>
     )
   }
