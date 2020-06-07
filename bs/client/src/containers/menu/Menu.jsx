@@ -37,9 +37,9 @@ export class Menu extends Component {
                 [
                     {
                         'type': 'li',
-                        'linkName': String.fromCharCode(128722),
-                        'linkAddr': '/',
-                        'className': 'nav-menu-item to-hide login'
+                        'linkName': (<span style={{fontSize: '200%', backgroundColor: 'yellow'}}>&#128722;</span>),
+                        'linkAddr': '/cart',
+                        'className': 'nav-menu-item to-hide login cart'
                     }
                 ]
             },

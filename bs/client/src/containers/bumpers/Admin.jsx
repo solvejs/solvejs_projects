@@ -1,5 +1,5 @@
 import React, { Component, Children, Fragment } from 'react';
-import BumpersContext from './BumpersFuncTest';
+// import BumpersContext from './BumpersFuncTest';
 
 class Admin extends Component {
     constructor(props) {
@@ -40,14 +40,14 @@ class AdminMenuItem extends Component {
     render() {
         return (
             <div>
-            <PagesLoaded />
-            <PagesLoaded2 />
+            <p>When enabled, Express attempts to determine the IP address of the client connected through the front-facing proxy, or series of proxies. The `req.ips` property, then contains an array of IP addresses the client is connected through. To enable it, use the values described in
+            </p>
             </div>
         )
     }
 }
 
-const PagesLoaded = () =>
+{/* const PagesLoaded = () =>
     (
         <BumpersContext.Consumer>
         {
@@ -70,7 +70,7 @@ const PagesLoaded = () =>
             )
         }
         </BumpersContext.Consumer>
-    )
+    ) */}
 
     const Button = (props) => {
         return (

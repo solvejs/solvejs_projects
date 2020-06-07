@@ -2,6 +2,10 @@ import React, { Component, Fragment } from "react";
 import Login from './Login';
 import Register from './Register';
 import {users} from '../users/users';
+import Dashboard from '../../components/Dashboard';
+import { Switch, Route } from "react-router-dom";
+import Admin from '../../containers/bumpers/Admin';
+import BumpersContext from '../bumpers/BumpersFuncTest';
 
 export default class LoginControl extends Component {
     constructor(props) {
@@ -78,6 +82,10 @@ export default class LoginControl extends Component {
                 <Button text="Logout" click={this.handleLogout}>,
                 </Button>
                 <Login showForm={this.state.logFormHideClasses} checkDB={this.handleLogin} />
+                <Switch>
+                <Dashboard exact path='/dashboard' component={Dashboard} />
+                <Route exact path='/admin' component={Admin} />
+                </Switch>
                 </Fragment>
             )
         }

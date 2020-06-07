@@ -6,12 +6,18 @@ class SoloBumper extends Component {
         super(props);
         this.state = {
             className: 'bumper bumper-long',
-            display: "inline-block"
+            display: "inline-block",
+            text: 'Add to Cart',
+            textStyle: {},
+            inCartTotal: 0,
+            inCartItems: [],
+            totalNumSpan: this.totalNumSpan
             //bumpersPaged: this.generatePagesWithBumpers,
             //pages: this.counter,
             //currentPageNumber: 1
         };
         this.addToCart = this.addToCart.bind(this);
+        this.handleClick = this.handleClick.bind(this);
         //this.removeAddToCart = this.removeAddToCart(this);
         // // this.bumper32 = this.bumper32.bind(this);
         // //this.counter = this.pagesCounted;
@@ -20,6 +26,9 @@ class SoloBumper extends Component {
     // sendToParent = () => {
     //     this.props.updateParent(this.state.bumpersPaged, this.state.pages);
     // };
+    cart = document.getElementsByClassName('cart');
+    totalNumSpan = document.createElement('span').append('this.state.inCartTotal');
+
     addToCart = () => {
         this.setState({
             display: 'inline-block'
@@ -72,6 +81,27 @@ class SoloBumper extends Component {
     //     }
     //     countAssign()
     //     }
+    handleClickChangeAddToCart = (event) => {
+        this.setState({
+            textStyle: {color: 'green', fontWeight: 'bold', fontSize: 'medium'}
+        });
+        let itemStored = localStorage.setItem(`cartItemLocal-${event.target.parentNode.previousSibling.id}`, '1'/* , event.target.parentNode.previousSibling.outerHTML */);
+        this.state.inCartItems.push(itemStored);
+        console.log('client side localstorage', localStorage);
+    }
+    handleClick = (event) => {
+        console.log(event.target.parentNode.previousSibling, 'event click add to cart solobump'); // returns div with bumper id#
+        this.setState({
+            text: 'Item In Cart',
+        });
+        const locStor = (id, query, ) => {
+            localStorage.setItem(`cartItemLocal-${event.target.parentNode.previousSibling.id}`, 1/* , event.target.parentNode.previousSibling.outerHTML */);
+        } 
+
+        let itemStored = localStorage.setItem(`cartItemLocal-${event.target.parentNode.previousSibling.id}`, '1'/* , event.target.parentNode.previousSibling.outerHTML */);
+        this.state.inCartItems.push(itemStored);
+        console.log('client side localstorage', localStorage);
+    }
     render() {
         // (this.bumper32());
         const styles = {
@@ -85,8 +115,8 @@ class SoloBumper extends Component {
                   <div className={this.state.className}>
                     {this.props.children}
                     {/* <div onMouseOver={this.addToCart} id={i} key={i++} className={this.state.className}>{item} */}
-                    <button style={containerStyle} className="add-to-cart">
-                    <CartText />
+                    <button style={containerStyle} className="add-to-cart" onClick={this.props.clickAddHandle}>
+                    <CartText text={this.state.text} style={this.state.textStyle} clickAddCartChange={this.handleClickChangeAddToCart}/>
                     </button>
                     </div>
                         )
@@ -95,11 +125,11 @@ class SoloBumper extends Component {
                // )
     }
 }
-function CartText() {
+function CartText(props) {
     return(
         <Fragment>
-        Add to Cart
+        <span style={props.style} onClick={props.clickAddCartChange}>{props.text}</span>
         </Fragment>
     )
 }
-export {SoloBumper};
+export {SoloBumper, CartText};

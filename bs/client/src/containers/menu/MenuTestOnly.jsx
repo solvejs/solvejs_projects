@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import Login from './Login';
-import Registration from './Register';
+import Login from '../Authentication/Login';
+import Registration from '../Authentication/Register';
 import Contact from '../Contact';
 import {users} from '../users/users';
 

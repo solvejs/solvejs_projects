@@ -6,7 +6,9 @@ const port = process.env.PORT || 3001;
 const path = require('path');
 const users = require('./db/users');
 const authUsers = users.authUsers;
-
+const bumpersRouter = require('./controllers/bumpers_routes');
+app.use('/api/bumpers', bumpersRouter);
+bumpersRouter.get('/api/bumpers', (req, res) => res.json({'test': 'test'}))
 // app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, '../Frontend/public')));
 /* app.use(function(req, res, next) {
@@ -68,6 +70,7 @@ app.post('/api/login', (req, res) => {
         res.json({
             "in db": req.body.loginEmailInput,
             "isLoggedIn": true,
+            "role": authUsers[userIndex].role,
             "logFormHideClasses": 'login-form hide-element'
         })
         // console.log(authUsers[userIndex].password, 'user pass success')

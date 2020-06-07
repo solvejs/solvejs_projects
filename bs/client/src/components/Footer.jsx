@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
     footerEls = [
         {
             linkAddr: '#',
-            linkName: '&copy; &#169; 2020 SolveJS'
+            linkName: <span>&copy; 2020 SolveJS</span>
         },
         {
             linkAddr: '#',
@@ -37,7 +37,7 @@ export default class Footer extends React.Component {
 function PrintFooter(props) {
     return (
         props.footerEls.map((item, index) => {
-            return <li key = {index} className="footer-item">
+            return <li key = {index} className="footer-item" style={{listStyle: "none", marginRight: "5px"}}>
             <a href ={item.linkAddr}>{item.linkName}</a>
             </li>
         })

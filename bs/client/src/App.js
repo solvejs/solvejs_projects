@@ -6,7 +6,6 @@ Link } from 'react-router-dom';
 import './reset.css';
 import './style.css';
 import './grid-flex.css';
-import Title from './components/Title';
 import Menu from './containers/menu/Menu';
 // import MenuTestOnly from './menu/MenuTestOnly';
 import Footer from './components/Footer';
@@ -20,7 +19,7 @@ import Categories from './components/Categories';
 import Aside from './containers/aside/Aside';
 import Admin from './containers/bumpers/Admin';
 import {/* BumpersCreator */ BumperContextProvider} from './containers/bumpers/BumpersFuncTest';
-import LoginPage from './containers/Authentication/LoginPage';
+import Cart from './containers/bumpers/Cart';
 
 class App extends Component {
   constructor(props) {
@@ -31,10 +30,8 @@ class App extends Component {
   render() {
    return (
      <div id="body">
-      <LoginPage />
      {<Menu handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} />}
      {/* <MenuTestOnly  handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} /> */}
-     <Title />
      {/* <BumpersDiv /> */}
      <Footer style/>
      {/* <Route path='/' component={Home} /> */}
@@ -45,7 +42,7 @@ class App extends Component {
       {/* <Route exact path='/categories' component={Categories} /> */}
       <Route exact path='/' component={Categories} />
       <Route exact path='/contact' component={Contact} />
-      
+      <Route path='/cart'  component={Cart} />
       {/* <Route path='/created' component={BumpersCreator} /> */}
       </BumperContextProvider>
       </Switch>

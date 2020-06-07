@@ -1,6 +1,7 @@
 import React, { Children, Fragment, Component } from 'react';
 import BumpersContext from '../containers/bumpers/BumpersFuncTest';
-import {SoloBumper} from '../containers/bumpers/SoloBumper'
+import {SoloBumper} from '../containers/bumpers/SoloBumper';
+import Title from './Title';
 
 export class Categories extends Component {
     constructor() {
@@ -19,10 +20,11 @@ export class Categories extends Component {
                 )
             }
             </BumpersContext.Consumer>
+            <Title />
             <BumpersContext.Consumer>
             {
                 context => (
-                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} >
+                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} >
                     {Children}
                     </CatFormToggleBumpers>
                 )
@@ -51,7 +53,7 @@ const CatFormToggleBumpers = (props) => {
         <div id="bumper-left" className="content-left bumper-flex" key={7}>
         <Fragment>
         {props.contextForm.map(item => 
-            <SoloBumper key={item.id}> <div style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>)
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} textStyle={props.contextTextStyle}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>) 
         }
         {/* props.contextForm.map(item => <button key={item.id}>{item.title}</button>) */}
         </Fragment>
