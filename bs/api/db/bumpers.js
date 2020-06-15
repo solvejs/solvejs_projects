@@ -5,7 +5,7 @@
 ] */
 const bumpersArray = [
     { 
-        title: 'Almost ready to explode', category: 'political', cartButtonStyle: ''
+        title: 'Almost ready to explode', category: 'political', cartButtonStyle: '', tester3: 'tesrrrrt'
     },
     { 
         title: 'Looking for a reason...keep tailing', category: 'political'

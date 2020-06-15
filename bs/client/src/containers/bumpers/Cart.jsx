@@ -17,7 +17,7 @@ const Cart = (props) => {
     )
 }
 
-const itemsInLocalStorage = [];
+// const itemsInLocalStorage = [];
 const getLocalStorageBumpers = () => {
     // localStorage.forEach(item => {
     //     if(item == 'cartItemLocal-') {
