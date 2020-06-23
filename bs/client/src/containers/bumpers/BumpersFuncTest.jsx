@@ -19,6 +19,8 @@ export class BumperContextProvider extends Component {
             // currBumpers: [createPages().pages[0]],
             // currBumpersPages: pageNumbersArr,
             apiData: [],
+            locallyStoredCart: window.localStorage,
+            testerLocStor: window.localStorage.tester,
             sidebarPrevBumpers: '',
             sidebarCurrBumpers: [{title: "test", id: 1}, {title: "test", id: 2}],
             sidebarCurrBumpersPages: pageNumbersArr,
@@ -30,9 +32,14 @@ export class BumperContextProvider extends Component {
             radioCatSelectedPageNums:this.createPages(this, 20, 'all').pageNumbersArr,
             radioCatSelected: 'all',
             radioPagesFiltered: [{title: 'PAGE LOADING...', id: 1}],// this.createPages(20, 'all').pages[0], // need function to call this,
-            inCartTotal: 0,
+            inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: [],
-            textStyle: {},
+            textStyleInCart: {
+                text: {color: 'blue', fontWeight: 'bold', fontSize: 'medium'}
+            },
+            textStyleOutCart: {
+                text: {color: 'red', fontWeight: 'bold', fontSize: 'medium'}
+            }
         }
         this.handlePageChange = this.handlePageChange.bind(this);
         this.handlePageChangeCat = this.handlePageChangeCat.bind(this);
@@ -58,6 +65,17 @@ export class BumperContextProvider extends Component {
     }
     componentDidMount() {
         //load 'all' page 1 after 1 sec
+        // const regex = /cartItemLocal-[0-9]/;
+        // const intermediateLoc = {window.localStorage};
+        // for(let item of intermediateLoc) {
+        //     if(item.contains('cartItemLocal-')) {
+        //         intermediateLoc.push(item)
+        //     }
+        // }
+        // window.localStorage.clear()
+        // if(!window.localStorage.getItem('inCartLocStoreArr')) {
+        //     window.localStorage.setItem('contextTextStyle', ['test', 'teste'])
+        // }
             setTimeout(() => this.setState({
                 radioCatSelectedPageNums: pagesForCats['all'].pageNumbersArr,
                 radioCatSelected: 'all',
@@ -79,7 +97,8 @@ export class BumperContextProvider extends Component {
                 console.log(storageLoc, 'storageloc')
                 console.log(data, 'data inside async dataPullFromAPI')
                 this.setState({
-                    apiData: data
+                    apiData: data,
+                    localStor: window.localStorage
                 })
             })
             .then(() => this.loopThroughBumperCatMapToPages())
@@ -95,10 +114,10 @@ export class BumperContextProvider extends Component {
         // need to fix cart update items
         // console.log(localStorage, '[bumpersfunctest.jsx] localstorage')
         tempInCartState.push(e.target.parentNode.previousSibling, e.target.parentNode.parentNode);
-        this.setState({
-            inCartTotal: this.state.inCartTotal + 1,
+        this.setState(prevState => ({
+            inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: tempInCartState,
-        });
+        }));
         tempInCartState = [];
     }
     handlePageChange(e) {
@@ -291,55 +310,6 @@ export class BumperContextProvider extends Component {
             //     }
             }
             // TEMP NAME CHANGE CREATEPAGES FOR TESTING ABOVE
-        ZZZZZZcreatePages = (perPage = 16, itemCat, infoData) => {
-            pages = []; // pushing pages from pageNumGen()
-            // pagesForCats = []; // reset to ensure not duplicated
-            const that = [infoData];
-            const items = this.tester;
-            // for(let i=0;i<that.length;i++) {items[i]=that[i]};
-            // function init() {
-                
-                let bLength = this.catFilter().bumpSelectedLength;
-                let numberOfPages = (Number.isInteger(bLength / perPage)) ? bLength / perPage : (parseInt(bLength / perPage) + 1);
-        
-                // logic for bumpers create
-                const pageNumGen = () => {
-                    let temp = [];
-                    let j = 0, z = 0;
-                    function objBumpersTempLoader() {
-                        // need while loop for having bumpers and return if not
-                        while(j < bLength && z < perPage) {
-                            // need a check for bumper exists in loop &&
-                            // pushing object to while loop below
-                            temp.push(this.catFilter(itemCat).bumpersFiltered[j]);
-                            j++; z++;
-                            // }
-                        }
-                        z=0;
-                        return temp;
-                    }
-                    function pushPage(i) {
-                        pageNumbersArrTemp.push(i)
-                    }
-                    for(let i = 0; i < numberOfPages; i++) {
-                            // load number + bumpers to temp then push to pages
-                            let objTemp = {};
-                            objTemp = objBumpersTempLoader();
-                            pages[i] = objTemp;
-                            pushPage(i);
-                            temp = [];
-                            // objTemp = {};
-                        }
-                        pageNumbersArr = pageNumbersArrTemp.map(item => item+1);
-                        pageNumbersArrTemp = [];
-                }
-                pageNumGen();
-                return {
-                    numberOfPages,
-                    pages,
-                    pageNumbersArr
-                    }
-        }
 render() {
     if(!this.state.apiData) {
         return <div>Loading...please wait</div>
@@ -360,7 +330,7 @@ render() {
             handlePageChangeCat: this.handlePageChangeCat,
             handleRadioCatChange: this.handleRadioCatChange,
             handleAddCartClick: this.handleAddCartClick,
-            inCartTotal: 0,
+            inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: this.state.inCartItems,
             textStyle: this.state.textStyle
         }}>

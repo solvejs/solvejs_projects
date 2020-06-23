@@ -5,19 +5,19 @@
 ] */
 const bumpersArray = [
     { 
-        title: 'Almost ready to explode', category: 'political', cartButtonStyle: '', tester3: 'tesrrrrt'
+        title: 'Almost ready to explode', category: 'political', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
-        title: 'Looking for a reason...keep tailing', category: 'political'
+        title: 'Looking for a reason...keep tailing', category: 'political', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'Lost everything today. Come closer', category: 'inappropriate'
+        title: 'Lost everything today. Come closer', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'Texting and driving', category: 'inappropriate'
+        title: 'Texting and driving', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'How is my driving?', category: 'inappropriate'
+        title: 'How is my driving?', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
         title: 'I love your wife', category: 'inappropriate'

@@ -24,7 +24,7 @@ export class Categories extends Component {
             <BumpersContext.Consumer>
             {
                 context => (
-                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} >
+                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} contextButtonIn={context.textStyleInCartButtonClass1} contextButtonOut={context.textStyleInCartButtonClass2}>
                     {Children}
                     </CatFormToggleBumpers>
                 )
@@ -45,6 +45,8 @@ export class Categories extends Component {
 }
 
 const CatFormToggleBumpers = (props) => {
+    let unparsedLocStor = localStorage.getItem('inCartLocStoreArr') || "[]";
+    let parsedLocStor = unparsedLocStor !== null || "[]" ? JSON.parse(unparsedLocStor) : undefined;
     return (
         /* <div className="content-grid" id="main-wrapper" key={5}>
         <div id="cat-items-rendered"> */
@@ -53,9 +55,14 @@ const CatFormToggleBumpers = (props) => {
         <div id="bumper-left" className="content-left bumper-flex" key={7}>
         <Fragment>
         {props.contextForm.map(item => 
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} textStyle={props.contextTextStyle}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>) 
+            parsedLocStor !== (null || undefined || "[]") && parsedLocStor.includes(`cartItemLocal-${item.id}`) ?
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{border: "3px solid red", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper> :
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>
+            )
         }
-        {/* props.contextForm.map(item => <button key={item.id}>{item.title}</button>) */}
+        {/****** 
+            later link this to api for updates text={item.cartStatus}   ******/
+        /* props.contextForm.map(item => <button key={item.id}>{item.title}</button>) */}
         </Fragment>
         </div>
         </div>

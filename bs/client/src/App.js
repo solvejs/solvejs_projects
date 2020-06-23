@@ -28,6 +28,11 @@ class App extends Component {
     };
   }
   render() {
+    if(localStorage.getItem("inCartLocStoreCount") === null) {
+      localStorage.setItem("inCartLocStoreArr", "[]");
+      localStorage.setItem("inCartLocStoreCount", "0"); // initialize if not set 
+    }
+    // localStorage.clear()
    return (
      <div id="body">
      {<Menu handleRegFormClick={this.handleRegFormClick} handleLogFormClick={this.handleLogFormClick} handleContactFormClick={this.handleContactFormClick} />}

@@ -384,6 +384,17 @@ button.add-to-cart {
     /* text-align: right; */
     top: 1px;
 }
+button.add-to-cart-selected {
+    position: relative;
+    /* display: block; */
+    float: right;
+    font-size: medium;
+    font-weight: bold;
+    color: var(--main-bg-color);
+    background-color: var(--secondary-highlight-color);
+    /* text-align: right; */
+    top: 1px;
+}
 .bumper-short {
     width: 175px;
     height: 50px;
