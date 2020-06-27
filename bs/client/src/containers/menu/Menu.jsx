@@ -37,7 +37,7 @@ export class Menu extends Component {
                 [
                     {
                         'type': 'li',
-                        'linkName': (<span style={{fontSize: '200%', backgroundColor: 'yellow'}}>&#128722;</span>),
+                        'linkName': (<span style={{fontSize: '200%', backgroundColor: ''}}>&#128722;</span>),
                         'linkAddr': '/cart',
                         'className': 'nav-menu-item to-hide login cart'
                     }
@@ -53,12 +53,13 @@ export class Menu extends Component {
         ],
         regFormHide: 'register-form hide-element',
         logFormHide: 'login-form hide-element',
-        contactFormHide: 'hide-element'
+        contactFormHide: 'hide-element',
+        forLocalStorUpdate: JSON.parse(localStorage.getItem('inCartLocStoreCount'))
       };
       this.handleRegFormClick = this.handleRegFormClick.bind(this);
       this.handleLogFormClick = this.handleLogFormClick.bind(this);
       this.handleContactFormClick = this.handleContactFormClick.bind(this);
-      this.handleInputChange = this.handleInputChange.bind(this);
+      this.handleCartStorChange = this.handleCartStorChange.bind(this);
       this.checkUserDB = this.checkUserDB.bind(this);
     }
     handleRegFormClick() {
@@ -82,8 +83,35 @@ export class Menu extends Component {
       contactFormHide: 'hide-element'
   })
   }
-  handleInputChange() {
+  triggerCartUpdateInt = setInterval(() =>
+    this.handleCartStorChange(), 3000);
+  handleCartStorChange() {
+    this.setState({
+      forLocalStorUpdate: JSON.parse(localStorage.getItem('inCartLocStoreCount'))
+    });
+      let cartIcon = document.querySelector('li.cart');
+          let currStateTotal;
+          currStateTotal = this.state.forLocalStorUpdate;
+          let nodeSpan = document.createElement('span');
+          cartIcon.appendChild(nodeSpan)
+          nodeSpan.textContent = '';
+          cartIcon.childNodes[1].textContent = currStateTotal;
+          if(cartIcon.children.length > 2) {
+              cartIcon.removeChild(cartIcon.childNodes[2])
+          }
   }
+  // componentDidMount() { // not needed with trigger setinterval above
+  //   let cartIcon = document.querySelector('li.cart');
+  //       let currStateTotal;
+  //       currStateTotal = this.state.forLocalStorUpdate;
+  //       let nodeSpan = document.createElement('span');
+  //       cartIcon.appendChild(nodeSpan)
+  //       nodeSpan.textContent = '';
+  //       cartIcon.childNodes[1].textContent = currStateTotal;
+  //       if(cartIcon.children.length > 2) {
+  //           cartIcon.removeChild(cartIcon.childNodes[2])
+  //       }
+  // }
   checkUserDB(event) {
     event.preventDefault(); // not sure this is doing anything
     let pass1 = document.querySelector('#register-password-input').value;
@@ -129,7 +157,7 @@ render() {
             <ul>
                 <li className={this.state.menuArr[3].submenu[0].className}><Link to={this.state.menuArr[3].submenu[0].linkAddr}>{this.state.menuArr[3].submenu[0].linkName}</Link></li>
             </ul>
-            <li className={this.state.menuArr[4].className}><Link to={this.state.menuArr[4].linkAddr}>{this.state.menuArr[4].linkName}</Link></li>
+            <li className={this.state.menuArr[4].className}><Link to={this.state.menuArr[4].linkAddr} onChange={this.handleCartStorChange}>{this.state.menuArr[4].linkName}</Link></li>
             </ul>
             </nav>
             <Contact className={this.state.contactFormHide}/>

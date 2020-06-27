@@ -1,4 +1,4 @@
-import React, { createContext, Children, Component } from 'react';
+import React, { createContext, Children, Component, Fragment } from 'react';
 import {SoloBumper} from '../bumpers/SoloBumper';
 import BumpersContext from './BumpersFuncTest';
 
@@ -49,14 +49,7 @@ class CartBumpers extends Component {
         let nodeSpan = document.createElement('span');
         cartIcon.appendChild(nodeSpan)
         nodeSpan.textContent = '';
-        cartIcon.childNodes[1].style.color = 'pink';
-        cartIcon.childNodes[1].style.backgroundColor = 'black'; 
-        cartIcon.childNodes[1].style.fontSize = 'large';
-        cartIcon.childNodes[1].style.display = 'inline-block';
-        cartIcon.childNodes[1].style.border = '1px solid pink';
-        cartIcon.childNodes[1].style.position = 'relative';
-        cartIcon.childNodes[1].style.left = '-17px';
-        cartIcon.childNodes[1].style.bottom = '10px';
+        
         cartIcon.childNodes[1].textContent = currStateTotal;
         if(cartIcon.children.length > 2) {
             cartIcon.removeChild(cartIcon.childNodes[2])
@@ -70,14 +63,6 @@ class CartBumpers extends Component {
         let nodeSpan = document.createElement('span');
         cartIcon.appendChild(nodeSpan)
         nodeSpan.textContent = '';
-        cartIcon.childNodes[1].style.color = 'pink';
-        cartIcon.childNodes[1].style.backgroundColor = 'black'; 
-        cartIcon.childNodes[1].style.fontSize = 'large';
-        cartIcon.childNodes[1].style.display = 'inline-block';
-        cartIcon.childNodes[1].style.border = '1px solid pink';
-        cartIcon.childNodes[1].style.position = 'relative';
-        cartIcon.childNodes[1].style.left = '-17px';
-        cartIcon.childNodes[1].style.bottom = '10px';
         cartIcon.childNodes[1].textContent = currStateTotal;
         if(cartIcon.children.length > 2) {
             cartIcon.removeChild(cartIcon.childNodes[2])
@@ -143,6 +128,7 @@ class CartBumpers extends Component {
                     </SoloBumper>
                     )
                 }
+                <PurchButton />
                     </div>
                     )
                 } else if(parsedLocStor.length === 0) {
@@ -162,14 +148,16 @@ class CartBumpers extends Component {
     }
 }
 
-
-// const itemsInLocalStorage = [];
-const getLocalStorageBumpers = () => {
-    // localStorage.forEach(item => {
-    //     if(item == 'cartItemLocal-') {
-    //         itemsInLocalStorage.push(item);
-    //         return itemsInLocalStorage;
-    //     }
-    // });
+const PurchButton = () => {
+    if (document.cookie.split(';').some( (item) => item.includes('loggedIn'))) {
+    return (
+        <button>Complete Order</button>
+    ) 
+    } else {
+        return (
+            <button>Please Login to Order</button>
+    )
+        }
 }
+
 export default Cart;

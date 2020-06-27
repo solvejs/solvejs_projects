@@ -76,6 +76,17 @@ li.login {
 li.login::after {
     content: '\00A0';
 }
+li > span {
+    display: inline-block;
+    position: relative;
+    border: 1px solid blue;
+    left: -17px;
+    bottom: 10px;
+    background-color: red;
+    color: var(--secondary-highlight-color);
+    font-size: large;
+    font-weight: bold;
+}
 #simple-pagination {
     font-family: 'Londrina Sketch', cursive;
     font-size: large;

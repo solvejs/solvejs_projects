@@ -37,6 +37,31 @@ export default class LoginControl extends Component {
               logFormHideClasses: 'login-form hide-element'
           })
     }
+    handleCookie(status) { 
+        console.log(status, 'status....start of condition')
+        let logCookies = document.cookie;
+        let stat = {
+            loggedIn: status
+        }
+        let decodedCookie = decodeURIComponent(logCookies);
+        if(status) {
+            console.log(status, 'status...true...if(status)')
+            // console.log('decodedCookie', document.cookie, new Date)
+            fetch('/api/cookie-login', {
+                method: "POST",
+                headers: {
+                    // Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'same-origin',
+                body: JSON.stringify(stat),
+            })
+            .then(res => console.log(status, res, 'res res res'))
+        } else if(!status) {
+            console.log(status, 'status...false...else/if(!status)')
+            // console.log('decodedCookie', document.cookie, new Date)
+        }
+    }
     handleLogin(event) {
         event.preventDefault(); // not sure this is doing anything
         let dataPass = {
@@ -48,14 +73,25 @@ export default class LoginControl extends Component {
                 body: JSON.stringify(dataPass),
                 headers: {
                 "Content-Type": "application/json"
-            }
+            },
+            credentials: 'same-origin'
             })
             .then(res => res.json())
             //.then(data => console.log(data, 'data from express'))
-            .then(data => this.setState({
+            .then(data => this.setState(prevState => ({
                 isLoggedIn: data.isLoggedIn,
                 logFormHideClasses: data.logFormHideClasses
-            }))
+            })))
+            .then(info => this.handleCookie(this.state.isLoggedIn))
+            // .then(document.cookie = 'loggedIn=true; path=/; max-age=30')
+    }
+    removeCookies = () => {
+        fetch('/api/cookie-logout', {
+            method: 'POST',
+            headers: {},
+            body: '',
+        })
+        .then(res => console.log(res, 'res cookie cleared?'))
     }
     handleLogout(event) {
         event.preventDefault();
@@ -74,6 +110,9 @@ export default class LoginControl extends Component {
             .then(data => this.setState({
                 isLoggedIn: data.isLoggedIn 
             }))
+            .then(
+                this.removeCookies()
+            )
     }
     render() {
         if(this.state.isLoggedIn) {

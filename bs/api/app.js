@@ -5,9 +5,11 @@ const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
 const path = require('path');
 const users = require('./db/users');
+const cookieParser = require('cookie-parser');
 const authUsers = users.authUsers;
 const bumpersRouter = require('./controllers/bumpers_routes');
 app.use('/api/bumpers', bumpersRouter);
+app.use(cookieParser('bsAPISecr777'));
 bumpersRouter.get('/api/bumpers', (req, res) => res.json({'test': 'test'}))
 // app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, '../Frontend/public')));
@@ -61,17 +63,17 @@ app.post('/', (err, req, res, next) => {
     else console.log('no error')
 })  
 
-app.post('/api/login', (req, res) => {
+app.post('/api/login', (req, res, next) => {
     const userIndex = authUsers.findIndex((item) => 
     item.email === req.body.loginEmailInput);
     let userPass = authUsers[userIndex] === undefined ? null 
     : authUsers[userIndex].password;
     if(userIndex != -1 && userPass === req.body.loginPasswordInput ) {
-        res.json({
+        return res.json({
             "in db": req.body.loginEmailInput,
             "isLoggedIn": true,
             "role": authUsers[userIndex].role,
-            "logFormHideClasses": 'login-form hide-element'
+            "logFormHideClasses": 'login-form hide-element',
         })
         // console.log(authUsers[userIndex].password, 'user pass success')
         // res.send('user is in the list')
@@ -83,6 +85,26 @@ app.post('/api/login', (req, res) => {
             })
     }
         //bodyParser.json(res.send(JSON.stringify(req)));
+})
+app.post('/api/cookie-login', (req, res) => {
+    // res.send('testing cookie...');
+    // let logStatus = JSON.parse(req.body);
+    if(req.body.loggedIn) {
+        console.log(req.body.loggedIn, 'req.status...')
+        // res.send('received').end()
+        res.header({
+            'Content-Type': 'text/html',
+        })
+        res.cookie('bsLoggedIn', true, {maxAge: 3600000, domain: '127.0.0.1', secure: false, path: '/', httpOnly: false, signed: true}).status(200).send('cookie is sent')
+    } else if(!req.param.status) {
+        res.send('req param not present')
+        // res.cookie('bsLoggedIn', false, {maxAge: 30, path: '/'}).send('cookie is sent')
+    } else {
+        //
+    }
+})
+app.post('/api/cookie-logout', (req, res) => {
+    res.clearCookie('bsLoggedIn').send('cookie cleared')
 })
 app.post('/api/logout', (req, res) => {
     const userIndex = authUsers.findIndex((item) => 
