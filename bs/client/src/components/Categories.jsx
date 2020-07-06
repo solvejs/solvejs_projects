@@ -56,8 +56,8 @@ const CatFormToggleBumpers = (props) => {
         <Fragment>
         {props.contextForm.map(item => 
             parsedLocStor !== (null || undefined || "[]") && parsedLocStor.includes(`cartItemLocal-${item.id}`) ?
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{border: "3px solid red", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper> :
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}>{item.title}</div></SoloBumper>
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{border: "3px solid red", height: "75px", verticalAlign: "middle"}}><span className={'vert-align-class'} style={{backgroundColor: 'blue', height: '75px', lineHeight: '75px'}}>{item.title}</span></div></SoloBumper> :
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}><span className={'vert-align-class'} style={{backgroundColor: 'blue', height: '75px', lineHeight: '75px'}}>{item.title}</span></div></SoloBumper>
             )
         }
         {/****** 
@@ -86,18 +86,18 @@ export const catsRadioArrForForm = [
     // form: name: "bumpers-cat-radio" | onChange: "props.handleRadioCatChange" | class: "bumpers-label-radio"
     {value: "all", id: "all", 
     checked: "props.selected === 'all'", onChange: "props.handleRadioCatChange", text: "All Bumpers"},
-    {value: "inappropriate", id: "inappropriate", 
-    checked: "props.selected === 'inappropriate'", onChange: "props.handleRadioCatChange", text: "Inappropriate"},
     {value: "drive-traffic", id: "drive-traffic", 
     checked: "props.selected === 'drive-traffic'", onChange: "props.handleRadioCatChange", text: "Driving & Traffic"},
-    {value: "political", id: "political", 
-    checked: "props.selected === 'political'", onChange: "props.handleRadioCatChange", text: "Political"},
-    {value: "family", id: "family", 
-    checked: "props.selected === 'family'", onChange: "props.handleRadioCatChange", text: "Family"},
+    {value: "logos", id: "logos", 
+    checked: "props.selected === 'logos'", onChange: "props.handleRadioCatChange", text: "Logos"},
+    {value: "diy", id: "diy", 
+    checked: "props.selected === 'diy'", onChange: "props.handleRadioCatChange", text: "DIY"},
     {value: "thoughtful", id: "thoughtful", 
     checked: "props.selected === 'thoughtful'", onChange: "props.handleRadioCatChange", text: "Thoughtful"},
-    {value: "thought-provoking", id: "thought-provoking", 
-    checked: "props.selected === 'thought-provoking'", onChange: "props.handleRadioCatChange", text: "Thought-provoking"}
+    {value: "health", id: "health", 
+    checked: "props.selected === 'health'", onChange: "props.handleRadioCatChange", text: "Health"},
+    {value: "inappropriate", id: "inappropriate", 
+    checked: "props.selected === 'inappropriate'", onChange: "props.handleRadioCatChange", text: "Inappropriate"},
 ]
 const CategoryRadioList = (props) => {
     return (

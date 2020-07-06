@@ -21,6 +21,7 @@ export class BumperContextProvider extends Component {
             apiData: [],
             locallyStoredCart: window.localStorage,
             testerLocStor: window.localStorage.tester,
+            cartLoggedinStatus: document.cookie.split(';').find( (item) => item.includes('bsLoggedIn')) ? 'Complete Order' : 'Log in to complete order',
             sidebarPrevBumpers: '',
             sidebarCurrBumpers: [{title: "test", id: 1}, {title: "test", id: 2}],
             sidebarCurrBumpersPages: pageNumbersArr,
@@ -94,7 +95,6 @@ export class BumperContextProvider extends Component {
             .then(resp => resp.json())
             .then(data => {
                 // let dataFromAPI = [];
-                console.log(storageLoc, 'storageloc')
                 console.log(data, 'data inside async dataPullFromAPI')
                 this.setState({
                     apiData: data,
@@ -171,22 +171,22 @@ export class BumperContextProvider extends Component {
                 case 'all':
                     this.switchGenCreate(catPassed);
                     break;
-                case 'inappropriate':
-                    this.switchGenCreate(catPassed);
-                    break;
                 case 'drive-traffic':
                     this.switchGenCreate(catPassed);
                     break;
-                case 'political':
+                case 'logos':
                     this.switchGenCreate(catPassed);
                     break;
-                case 'family':
+                case 'diy':
                     this.switchGenCreate(catPassed);
                     break;
                 case 'thoughtful':
                     this.switchGenCreate(catPassed);
                     break;
-                case 'thought-provoking':
+                case 'health':
+                    this.switchGenCreate(catPassed);
+                    break;
+                case 'inappropriate':
                     this.switchGenCreate(catPassed);
                     break;
                 default:
@@ -332,6 +332,7 @@ render() {
             handleAddCartClick: this.handleAddCartClick,
             inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: this.state.inCartItems,
+            cartLoggedinStatus: this.state.cartLoggedinStatus,
             textStyle: this.state.textStyle
         }}>
             {this.props.children}

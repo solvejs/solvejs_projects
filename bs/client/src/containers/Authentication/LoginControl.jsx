@@ -37,7 +37,7 @@ export default class LoginControl extends Component {
               logFormHideClasses: 'login-form hide-element'
           })
     }
-    handleCookie(status) { 
+    handleCookie(status) {
         console.log(status, 'status....start of condition')
         let logCookies = document.cookie;
         let stat = {

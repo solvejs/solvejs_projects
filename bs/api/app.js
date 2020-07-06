@@ -106,6 +106,15 @@ app.post('/api/cookie-login', (req, res) => {
 app.post('/api/cookie-logout', (req, res) => {
     res.clearCookie('bsLoggedIn').send('cookie cleared')
 })
+app.post('/api/order', (req, res) => {
+    try {
+            res.status(200)
+                .send('Order has been completed')
+            } catch {
+        throw new Error('something went wrong')
+    }
+}
+)
 app.post('/api/logout', (req, res) => {
     const userIndex = authUsers.findIndex((item) => 
     item.email === req.body.loginEmailInput);

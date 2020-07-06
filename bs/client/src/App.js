@@ -42,20 +42,21 @@ class App extends Component {
      {/* <Route path='/' component={Home} /> */}
      <Switch>
      <BumperContextProvider>
-     <Aside />      
+     <Aside />
       <Route exact path='/about' component={About} />
       {/* <Route exact path='/categories' component={Categories} /> */}
       <Route exact path='/' component={Categories} />
       <Route exact path='/contact' component={Contact} />
       <Route path='/cart'  component={Cart} />
       {/* <Route path='/created' component={BumpersCreator} /> */}
+      <LoginControl component={LoginControl}>
+      <Route exact path='/admin' component={Admin} />
+      </LoginControl>
       </BumperContextProvider>
       </Switch>
       <Switch>
       {/* need to refactor forms to be able to switch properly */}
-      <LoginControl component={LoginControl}>
-      <Route exact path='/admin' component={Admin} />
-      </LoginControl>
+      
       <Route path='#' component={Login} />
       <Route path='#' component={Registration} />
       </Switch>

@@ -1,6 +1,7 @@
 import React, { Fragment, Children } from 'react';
-import BumpersContext from '../../containers/bumpers/BumpersFuncTest';
+import BumpersContext from '../bumpers/BumpersFuncTest';
 import {SoloBumperShort} from '../bumpers/SoloBumperShort';
+import requireAuthentication from '../Authentication/requireAuthentication';
 
 export function Aside() {
     return (
@@ -32,5 +33,4 @@ function BumpersAside(props) {
             </aside>
     )
 }
-
 export default Aside;

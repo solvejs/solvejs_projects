@@ -1,22 +1,20 @@
 import React, { Component, Fragment } from "react";
 
-export function requireAuthentication(Component) {
-    return class AuthenticatedComponent extends Component {
-        isAuthenticated() {
-            return this.props.isAuthenticated;
-        }
-        render() {
-            const loginErrMessage = (
-                <div>
-                    Please <a href='/login'>login</a> in order to view this part of the application.
-                </div>
-            );
+export function requireAuthentication(AuthenticatedComponent) {
+    return function AuthenticatedComponent1(props) {
+        // isAuthenticated() {
+        //     return this.props.isAuthenticated;
+        // }
+        // render() {
+            
             return (
-                <div>
-                    {this.isAuthenticated === true ? <Component {...this.props} /> : loginErrMessage}
-                </div>
+                    props.isAuthenticated ? <AuthenticatedComponent {...props}/> : (
+                        <div>
+                            Please <a href='/login'>login</a> in order to view this part of the application.
+                        </div>
+                    )
             )
-        }
+        // }
     }
 }
 

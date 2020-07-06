@@ -5,19 +5,19 @@
 ] */
 const bumpersArray = [
     { 
-        title: 'Almost ready to explode', category: 'political', cartButtonStyle: '', cartStatus: 'In Cart'
+        title: 'Almost ready to explode', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
-        title: 'Looking for a reason...keep tailing', category: 'political', cartButtonStyle: '', cartStatus: 'Add to Cart'
+        title: 'Looking for a reason...keep tailing', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
         title: 'Lost everything today. Come closer', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'Texting and driving', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'Add to Cart'
+        title: 'Texting and driving', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'How is my driving?', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'In Cart'
+        title: 'How is my driving?', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
         title: 'I love your wife', category: 'inappropriate'
@@ -29,16 +29,16 @@ const bumpersArray = [
         title: 'I had your wife, too. LOL.', category: 'inappropriate'
     },
     { 
-        title: 'Brake check. 3, 2, 1...', category: 'inappropriate'
+        title: 'Brake check. 3, 2, 1...', category: 'drive-traffic'
     },
     { 
-        title: 'Get closer. I like insurance', category: 'political'
+        title: 'Get closer. I like insurance', category: 'drive-traffic'
     },
     { 
-        title: 'Almost sane. Come to me.', category: 'inappropriate'
+        title: 'Almost sane. Come to me.', category: 'drive-traffic'
     },
     { 
-        title: 'i\'m following you', category: 'inappropriate'
+        title: 'i\'m following you', category: 'drive-traffic'
     },
     { 
         title: 'kidnapper onboard', category: 'inappropriate'
@@ -50,61 +50,61 @@ const bumpersArray = [
         title: 'suck my $*@#, man', category: 'inappropriate'
     },
     { 
-        title: 'How are the fumes??', category: 'inappropriate'
+        title: 'How are the fumes??', category: 'drive-traffic'
     },
     { 
         title: 'Want me to plug your wife\'s nose?', category: 'inappropriate'
     },
     { 
-        title: 'Can i smoke your passenger\'s BUTT??', category: 'political'
+        title: 'Can i smoke your passenger\'s BUTT??', category: 'inappropriate'
     },
     { 
         title: 'Got a hole? May I?', category: 'inappropriate'
     },
     { 
-        title: 'Bumper Sticker', category: 'inappropriate'
+        title: 'Bumper Sticker', category: 'drive-traffic'
     },
     { 
         title: 'C U N T.he Mirror', category: 'inappropriate'
     },
     { 
-        title: 'Caution!! Taking an online test.', category: 'inappropriate'
+        title: 'Caution!! Taking an online test.', category: 'drive-traffic'
     },
     { 
-        title: 'Please don\'t read this...', category: 'inappropriate'
+        title: 'Please don\'t read this...', category: 'drive-traffic'
     },
     { 
-        title: 'Adults onboard', category: 'inappropriate'
+        title: 'Adults onboard', category: 'drive-traffic'
     },
     { 
-        title: 'Reading. Please stay back.', category: 'political'
+        title: 'Reading. Please stay back.', category: 'drive-traffic'
     },
     { 
-        title: 'Bumper cars. Expect heavy braking. :-)', category: 'inappropriate'
+        title: 'Bumper cars. Expect heavy braking. :-)', category: 'drive-traffic'
     },
     { 
-        title: 'Watch out for loose screws.', category: 'family'
+        title: 'Watch out for loose screws.', category: 'drive-traffic'
     },
     { 
-        title: 'Let\'s switch places. Pass me.', category: 'inappropriate'
+        title: 'Let\'s switch places. Pass me.', category: 'drive-traffic'
     },
     { 
-        title: 'Call Me. 305-555-0000', category: 'family'
+        title: 'Call Me. 305-555-0000', category: 'health'
     },
     { 
-        title: 'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',category: 'inappropriate'
+        title: 'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',category: 'drive-traffic'
     },
     { 
-        title: 'Nice Sunday drive behind me, right?', category: 'inappropriate'
+        title: 'Nice Sunday drive behind me, right?', category: 'drive-traffic'
     },
     { 
-        title: 'Microwave onboard', category: 'political'
+        title: 'Microwave onboard', category: 'drive-traffic'
     },
     { 
-        title: 'Careful of Ingrates in Your Life', category: 'inappropriate'
+        title: 'Careful of Ingrates in Your Life', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 33', category: 'family'
+        title: 'anIndex > 33', category: 'health'
     },
     { 
         title: 'anIndex > 34', category: 'inappropriate'
@@ -140,7 +140,7 @@ const bumpersArray = [
         title: 'anIndex > 44', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 45', category: 'family'
+        title: 'anIndex > 45', category: 'health'
     },
     { 
         title: 'anIndex > 46', category: 'inappropriate'
@@ -167,7 +167,7 @@ const bumpersArray = [
         title: 'anIndex > 53', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 54', category: 'inappropriate'
+        title: 'anIndex > 54', category: 'diy'
     },
     { 
         title: 'anIndex > 55', category: 'political'
@@ -197,7 +197,7 @@ const bumpersArray = [
         title: 'anIndex > 63', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 64', category: 'inappropriate'
+        title: 'anIndex > 64', category: 'logos'
     },
     { 
         title: 'anIndex > 65', category: 'political'
