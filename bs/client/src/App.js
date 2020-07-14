@@ -18,7 +18,7 @@ import About from './components/About';
 import Categories from './components/Categories';
 import Aside from './containers/aside/Aside';
 import Admin from './containers/bumpers/Admin';
-import {/* BumpersCreator */ BumperContextProvider} from './containers/bumpers/BumpersFuncTest';
+import {/* BumpersCreator */ BumperContextProvider} from './containers/bumpers/BumpersAndCats';
 import Cart from './containers/bumpers/Cart';
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
      {/* <Route path='/' component={Home} /> */}
      <Switch>
      <BumperContextProvider>
-     <Aside />
+     {/* <Aside /> */}
       <Route exact path='/about' component={About} />
       {/* <Route exact path='/categories' component={Categories} /> */}
       <Route exact path='/' component={Categories} />

@@ -1,5 +1,7 @@
+// const https = require('https');
 const express = require('express');
 const app = express();
+// app.use(https);
 const json = express.json(); // for parsing application/json
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
@@ -7,6 +9,9 @@ const path = require('path');
 const users = require('./db/users');
 const cookieParser = require('cookie-parser');
 const authUsers = users.authUsers;
+const authUsers1 = users.authUsers1;
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 const bumpersRouter = require('./controllers/bumpers_routes');
 app.use('/api/bumpers', bumpersRouter);
 app.use(cookieParser('bsAPISecr777'));
@@ -68,7 +73,7 @@ app.post('/api/login', (req, res, next) => {
     item.email === req.body.loginEmailInput);
     let userPass = authUsers[userIndex] === undefined ? null 
     : authUsers[userIndex].password;
-    if(userIndex != -1 && userPass === req.body.loginPasswordInput ) {
+    if(userIndex != -1 && bcrypt.compareSync(req.body.loginPasswordInput, userPass) ) {
         return res.json({
             "in db": req.body.loginEmailInput,
             "isLoggedIn": true,
@@ -83,6 +88,7 @@ app.post('/api/login', (req, res, next) => {
                 "in db": req.body.loginEmailInput,
                 "isLoggedIn": false,
             })
+            console.log(authUsers1, 'auth1....')
     }
         //bodyParser.json(res.send(JSON.stringify(req)));
 })

@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
-const authUsers = [
+const authUsers1 = [
     {
         'firstName': 'Mike',
         'email': 'mike@gmail.com',
@@ -33,4 +35,12 @@ const authUsers = [
     
 ]
 
-module.exports.authUsers = authUsers;
+let authUsers = [];
+authUsers1.forEach(item => {
+    item.password = bcrypt.hashSync(item.password, saltRounds) 
+authUsers.push(item)
+})
+
+module.exports= {
+    authUsers, authUsers1
+}

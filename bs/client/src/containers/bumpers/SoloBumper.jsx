@@ -132,8 +132,8 @@ class SoloBumper extends Component {
             textStyle: {color: 'red', fontWeight: 'bold', fontSize: 'medium'},
             text: 'testing handleInCart'
         }))
-        let tempLocStorCheck = localStorage.getItem('inCartLocStoreArr');
-        let tempLocStorParseHolder = JSON.parse(tempLocStorCheck);
+        // let tempLocStorCheck = localStorage.getItem('inCartLocStoreArr');
+        // let tempLocStorParseHolder = JSON.parse(tempLocStorCheck);
         // let found = `cartItemLocal-${}`;
         // if(tempLocStorParseHolder.includes(found)) {
         //     console.log(event.target.parentNode.previousSibling, 'found item...')
@@ -156,6 +156,7 @@ class SoloBumper extends Component {
         // this.state.inCartItems.push(itemStored);
         // console.log('client side localstorage', localStorage);
     }
+    
     render() {
         // (this.bumper32());
         const styles = {
@@ -166,7 +167,7 @@ class SoloBumper extends Component {
         const { containerStyle } = styles;
         return (
               //  return (
-                  <div className={this.state.className}>
+                  <div className={this.state.className} style={{}}>
                     {this.props.children}
                     {/* <div onMouseOver={this.addToCart} id={i} key={i++} className={this.state.className}>{item} */}
                     <button style={containerStyle} className={this.props.buttonClass} onClick={this.props.clickAddHandle}>

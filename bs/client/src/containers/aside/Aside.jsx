@@ -1,5 +1,5 @@
 import React, { Fragment, Children } from 'react';
-import BumpersContext from '../bumpers/BumpersFuncTest';
+import BumpersContext from '../bumpers/BumpersAndCats';
 import {SoloBumperShort} from '../bumpers/SoloBumperShort';
 import requireAuthentication from '../Authentication/requireAuthentication';
 

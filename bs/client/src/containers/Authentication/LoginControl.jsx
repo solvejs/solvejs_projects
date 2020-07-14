@@ -5,7 +5,7 @@ import {users} from '../users/users';
 import Dashboard from '../../components/Dashboard';
 import { Switch, Route } from "react-router-dom";
 import Admin from '../../containers/bumpers/Admin';
-import BumpersContext from '../bumpers/BumpersFuncTest';
+import BumpersContext from '../bumpers/BumpersAndCats';
 
 export default class LoginControl extends Component {
     constructor(props) {

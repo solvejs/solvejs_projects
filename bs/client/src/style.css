@@ -54,6 +54,9 @@ h1, h2, h3 {
     /* font-family: 'Londrina Sketch', cursive; */
     font-weight: 500;
 }
+p {
+    padding: 10px;
+}
 /* NAV */
 .nav-menu {
     width: 100%;
@@ -368,7 +371,6 @@ textarea#email-message {
 
 .bumper {
     text-align: center;
-    vertical-align: center;
 }
 .bumper-long {
     width: 400px;

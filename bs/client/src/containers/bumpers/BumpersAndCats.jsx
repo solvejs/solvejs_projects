@@ -7,7 +7,7 @@ import { catsRadioArrForForm } from '../../components/Categories'
 // setTimeout(() => (console.log(DataFromAPI, 'd from a 4000'), new Date()), 4000);
 // document.addEventListener('DOMContentLoaded', (event) => {
 
-    const pagesForCats = {}; // placeholder for bumperCatMapToPages generation of pages
+const pagesForCats = {}; // placeholder for bumperCatMapToPages generation of pages
 const BumpersContext = createContext();
 export class BumperContextProvider extends Component {
     constructor(props) {
@@ -33,6 +33,7 @@ export class BumperContextProvider extends Component {
             radioCatSelectedPageNums:this.createPages(this, 20, 'all').pageNumbersArr,
             radioCatSelected: 'all',
             radioPagesFiltered: [{title: 'PAGE LOADING...', id: 1}],// this.createPages(20, 'all').pages[0], // need function to call this,
+            bumperTextSize: '300%', 
             inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: [],
             textStyleInCart: {
@@ -103,7 +104,7 @@ export class BumperContextProvider extends Component {
             })
             .then(() => this.loopThroughBumperCatMapToPages())
         }
-
+    
     handleAddCartClick(e) {
         // console.log(e.target.parentNode.previousSibling, '[bumpersfunctest.jsx] event click add to cart'); // returns div with bumper id#
         // this.setState({
@@ -310,6 +311,40 @@ export class BumperContextProvider extends Component {
             //     }
             }
             // TEMP NAME CHANGE CREATEPAGES FOR TESTING ABOVE
+fontGrow = () => {
+    const divClassBumperLong = document.querySelectorAll('div.bumper-long');
+    let styles;
+    let k = 0;
+    divClassBumperLong.forEach(item => {
+        let font = 10;
+        let iDiv=Number(item.firstElementChild.clientWidth.toString().replace(/D/g, ''))
+        let iSpan = Number(item.firstElementChild.firstChild.clientWidth.toString().replace(/D/g, ''));
+        while( (iDiv-iSpan)>=60) { // WHY DOES NUMBER 60 WORK BEST?????
+            font+=2;
+            iDiv=Number(item.firstElementChild.clientWidth.toString().replace(/D/g, ''))
+            iSpan = Number(item.firstElementChild.firstChild.clientWidth.toString().replace(/D/g, ''));
+            item.firstElementChild.firstChild.style.fontSize = font +'px';
+            // let tmpSpanFontPercent = Number(spanItem.clientWidth.toString().replace(/\D/g, ''));
+            // let tmpDivFont = Number(divItem.clientWidth.toString().replace(/D/g, ''));
+            // iSpan.style.fontSize = ((font += 2) + 'px').toString() //(font += 5)
+            console.log(iDiv-iSpan)
+        }
+        // if(item.clientWidth > spanItem.clientWidth) {
+        //     spanItem.style.fontSize = '200%';
+        //     console.log('loaded ... width', item.clientWidth, divItem.clientWidth, spanItem.clientWidth)
+        // } else {
+        //     spanItem.style.fontSize = '50%'
+        //     console.log('loaded ... width', item.clientWidth, divItem.clientWidth, spanItem.clientWidth)
+        // }
+        // styles.style.border = '3px solid purple',
+    }
+    )
+}
+componentDidUpdate() {
+    // if(document.querySelectorAll('div.bumper-long')) {
+        this.fontGrow()
+    // }
+}
 render() {
     if(!this.state.apiData) {
         return <div>Loading...please wait</div>
@@ -333,7 +368,8 @@ render() {
             inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: this.state.inCartItems,
             cartLoggedinStatus: this.state.cartLoggedinStatus,
-            textStyle: this.state.textStyle
+            textStyle: this.state.textStyle,
+            textSize: this.state.bumperTextSize,
         }}>
             {this.props.children}
         </BumpersContext.Provider>

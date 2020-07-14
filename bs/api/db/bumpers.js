@@ -104,107 +104,159 @@ const bumpersArray = [
         title: 'Careful of Ingrates in Your Life', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 33', category: 'health'
+        title: 'Soda. Cost: 10 cents. Retail: $2-3.', category: 'health'
     },
     { 
-        title: 'anIndex > 34', category: 'inappropriate'
+        title: 'As you work, I work your bedroom.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 35', category: 'inappropriate'
+        title: 'She called me last night', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 36', category: 'inappropriate'
+        title: 'He called me last night', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 37', category: 'inappropriate'
+        title: 'Making contact at your home', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 38', category: 'political'
+        title: 'Exercise for your health', category: 'health'
     },
     { 
-        title: 'anIndex > 39', category: 'inappropriate'
+        title: 'Waiting for you to leave the house', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 40', category: 'inappropriate'
+        title: 'Awful. Just awful. Wow!', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 41', category: 'inappropriate'
+        title: 'I ran over your flowers.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 42', category: 'inappropriate'
+        title: 'Your friend did her a favor', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 43', category: 'inappropriate'
+        title: 'Your friend did him a favor', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 44', category: 'inappropriate'
+        title: 'Your dad is cheating on you', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 45', category: 'health'
+        title: 'Are you hungry or greedy??', category: 'health'
     },
     { 
-        title: 'anIndex > 46', category: 'inappropriate'
+        title: 'My life. Centered around you.', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 47', category: 'inappropriate'
+        title: 'Looking for you. I have pepper spray.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 48', category: 'inappropriate'
+        title: 'Nervous? I really am dangerous.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 49', category: 'drive-traffic'
+        title: 'Testing your brakes.', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 50', category: 'inappropriate'
+        title: 'Hit and Run Drive Master', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 51', category: 'inappropriate'
+        title: 'Caution. Difficulty driving.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 52', category: 'thought-provoking'
+        title: 'Passed you. Your mom needs me.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 53', category: 'inappropriate'
+        title: 'Someone is watching you', category: 'thought-provoking'
     },
     { 
-        title: 'anIndex > 54', category: 'diy'
+        title: 'Night. Focus. Your window.', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 55', category: 'political'
+        title: 'D. I. Y. Network', category: 'diy'
     },
     { 
-        title: 'anIndex > 56', category: 'drive-traffic'
+        title: 'Eating for your health??', category: 'health'
     },
     { 
-        title: 'anIndex > 57', category: 'drive-traffic'
+        title: 'Driving super slow. Stolen.', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 58', category: 'thoughtful'
+        title: 'Getting ready to slam brakes', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 59', category: 'inappropriate'
+        title: 'Use your resources.', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 60', category: 'inappropriate'
+        title: 'Seeing the world through your window', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 61', category: 'thoughtful'
+        title: 'I drive your car while you work', category: 'inappropriate'
     },
     { 
-        title: 'anIndex > 62', category: 'drive-traffic'
+        title: 'I\'m you. You\'re me. Now what?', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 63', category: 'thoughtful'
+        title: 'Master of the rapid stop', category: 'drive-traffic'
     },
     { 
-        title: 'anIndex > 64', category: 'logos'
+        title: 'Would you do me a favor?', category: 'thoughtful'
     },
     { 
-        title: 'anIndex > 65', category: 'political'
+        title: 'Logo is missing', category: 'logos'
     },
     { 
-        title: 'anIndex > 66', category: 'thoughtful'
+        title: 'Your mom is cheating on you', category: 'inappropriate'
     },
+    { 
+        title: 'Eating too many calories?', category: 'health'
+    },
+    { 
+        title: 'Excuses?? Is that all????', category: 'thoughtful'
+    },
+    { 
+        title: 'Your mom is cheating on your man', category: 'inappropriate'
+    },
+    { 
+        title: 'Your dad is cheating on your girl', category: 'inappropriate'
+    },
+    { 
+        title: 'He knows...', category: 'drive-traffic'
+    },
+    { 
+        title: 'She knows...', category: 'drive-traffic'
+    },
+    { 
+        title: 'Shhh...not watching the road', category: 'drive-traffic'
+    },
+    { 
+        title: 'I did it already', category: 'diy'
+    },
+    { 
+        title: 'Doing it now.', category: 'diy'
+    },
+    { 
+        title: 'You do it.', category: 'diy'
+    },
+    { 
+        title: 'D.  I.  Y.', category: 'diy'
+    },
+    { 
+        title: 'Want me to do it?', category: 'diy'
+    },
+    { 
+        title: 'I did\'t have to do it.', category: 'diy'
+    },
+    { 
+        title: 'It\'s your choice. Decide.', category: 'thoughtful'
+    },
+    { 
+        title: 'Make stronger decisions.', category: 'thoughtful'
+    },
+    {
+        title: 'You really can have it all.', category: 'thoughtful'
+    },
+    {
+        title: 'Are you willing to do??', category: 'thoughtful'
+    },
+    
 ]
 // attempting to get auto-generated div for each of the bumper stickers
 //let bumperText = bumperDiv.textContent = `<div class="bumper bumper-long">${item}</div>`;

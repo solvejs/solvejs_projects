@@ -1,7 +1,8 @@
 import React, { createContext, Children, Component, Fragment, useState } from 'react';
 import {SoloBumper} from '../bumpers/SoloBumper';
-import BumpersContext from './BumpersFuncTest';
+import BumpersContext from './BumpersAndCats';
 import LoginControl from '../Authentication/LoginControl';
+import {randCol} from '../../utils/randColors';
 
 function checkLoggedIn() {
     console.log('purchased items. thanks.');
@@ -170,21 +171,29 @@ class CartBumpers extends Component {
         // let test3 = JSON.parse(test2)
         if(this.state.destrData.length !== 0 && parsedLocStor.length > 0) {
             return (
-                <div id='contact-wrapper' className='content-left'>
-                <h2>Current Cart Items</h2>
+                <div id='cart-content' className='main-content'>
+                <h2 style={{textAlign: 'center', fontWeight: 'bold'}}>Current Cart Items</h2>
+                <div id="main-wrapper" className="content-grid">
+                <div id="bumper-left" className="content-left bumper-flex" key={7}>
                 {
                     parsedLocStor.map(item =>
-                    <SoloBumper key={Number(item.substring(14))} clickAddHandle={this.handleClickChangeAddToCart} text={'Remove'} buttonClass={'add-to-cart-selected'}> <div id={this.state.destrData[Number(item.substring(14))].id} style={{border: "3px solid blue", height: "75px", verticalAlign: "middle"}}>{this.state.destrData[Number(item.substring(14))].title}</div>
+                    <SoloBumper key={Number(item.substring(14))} clickAddHandle={this.handleClickChangeAddToCart} text={'Remove'} buttonClass={'add-to-cart-selected'}> <div id={this.state.destrData[Number(item.substring(14))].id} style={{display: 'block', width: '100%', height: "75px"}}>
+                    <span style={{height: '75px', lineHeight: '75px', display: 'inline-block', color: randCol(), backgroundColor: randCol()}}>{this.state.destrData[Number(item.substring(14))].title}
+                    </span></div>
                     </SoloBumper>
                     )
                 }
-                <div>
+                </div>
+                <div style={{textAlign: 'center',margin: 'auto', marginTop: '15px', width: 'max-content'}}>
+                <div style={{textAlign: 'left'}}>
                 <CCPay show={!this.state.visibility} />
                 </div>
-                <div>
+                <div style={{textAlign: 'left'}}>
                 <PurchButton disabled={this.state.purchButtonDisabled} text={'Complete Purchase'} title={this.state.titleForButton} order={this.handleOrder} hover={this.handleHoverCartButton}/>
                 </div>
-                    </div>
+                </div>
+                </div>
+                </div>
                     )
                 } else if(parsedLocStor.length === 0) {
             return (
@@ -201,7 +210,6 @@ class CartBumpers extends Component {
                 }
     }
 }
-
 function PurchButton(props) {
     // response.json() Promise { <state>: "pending" } 200
     return <button disabled={props.disabled} onMouseOver={props.hover} onClick={props.order} title={props.title}>{props.text}</button>

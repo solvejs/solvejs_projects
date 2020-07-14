@@ -6,9 +6,6 @@ function About(props) {
     const [color2, setColor2] = useState('red');
     const [username, setUser] = useState('');
     const [password, setPass] = useState('');
-    const handleClick = (prevState, currState) => {
-        currState = setColor2('green')
-    }
     const handleChangeUser = (e) => {
         setUser(e.target.value)
     }
@@ -23,16 +20,24 @@ function About(props) {
             body: data,
         })
     }
-    
+    function fontPercentage(width) {
+        if(document.activeElement.style.width >= Number(document.activeElement.parentElement.style.width.replace(/\D/g, ''))) {
+            console.log(width, 'width', document.getElementsByTagName('span'), document.getElementById('top123'), 'document.activeElement.parentElement.style.width')
+            return '0'
+        } else {
+            return fontPercentage(10)
+        }
+    }
     return (
         <div className="about">
         <h2>About SolveJS Bumpers</h2>
-        <p>SolveJS Bumpers is your source for humerous bumper stickers. I hope you will find the best bumper stickers money can buy to help lighten the mood for those who read your stickers as they make their commute to / from work.
+        <p>SolveJS Bumpers is your source for humerous bumper stickers. If you enjoy looking back to see someone smiling or laughing because of the bumper sticker on your vehicle, you are at the right place now.
         </p>
-        <Fragment>
-        <Button col={color2} colChange={handleClick} />
-        </Fragment>
-        <Form user={username} pass={password} userChange={handleChangeUser} passChange={handleChangePass} sub={submitForm}/>
+        <p>If you feel that little internal tickle or giggle in knowing that your bumper sticker has placed a smile on someone's face, you're at the right site.
+        </p>
+        <p>
+        We trust you will find the best bumper stickers money can buy to help lighten the mood for those who read your stickers as they make their commute to / from work.
+        </p> 
         </div>
         )
     }

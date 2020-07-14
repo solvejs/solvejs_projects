@@ -1,7 +1,8 @@
 import React, { Children, Fragment, Component } from 'react';
-import BumpersContext from '../containers/bumpers/BumpersFuncTest';
+import BumpersContext from '../containers/bumpers/BumpersAndCats';
 import {SoloBumper} from '../containers/bumpers/SoloBumper';
 import Title from './Title';
+import { randCol } from '../utils/randColors';
 
 export class Categories extends Component {
     constructor() {
@@ -24,7 +25,7 @@ export class Categories extends Component {
             <BumpersContext.Consumer>
             {
                 context => (
-                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} contextButtonIn={context.textStyleInCartButtonClass1} contextButtonOut={context.textStyleInCartButtonClass2}>
+                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} contextButtonIn={context.textStyleInCartButtonClass1} contextButtonOut={context.textStyleInCartButtonClass2} contextFontSize={context.bumperTextSize}>
                     {Children}
                     </CatFormToggleBumpers>
                 )
@@ -47,6 +48,10 @@ export class Categories extends Component {
 const CatFormToggleBumpers = (props) => {
     let unparsedLocStor = localStorage.getItem('inCartLocStoreArr') || "[]";
     let parsedLocStor = unparsedLocStor !== null || "[]" ? JSON.parse(unparsedLocStor) : undefined;
+    const fontSize = props.contextFontSize;
+    const fontSz = (item) => {
+        document.getElementById(item.id)
+    }
     return (
         /* <div className="content-grid" id="main-wrapper" key={5}>
         <div id="cat-items-rendered"> */
@@ -54,10 +59,10 @@ const CatFormToggleBumpers = (props) => {
         <div id="main-wrapper" className="content-grid">
         <div id="bumper-left" className="content-left bumper-flex" key={7}>
         <Fragment>
-        {props.contextForm.map(item => 
+        {props.contextForm.map(item =>
             parsedLocStor !== (null || undefined || "[]") && parsedLocStor.includes(`cartItemLocal-${item.id}`) ?
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{border: "3px solid red", height: "75px", verticalAlign: "middle"}}><span className={'vert-align-class'} style={{backgroundColor: 'blue', height: '75px', lineHeight: '75px'}}>{item.title}</span></div></SoloBumper> :
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{border: "1px solid black", height: "75px", verticalAlign: "middle"}}><span className={'vert-align-class'} style={{backgroundColor: 'blue', height: '75px', lineHeight: '75px'}}>{item.title}</span></div></SoloBumper>
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper> :
+            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper>
             )
         }
         {/****** 
