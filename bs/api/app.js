@@ -37,7 +37,7 @@ function reactPath(req, res, next) { // middleware created to handle dirname
 }
 // app.use(reactPath); // middleware created
 app.use(express.json()); // needed to add express. since has built-in body parser
-app.use(express.static(path.join(__dirname, 'client/public')))
+app.use(express.static(path.join(__dirname, 'build')))
 let user = null;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
