@@ -170,7 +170,7 @@ class SoloBumper extends Component {
                   <div className={this.state.className} style={{}}>
                     {this.props.children}
                     {/* <div onMouseOver={this.addToCart} id={i} key={i++} className={this.state.className}>{item} */}
-                    <button style={containerStyle} className={this.props.buttonClass} onClick={this.props.clickAddHandle}>
+                    <button style={containerStyle} className={this.props.buttonClass} onClick={this.props.clickCartButtonHandle}>
                     <CartText text={this.props.text} style={this.state.textStyle} className={this.props.buttonClass} clickAddCartChange={this.handleClickChangeAddToCart} checkInCart={this.handleInCart}/>
                     </button>
                     </div>

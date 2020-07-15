@@ -25,7 +25,7 @@ export class Categories extends Component {
             <BumpersContext.Consumer>
             {
                 context => (
-                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} contextButtonIn={context.textStyleInCartButtonClass1} contextButtonOut={context.textStyleInCartButtonClass2} contextFontSize={context.bumperTextSize}>
+                    <CatFormToggleBumpers contextForm={context.radioPagesFiltered} contextCartItems={context.inCartItems} contextAddCartHandle={context.handleAddCartClick} contextTextStyle={context.textStyle} contextButtonIn={context.textStyleInCartButtonClass1} contextButtonOut={context.textStyleInCartButtonClass2} contextFontSize={context.bumperTextSize} >
                     {Children}
                     </CatFormToggleBumpers>
                 )
@@ -61,8 +61,8 @@ const CatFormToggleBumpers = (props) => {
         <Fragment>
         {props.contextForm.map(item =>
             parsedLocStor !== (null || undefined || "[]") && parsedLocStor.includes(`cartItemLocal-${item.id}`) ?
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper> :
-            <SoloBumper key={item.id} clickAddHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper>
+            <SoloBumper key={item.id} clickCartButtonHandle={props.contextAddCartHandle} text={'In Cart'} buttonClass={'add-to-cart-selected'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper> :
+            <SoloBumper key={item.id} clickCartButtonHandle={props.contextAddCartHandle} text={'Add to Cart'} buttonClass={'add-to-cart'}> <div id={item.id} style={{display: 'block', width: '100%', height: "75px"}}><span style={{height: '75px', lineHeight: '75px', display: 'inline-grid', color: randCol(), backgroundColor: randCol()}}>{item.title}</span></div></SoloBumper>
             )
         }
         {/****** 

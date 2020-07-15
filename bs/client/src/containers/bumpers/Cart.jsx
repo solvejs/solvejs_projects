@@ -31,7 +31,8 @@ class CartBumpers extends Component {
             currentCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             visibility: false,
             purchButtonDisabled: true,
-            titleForButton: 'Please login to complete your order.'
+            titleForButton: 'Please login to complete your order.',
+            totalCost: 0
         }
     }
     /* {cartButtonStyle: '',
@@ -44,7 +45,8 @@ class CartBumpers extends Component {
         console.log(this.state.destrData, 'inside did mount')
         this.setState({
             destrData: this.props.contextData,
-            currentCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount"))
+            currentCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
+            totalCost: document.querySelectorAll('span.cart-span') ? Number(localStorage.getItem('inCartLocStoreCount')) * 1.99 : null
         });
         
         // this.cartNumToIcon();
@@ -74,6 +76,9 @@ class CartBumpers extends Component {
         if(cartIcon.children.length > 2) {
             cartIcon.removeChild(cartIcon.childNodes[2])
         }
+        this.setState(prevState => ({
+            totalCost: Number(localStorage.getItem('inCartLocStoreCount')) * 1.99
+        }))
     }
 //     handleChange = () => {
 //         this.setState({
@@ -108,7 +113,8 @@ class CartBumpers extends Component {
         // }
         }
         this.setState(prevState => ({
-            currentCartTotal: itemsParsedFromLocStor.length
+            currentCartTotal: itemsParsedFromLocStor.length,
+            totalCost: Number(localStorage.getItem('inCartLocStoreCount')) * 1.99
         }))
         // this.state.textStyle.color === 'green' ? 
         // this.setState(prevState => ({
@@ -162,6 +168,11 @@ class CartBumpers extends Component {
             visibility: !this.state.visibility
         }))
     }
+    totalChange = () => {
+        this.setState(prevState => ({
+            totalCost: document.querySelectorAll('span.cart-span') ? Number(localStorage.getItem('inCartLocStoreCount')) * 1.99 : null
+        }))
+    }
     render() {
         const unparsedLocStor = localStorage.getItem('inCartLocStoreArr') || "[]";
         let parsedLocStor = unparsedLocStor !== null || "[]" ? JSON.parse(unparsedLocStor) : null;
@@ -177,8 +188,8 @@ class CartBumpers extends Component {
                 <div id="bumper-left" className="content-left bumper-flex" key={7}>
                 {
                     parsedLocStor.map(item =>
-                    <SoloBumper key={Number(item.substring(14))} clickAddHandle={this.handleClickChangeAddToCart} text={'Remove'} buttonClass={'add-to-cart-selected'}> <div id={this.state.destrData[Number(item.substring(14))].id} style={{display: 'block', width: '100%', height: "75px"}}>
-                    <span style={{height: '75px', lineHeight: '75px', display: 'inline-block', color: randCol(), backgroundColor: randCol()}}>{this.state.destrData[Number(item.substring(14))].title}
+                    <SoloBumper key={Number(item.substring(14))} clickCartButtonHandle={this.handleClickChangeAddToCart} text={'Remove - $1.99'} buttonClass={'add-to-cart-selected'}> <div id={this.state.destrData[Number(item.substring(14))].id} style={{display: 'block', width: '100%', height: "75px"}}>
+                    <span className='cart-span' onClick={this.totalChange} style={{height: '75px', lineHeight: '75px', display: 'inline-block', color: randCol(), backgroundColor: randCol()}}>{this.state.destrData[Number(item.substring(14))].title}
                     </span></div>
                     </SoloBumper>
                     )
@@ -186,7 +197,7 @@ class CartBumpers extends Component {
                 </div>
                 <div style={{textAlign: 'center',margin: 'auto', marginTop: '15px', width: 'max-content'}}>
                 <div style={{textAlign: 'left'}}>
-                <CCPay show={!this.state.visibility} />
+                <CCPay show={!this.state.visibility} totalCost={this.state.totalCost} totalChange={this.totalChange}/>
                 </div>
                 <div style={{textAlign: 'left'}}>
                 <PurchButton disabled={this.state.purchButtonDisabled} text={'Complete Purchase'} title={this.state.titleForButton} order={this.handleOrder} hover={this.handleHoverCartButton}/>
@@ -219,14 +230,22 @@ function PurchButton(props) {
 function CCPay(props) {
     if(props.show) {
         return (
+            <div>
+            <TotalCartCost totalCost={props.totalCost} totalChange={props.totalChange} />
             <form id='cc-pay' key={1}>
             <input type='text' value='Name on Card' /><br />
             <input type='number' value={Number(1111999911119999)} /><br />
             <input type='data' value={'11/2023'} /><br />
             </form>
+            </div>
         )
     } else 
     return null
+}
+function TotalCartCost(props) {
+    return (
+    <span>Cart Total:  {props.totalCost}</span>
+    )
 }
 // class PurchButton extends Component {
 //     state = {

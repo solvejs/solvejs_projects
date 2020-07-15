@@ -36,6 +36,7 @@ export class BumperContextProvider extends Component {
             bumperTextSize: '300%', 
             inCartTotal: JSON.parse(localStorage.getItem("inCartLocStoreCount")),
             inCartItems: [],
+            // cartDollTotal: document.querySelectorAll('span.cart-span') ? document.querySelectorAll('span.cart-span').length*1.99 : null,
             textStyleInCart: {
                 text: {color: 'blue', fontWeight: 'bold', fontSize: 'medium'}
             },

@@ -26,7 +26,7 @@ const bumpersArray = [
         title: 'Looking at your wife', category: 'inappropriate'
     },
     { 
-        title: 'I had your wife, too. LOL.', category: 'inappropriate'
+        title: 'Been there. Done that. She mention it?', category: 'inappropriate'
     },
     { 
         title: 'Brake check. 3, 2, 1...', category: 'drive-traffic'
@@ -47,25 +47,25 @@ const bumpersArray = [
         title: 'eat my [BLANK]', category: 'inappropriate'
     },
     { 
-        title: 'suck my $*@#, man', category: 'inappropriate'
+        title: 'Super soak you', category: 'inappropriate'
     },
     { 
         title: 'How are the fumes??', category: 'drive-traffic'
     },
     { 
-        title: 'Want me to plug your wife\'s nose?', category: 'inappropriate'
+        title: 'Nose plugger inside. See?', category: 'inappropriate'
     },
     { 
-        title: 'Can i smoke your passenger\'s BUTT??', category: 'inappropriate'
+        title: 'Pipes \'R Us. Get some', category: 'inappropriate'
     },
     { 
-        title: 'Got a hole? May I?', category: 'inappropriate'
+        title: 'Digging deep...since 19[you left]', category: 'inappropriate'
     },
     { 
         title: 'Bumper Sticker', category: 'drive-traffic'
     },
     { 
-        title: 'C U N T.he Mirror', category: 'inappropriate'
+        title: 'C U N The Mirror', category: 'inappropriate'
     },
     { 
         title: 'Caution!! Taking an online test.', category: 'drive-traffic'
