@@ -97,7 +97,7 @@ export class BumperContextProvider extends Component {
             .then(resp => resp.json())
             .then(data => {
                 // let dataFromAPI = [];
-                console.log(data, 'data inside async dataPullFromAPI')
+                // console.log(data, 'data inside async dataPullFromAPI')
                 this.setState({
                     apiData: data,
                     localStor: window.localStorage
@@ -328,7 +328,6 @@ fontGrow = () => {
             // let tmpSpanFontPercent = Number(spanItem.clientWidth.toString().replace(/\D/g, ''));
             // let tmpDivFont = Number(divItem.clientWidth.toString().replace(/D/g, ''));
             // iSpan.style.fontSize = ((font += 2) + 'px').toString() //(font += 5)
-            console.log(iDiv-iSpan)
         }
         // if(item.clientWidth > spanItem.clientWidth) {
         //     spanItem.style.fontSize = '200%';

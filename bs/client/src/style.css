@@ -319,7 +319,7 @@ button[type=submit], button[type=reset] {
 }
 button[type=reset] {
     width: 70px;
-    color: 'red'
+    color: red
 }
 textarea#email-message {
     margin-top: 10px;

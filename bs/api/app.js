@@ -30,8 +30,8 @@ app.use(router);
 
 // console.log(path.join(__dirname, '../') + 'Frontend/public')
 function reactPath(req, res, next) { // middleware created to handle dirname
-        res.sendReactPath = function(view) {
-            return res.sendFile(path.join(__dirname, '/client/public', view));
+res.sendReactPath = function(view) {
+    return res.sendFile(path.join(__dirname, 'build', view));
     }
     next();
 }
@@ -53,16 +53,15 @@ app.use(bodyParser.urlencoded({extended: true}));
         res.sendFile('tester.html')
         // res.sendFile(path.join(__dirname, '../Frontend/public', 'tester.html'));
     }) */
-app.get('/', (err, req, res, next) => {
-    if(!err) {
-        // res.sendFile(path.join(__dirname, '..Frontend/src   ', 'index.js') );
-        console.log('tested before res.send')
-        res.send('Express');
-        // res.send(console.log(req.params)); // sent message
-    } else {
-        console.log('homepage did not work');
-    }
-})
+// app.get('/', (err, req, res, next) => {
+//     if(!err) {
+//         // res.sendFile(path.join(__dirname, '..Frontend/src   ', 'index.js') );
+//         res.sendFile(path.join(__dirname, 'build', 'index.html'));
+//         // res.send(console.log(req.params)); // sent message
+//     } else {
+//         console.log('homepage did not work');
+//     }
+// })
 app.post('/', (err, req, res, next) => {
     if(err) console.log('error', err)
     else console.log('no error')
@@ -164,33 +163,16 @@ app.get('/admin.html', (req, res) => {
 })
 
 app.get('/profile', (req, res) => {
-    console.log('testing profile');
-    try {
-            res.json([
-                {id: 1, user: "frank"},
-                {id: 2, user: "mike"}
-            ]);
-    } catch {
-        res.send('did not work.')
-    }
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 app.post('/profile', (req, res) => {
-    console.log('testing profile');
-    try {
-            res.json([
-                {type: "post", id: 1, user: "EXPRESS"},
-                {type: "post", id: 2, user: "RENDERED"},
-                {type: "post", id: 3, user: "RESPONSE"}
-            ]);
-    } catch {
-        res.send('did not work.')
-    }
+    res.sendFile(path.join(__dirname, 'build', 'index.html'))
 })
 
 // will need to set page param to auto-generate pages and change the url path on changes
 
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/public/index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
 })
 
 app.listen(port, (req, res) => {
