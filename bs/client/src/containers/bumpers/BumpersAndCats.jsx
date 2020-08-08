@@ -87,7 +87,11 @@ export class BumperContextProvider extends Component {
     }
     async dataPullFromAPI() {
             let storageLoc = window.localStorage;
+<<<<<<< HEAD
             let batch = await fetch('api/bumpers', {
+=======
+            let batch = await fetch('/api/bumpers', {
+>>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
                 method: 'get',
                 headers: {
                     'Content-Type': 'application/json',

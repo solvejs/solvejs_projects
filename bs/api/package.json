@@ -2,7 +2,11 @@
   "name": "solvejs-bumpers-backend",
   "version": "1.0.0",
   "description": "backend",
+<<<<<<< HEAD
   "homepage": "/",
+=======
+  "homepage": ".",
+>>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
   "main": "app.js",
   "dependencies": {
     "bcrypt": "^5.0.0",
