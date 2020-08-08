@@ -146,7 +146,11 @@ class CartBumpers extends Component {
         // send to api
         // redirect home
         const inCart = localStorage.getItem('inCartLocStoreArr');
+<<<<<<< HEAD
         const response = await fetch('api/order', {
+=======
+        const response = await fetch('/api/order', {
+>>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
             method: 'POST',
             referrerPolicy: 'same-origin',
             headers: {
