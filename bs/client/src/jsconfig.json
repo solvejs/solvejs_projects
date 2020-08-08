@@ -1,0 +1,11 @@
+{ 
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "paths": { 
+            "stores/*":       ["./containters/*"],
+            "utils/*":        ["./containters/utils/*"]
+        },
+        "target": "es6",
+        "jsx": "react"
+    }
+}
