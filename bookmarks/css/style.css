@@ -46,28 +46,6 @@ ul {
     text-align: center; 
     position: sticky;
 }
-li.pvids {
-    background-color: #000000; 
-    padding:10px; 
-    margin:8px; 
-    padding:10px; 
-    text-transform:uppercase; 
-    text-decoration:overline; 
-    font-size:13px; 
-    font-family:cursive; 
-    color:#ffffff;
-}
-input.cbatemodel {
-    background-color: #33FF57; 
-    padding:10px; 
-    margin:8px; 
-    padding:10px; 
-    text-transform:uppercase; 
-    text-decoration:overline; 
-    font-size:13px; 
-    font-family:cursive; 
-    color:#33BDFF;
-}
 
 .hide-item {
     display: none;

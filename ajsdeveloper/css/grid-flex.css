@@ -2,4 +2,9 @@ div.wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     background-color: orange;
+    grid-template-areas: 
+    wp wp wp wp wp wp wp wp wp wp;
+}
+#web-projects {
+    grid-area: wp;
 }

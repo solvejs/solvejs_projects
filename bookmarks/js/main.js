@@ -1,16 +1,3 @@
-const pornSection = document.getElementById('pvidsx');
-const pornButton = document.getElementById('porn-button');
-
-//pornSection.setAttribute('style', 'display: none');
-
-export function hidePorn() {
-    pornButton.addEventListener('click', () => {
-        pornSection.classList.toggle('hide-item');
-        scrollTo(0, -50)
-    })
-}
-// hidePorn();
-
 // higher order function
 function adder(n) {
     return m => m > n;

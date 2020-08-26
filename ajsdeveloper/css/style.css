@@ -1,0 +1,57 @@
+html {
+    background-color: blue;
+}
+body {
+    margin: auto;
+    width: 80vw;
+    min-height: 900px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+h1 {
+    margin-left: 10px;
+    padding-top: 10px;
+}
+li,ul {
+    list-style: none;
+}
+.top-ul {
+    background-color: lightgrey;
+    color: pink;
+    text-transform: uppercase;
+    text-decoration: wavy;
+}
+div#web-projects {
+    margin: 10px 5px;
+}
+ul.projects {
+    display: inline-block;
+    max-width: 300px;
+    margin: 10px 5px;
+}
+li.single-project {
+    font: bolder;
+    padding: 5px 0;
+}
+.skills {
+    font-size: 1.2em;
+}
+.technologies {
+    background-color: #ffffcc;
+}
+.technologies:nth-child(even) {
+    background-color: #ccffcc;
+}
+.hide {
+    display: none;
+}
+.highlight {
+    text-transform: uppercase;
+    color: blue;
+    background-color: deepskyblue;
+}
+.reject {
+    text-decoration-line: line-through;
+    color: darkolivegreen;
+    background-color: darkgray;
+}
