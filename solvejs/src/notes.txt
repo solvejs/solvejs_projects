@@ -1,0 +1,25 @@
+layout:
+
+- logged in state > App
+- name with developer on blog posts
+- header
+    SolveJS
+    Learn Past Yet
+- github for code copying
+    - code block on website + commentary as the posts
+    - find proper technical terms online
+    - advise when unsure or information may not be correct
+    - solicit feedback and corrections
+    - reload for /page > fix
+    - login will show user name with 'logout' when logged in
+        - dashboard will show if user is admin
+            - options to PUT (create) post with featured image, code section, etc.
+    - env variables for any passwords and keys for security
+- header > change to image for size adjust
+    - fix header resize on smaller screens
+- router
+    - div#web-projects > collapsed content requiring hover to reveal
+    - switch
+        - logged in vs not logged in (blog, also)
+            - page with all headers, etc
+            - page with all headers, etc. + switched nested pages requiring login (blog will have like, comments if logged in with gmail, facebook, or twitter)

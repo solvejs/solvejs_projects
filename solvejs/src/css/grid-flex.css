@@ -1,0 +1,31 @@
+#root {
+    display: grid;
+    grid-template-areas:
+    "head head head head head head head head head head head head"
+    "contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap "
+    "footer footer footer footer footer footer footer footer footer footer footer footer "
+}
+div#content-wrapper {
+    /* grid-template-columns: repeat(3, 1fr); */
+    background-color: orange;
+    grid-area: 
+    contwrap;
+}
+div#header {
+    grid-area: head;
+}
+/* #nav-menu {
+    grid-area: nav;
+} */
+#web-projects {
+    grid-area: webproj;
+}
+#card-posts {
+    grid-area: cp;
+}
+div#footer-menu {
+    grid-area: footer;
+}
+/* "webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj"
+    "wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt"
+    "cp cp cp cp cp cp cp cp cp cp cp cp" */

@@ -1,0 +1,122 @@
+html {
+    background-color: blue;
+}
+
+/* open: style for mobile screen */
+
+body {
+    margin: auto;
+    width: 90vw;
+    min-height: 900px;
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Header */
+
+div#header {
+    transform: rotateX(360deg);
+    transition: ease 2s;
+}
+
+/* Menu */
+
+#nav-menu {
+    font-size: 20px;
+    text-align: center;
+}
+
+/* Footer */
+/* Images */
+
+.featured-image {
+    border: 2px solid black;
+    width: 500px;
+    margin: 10px;
+    float: left;
+}
+
+/* Content */
+
+h1 {
+    margin-left: 10px;
+    padding-top: 10px;
+
+}
+h1.title {
+    text-align: center;
+    font-size: 2.0em;
+    margin-top: 10px;
+    text-decoration: overline underline;
+    text-transform: capitalize;
+    color: blue;
+}
+p {
+    margin: 10px 5px 20px;
+}
+div p:nth-child(2)::after {
+    content: '<div>../public/images/demo_ad.png</div>';
+}
+div.post {
+    margin-bottom: 10px;
+}
+div#web-projects {
+    margin: 10px 5px;
+}
+ul.projects {
+    display: inline-block;
+    max-width: 300px;
+    margin: 10px 5px;
+}
+span.author-bio {
+    margin-left: 10px;
+    font-style: italic;
+    color: rgb(0, 181, 255);
+}
+div#content-wrapper {
+    margin-top: 50px; /* height to match Header height as it is position: fixed */
+}
+
+/* General */
+
+li,ul {
+    list-style: none;
+}
+.top-ul {
+    background-color: lightgrey;
+    color: pink;
+    text-transform: uppercase;
+    text-decoration: wavy;
+}
+
+/* .technologies:hover {
+    visibility: hidden;
+}
+.technologies:hover {
+    visibility: visible;
+} */
+li.single-project {
+    font-weight: bolder;
+    padding: 5px 0;
+}
+.skills {
+    font-size: 1.2em;
+}
+.technologies {
+    background-color: #ffffcc;
+}
+.technologies:nth-child(even) {
+    background-color: #ccffcc;
+}
+.hide {
+    display: none;
+}
+.highlight {
+    text-transform: uppercase;
+    color: blue;
+    background-color: deepskyblue;
+}
+.reject {
+    text-decoration-line: line-through;
+    color: darkolivegreen;
+    background-color: darkgray;
+}
