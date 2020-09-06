@@ -4,10 +4,10 @@
     "head head head head head head head head head head head head"
     "contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap contwrap "
     "footer footer footer footer footer footer footer footer footer footer footer footer "
+    /* "pop pop pop pop pop pop pop pop pop pop pop " */
 }
 div#content-wrapper {
     /* grid-template-columns: repeat(3, 1fr); */
-    background-color: orange;
     grid-area: 
     contwrap;
 }
@@ -19,9 +19,18 @@ div#header {
 } */
 #web-projects {
     grid-area: webproj;
+    display: flex;
+    flex-wrap: wrap;
 }
-#card-posts {
-    grid-area: cp;
+table.project {
+    display: grid;
+    margin-right: 10px;
+    align-content: stretch;
+}
+#card-posts { /* flex to wrap when card and not when full */
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
 }
 div#footer-menu {
     grid-area: footer;
@@ -29,3 +38,7 @@ div#footer-menu {
 /* "webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj webproj"
     "wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt wpt"
     "cp cp cp cp cp cp cp cp cp cp cp cp" */
+
+.popup {
+    grid-area: pop;
+}

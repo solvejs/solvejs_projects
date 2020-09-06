@@ -4,6 +4,8 @@ import {Header} from './components/Header';
 import Footer from './components/Footer';
 import {About} from './components/About';
 import Blog from './containers/Blog';
+import Popup from './containers/Popup';
+import Projects from './components/Projects';
 
 export default class App extends Component {
     constructor(props) {
@@ -16,12 +18,15 @@ export default class App extends Component {
         return (
             <Router>
             <Header />
-            
-            <Switch>
-            <Route path='/' exact><Blog loggedIn={this.state.loggedIn}/></Route>
-            <Route path='/about'><About /></Route>
-            </Switch>
-            <Footer />
+            <div className="page-wrapper">
+                <Popup />
+                <Switch>
+                <Route path='/' exact><Blog loggedIn={this.state.loggedIn}/></Route>
+                <Route path='/about'><About /></Route>
+                <Route path='/projects'><Projects /></Route>
+                </Switch>
+                <Footer />
+            </div>
             </Router>
         )
     }

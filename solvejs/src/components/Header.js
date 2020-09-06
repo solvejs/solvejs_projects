@@ -8,11 +8,11 @@ function Header() {
             <h1 style={{width: 'max-content', margin: 'auto'}}><span style={{color: 'black'}}>&lt;</span>S o l v e J S <span style={{color: 'black'}}>&#47;&gt;</span> Learning Past Yet</h1>
         </div>
         <div id='nav-menu'>
-            <NavLink to='/' activeStyle={{backgroundColor: 'blue', color: 'white', fontWeight: 'bolder'}} strict>Home</NavLink>
-            <NavLink to='/projects'>Projects</NavLink>
-            <NavLink to='/goals'>Goals</NavLink>
-            <NavLink to='/about'>About</NavLink>
-            <NavLink to='/login'>Login</NavLink>
+            <NavLink to='/' className='navlink-class' activeStyle={{backgroundColor: 'blue', color: 'white', fontWeight: 'bolder'}} strict>Home</NavLink>
+            <NavLink to='/projects' className='navlink-class'>Projects</NavLink>
+            <NavLink to='/goals' className='navlink-class'>Goals</NavLink>
+            <NavLink to='/about' className='navlink-class'>About</NavLink>
+            <NavLink to='/login' className='navlink-class'>Login</NavLink>
         </div>
         </div>
     )

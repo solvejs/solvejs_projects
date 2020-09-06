@@ -1,33 +1,36 @@
 import React, { Component } from 'react';
-import Card from './Card';
+import BlogPostCard from './BlogPostCard';
+import BlogPostFull from './BlogPostFull';
+import Card from './BlogPostRender';
+import Projects from '../components/Projects';
+import {posts} from '../db/posts';
 
 export default class Blog extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            active: false,
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+handleClick() {
+    this.setState({
+        active: false
+    })
     }
     render() {
-        return (
+        let tech = ['JavaScript', 'ReactJS', 'React Router', 'Express', 'Git - version control', 'Webpack [Development]', 'Nodemon [Development]']
+        return (/* need key for list - move to array */
             <div id="content-wrapper">
-                <div id="web-projects">
-                <ul className="projects skills">
-                    <li className="single-project">
-                    <a href="https://bumpers.solvejs.com">Bumper Stickers - e-commerce</a>
-                    </li>
-                    <li className="technologies">JavaScript</li>
-                    <li className="technologies">ReactJS</li>
-                    <li className="technologies">React Router</li>
-                    <li className="technologies">Express</li>
-                    <li className="technologies">Git - version control</li>
-                    <li className="technologies">Webpack [Development]</li>
-                    <li className="technologies">Nodemon [Development]</li>
-                </ul>
-            </div>
-            <div id='card-posts'>
-                <h1>**blog componenent will show as cards until clicked; others will remain as cards and reposition &gt;&gt; challenge may be if user selects post in the middle; on click, card will open to post &gt;&gt; 'collapse post'
-                </h1>
-                <Card writer='James C Hardy, JavaScript | ReactJS | Express | PostgreSQL Web Developer' />
-                <span> &gt; will go in blog post later</span>
-            </div>
+                <div id='card-posts' key={1}>
+                    <h1>**blog componenent will show as cards until clicked; others will remain as cards and reposition &gt;&gt; challenge may be if user selects post in the middle; on click, card will open to post &gt;&gt; 'collapse post'
+                    </h1>
+                        {posts.map((item, index) =>
+                            item.full ? 
+                                <Card id={index} title={item.title} image={item.image} text={item.text} writer='James C Hardy, JavaScript | ReactJS | Express | PostgreSQL Web Developer' /> : 
+                                <Card id={index} title={item.title} image={item.image} text={item.text} writer='James C Hardy, JavaScript | ReactJS | Express | PostgreSQL Web Developer' />
+                        )}
+                </div>
             </div>
         )
     }
