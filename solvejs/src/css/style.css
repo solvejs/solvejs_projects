@@ -117,6 +117,43 @@ span.author-bio {
     margin-top: 70px; /* moved page to wrapper for header 70px adjustment */
 }
 
+/* Forms */
+form input, label {
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+form input {
+    width: 60%;
+    float: left;
+}
+form label {
+    width: 30%;
+    float: right;
+}
+input[type='submit'] {
+    width: 80px;
+    background-color: white;
+    color: blue;
+    clear: left;
+    float: left;
+}
+.input-check-fail {
+    background-color:red;
+    color: black;
+    font-weight: bold;
+}
+.input-check-pass {
+    background-color: green;
+    color: white;
+    font-weight: bold;
+}
+
+/* Popup */
+
+.popup {
+    transform: rotate(360deg);
+    transition: 5s;
+}
 /* General */
 
 li,ul {

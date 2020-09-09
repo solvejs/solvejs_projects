@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import BlogPostCard from './BlogPostCard';
-import BlogPostFull from './BlogPostFull';
 import Card from './BlogPostRender';
 import Projects from '../components/Projects';
 import {posts} from '../db/posts';

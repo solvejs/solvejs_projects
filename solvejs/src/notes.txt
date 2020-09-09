@@ -2,24 +2,26 @@ currently work-in-progress before git push:
 
 primary:
 
-- projects > refactor from ul to table > add flex
---- moved to /projects
---- resolved li render issue by refactor code 
-- blogpostrendner > mapping to table to satisfy jsx and 2nd map inside for array items map
+- popup - added initial popup placeholder
+--- email regex check
 
 secondary:
 
+- fix <p> post bubbling onclick;
+--- remove click to paragraph
 - adgen > working on generating demo ad from array.length and random based on 2 course categories (javascript and full-stack)
-- popup - added initial popup placeholder
+--- add ad to 2nd paragraph
+--- add email form
 
 next:
 
-- refactor blog posts
---- remove click to paragraph
---- add ad to 2nd paragraph
-- popup > reposition to middle
---- add email form
+- connect express
+- connect postgresql
+--- tables
+----- users info; posts; images;
 
+- popup > reposition to middle
+==========================================
 layout:
 
 - logged in state > App

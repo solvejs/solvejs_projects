@@ -13,7 +13,7 @@ export default class Card extends Component {
     handleClickFullSize(state) {
         this.setState({
             full: !this.state.full
-        })
+        });
     }
     handleParagraphAd() {
         let imageTest = import ('../../public/images/ads/demo_ad.png');
@@ -22,6 +22,8 @@ export default class Card extends Component {
         document.querySelectorAll(('.blog-text p:nth-child(2)')).forEach(item => item.append(imageTest));
     }
     componentDidMount() {
+        let paragraphs = document.querySelectorAll('.blog-text > p:nth-child(2)');
+        console.log(paragraphs, '<<< -- paragraph')
         this.handleParagraphAd();
     }
     // componentDidMount() {
@@ -41,7 +43,13 @@ export default class Card extends Component {
                     <h1 className='title'><a href={replaceSpace/* item.title.replace(/ /g, '-') */}>{this.props.title}</a></h1>
                     <a href={replaceSpace/* item.title.replace(/ /g, '-') */}><img className='featured-image' src={this.props.image} width='60px' alt='image did not load' /></a>
                     <div className='blog-text'>{this.props.text}</div>
+                    <BlogContent className='blog-text' post={this.props.text}/>
                     <span className='author-bio'>{this.props.writer}</span>
                 </div>)
     }
+}
+function BlogContent(props) {
+    return (
+        props.post
+    )
 }
