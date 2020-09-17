@@ -94,9 +94,6 @@ h1.title {
 p {
     margin: 10px 5px 20px;
 }
-div p:nth-child(2)::after {
-    content: '<div>../public/images/demo_ad.png</div>';
-}
 div.post {
     margin-bottom: 10px;
 }
@@ -153,6 +150,14 @@ input[type='submit'] {
 .popup {
     transform: rotate(360deg);
     transition: 5s;
+}
+
+/* Ad */
+
+img.ad {
+    margin-top: 5px;
+    margin-left: 10px;
+    filter: drop-shadow(-3px 3px 2px black);
 }
 /* General */
 

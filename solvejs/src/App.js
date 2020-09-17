@@ -6,6 +6,7 @@ import {About} from './components/About';
 import Blog from './containers/Blog';
 import Popup from './containers/Popup';
 import Projects from './components/Projects';
+import Terms from './components/Terms';
 
 export default class App extends Component {
     constructor(props) {
@@ -24,6 +25,7 @@ export default class App extends Component {
                 <Route path='/' exact><Blog loggedIn={this.state.loggedIn}/></Route>
                 <Route path='/about'><About /></Route>
                 <Route path='/projects'><Projects /></Route>
+                <Route path='/terms'><Terms /></Route>
                 </Switch>
                 <Footer />
             </div>

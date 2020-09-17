@@ -1,24 +1,25 @@
 currently work-in-progress before git push:
-
+---- git commit -m 'post state to parent comp to use dom div id for only 1 full ad; dom add 1 ad 3rd para of full post'
 primary:
 
-- popup - added initial popup placeholder
---- email regex check
-
-secondary:
-
-- fix <p> post bubbling onclick;
---- remove click to paragraph
-- adgen > working on generating demo ad from array.length and random based on 2 course categories (javascript and full-stack)
---- add ad to 2nd paragraph
---- add email form
-
-next:
-
+- post > click event on featured image and title
+- images connect
+--- file count images for array random ad
 - connect express
 - connect postgresql
 --- tables
 ----- users info; posts; images;
+
+secondary:
+
+- adgen > working on generating demo ad from array.length and random based on 2 course categories (javascript and full-stack)
+--- add email form > integrate smtp
+- projects page
+--- spice up natural language and effects
+- ad > fix random showing of 2 or 3 images
+next:
+
+- move ad images to directory for node js count
 
 - popup > reposition to middle
 ==========================================
