@@ -1,14 +1,18 @@
 currently work-in-progress before git push:
----- git commit -m 'post state to parent comp to use dom div id for only 1 full ad; dom add 1 ad 3rd para of full post'
+---- git commit -m 'express skeleton; router start for posts; 
+
 primary:
 
-- post > click event on featured image and title
-- images connect
---- file count images for array random ad
 - connect express
 - connect postgresql
 --- tables
+----- alter primary key > posts table
 ----- users info; posts; images;
+- .env password storage
+- post > click event on featured image and title
+- images connect
+--- file count images for array random ad
+- add story to website
 
 secondary:
 
