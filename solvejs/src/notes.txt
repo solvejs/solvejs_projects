@@ -1,8 +1,9 @@
 currently work-in-progress before git push:
----- git commit -m 'express skeleton; router start for posts; 
+---- git commit -m '
 
 primary:
 
+-!! - gitignore re-add after fixing .env saving
 - connect express
 - connect postgresql
 --- tables
