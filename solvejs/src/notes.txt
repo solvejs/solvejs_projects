@@ -1,6 +1,8 @@
 currently work-in-progress before git push:
 ---- git commit -m '
 
+==--==--==>> check if head split due to git init on folder??
+
 primary:
 
 -!! - gitignore re-add after fixing .env saving
