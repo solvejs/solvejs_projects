@@ -2,11 +2,7 @@ import React from 'react';
 
 export default function Login(props) {
         return (
-<<<<<<< HEAD
             <form action="api/login" method="post" id="login-wrapper" className={props.showForm} onSubmit={props.checkDB} >
-=======
-            <form action="/api/login" method="post" id="login-wrapper" className={props.showForm} onSubmit={props.checkDB} >
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
                 <label htmlFor="loginEmailInput">Email Address</label>
                 <input type="email" name="loginEmailInput" id="loginEmailInput" className={"login-email"} placeholder="Email Address" defaultValue="" required onChange={props.trackText} />
                 <label htmlFor="loginPasswordInput">Password</label>

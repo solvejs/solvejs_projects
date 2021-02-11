@@ -47,11 +47,7 @@ export default class LoginControl extends Component {
         if(status) {
             console.log(status, 'status...true...if(status)')
             // console.log('decodedCookie', document.cookie, new Date)
-<<<<<<< HEAD
             fetch('api/cookie-login', {
-=======
-            fetch('/api/cookie-login', {
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
                 method: "POST",
                 headers: {
                     // Accept: 'application/json',
@@ -72,11 +68,7 @@ export default class LoginControl extends Component {
             loginEmailInput: this.state.loginEmailInput,
             loginPasswordInput: this.state.loginPasswordInput
         };
-<<<<<<< HEAD
             fetch('api/login', {
-=======
-            fetch('/api/login', {
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
                 method: "POST",
                 body: JSON.stringify(dataPass),
                 headers: {
@@ -94,11 +86,7 @@ export default class LoginControl extends Component {
             // .then(document.cookie = 'loggedIn=true; path=/; max-age=30')
     }
     removeCookies = () => {
-<<<<<<< HEAD
         fetch('api/cookie-logout', {
-=======
-        fetch('/api/cookie-logout', {
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
             method: 'POST',
             headers: {},
             body: '',
@@ -110,11 +98,7 @@ export default class LoginControl extends Component {
         let dataPass = {
             loginEmailInput: this.state.loginEmailInput
         };
-<<<<<<< HEAD
             fetch('api/logout', {
-=======
-            fetch('/api/logout', {
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
                 method: "POST",
                 body: JSON.stringify(dataPass),
                 headers: {
