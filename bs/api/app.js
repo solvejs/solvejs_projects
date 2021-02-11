@@ -15,11 +15,8 @@ const saltRounds = 10;
 const bumpersRouter = require('./controllers/bumpers_routes');
 app.use('/api/bumpers', bumpersRouter);
 app.use(cookieParser('bsAPISecr777'));
-<<<<<<< HEAD
 // bumpersRouter.get('/api/bumpers', (req, res) => res.json({'test': 'test'}))
-=======
 bumpersRouter.get('/api/bumpers', (req, res) => res.json({'test': 'test'}))
->>>>>>> f35abca94f491dbd8ac33a502e06819854ede0e6
 // app.use(express.static('public'))
 // app.use(express.static(path.join(__dirname, '../Frontend/public')));
 /* app.use(function(req, res, next) {
