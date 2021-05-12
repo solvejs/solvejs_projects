@@ -1,11 +1,11 @@
 import React, { Component, Fragment } from "react";
 import Login from './Login';
-import Register from './Register';
-import {users} from '../users/users';
+// import Register from './Register';
+// import {users} from '../users/users';
 import Dashboard from '../../components/Dashboard';
 import { Switch, Route } from "react-router-dom";
 import Admin from '../../containers/bumpers/Admin';
-import BumpersContext from '../bumpers/BumpersAndCats';
+// import BumpersContext from '../bumpers/BumpersAndCats';
 
 export default class LoginControl extends Component {
     constructor(props) {
@@ -39,11 +39,11 @@ export default class LoginControl extends Component {
     }
     handleCookie(status) {
         console.log(status, 'status....start of condition')
-        let logCookies = document.cookie;
+        // let logCookies = document.cookie;
         let stat = {
             loggedIn: status
         }
-        let decodedCookie = decodeURIComponent(logCookies);
+        // let decodedCookie = decodeURIComponent(logCookies);
         if(status) {
             console.log(status, 'status...true...if(status)')
             // console.log('decodedCookie', document.cookie, new Date)

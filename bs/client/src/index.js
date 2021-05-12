@@ -7,7 +7,7 @@ Link,} from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './containers/serviceWorker';
 
-ReactDOM.render(
+ReactDOM.hydrate(
   <Router>
     <App />
   </Router>,

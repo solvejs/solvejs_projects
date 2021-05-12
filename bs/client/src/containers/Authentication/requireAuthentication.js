@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 
 export function requireAuthentication(AuthenticatedComponent) {
     return function AuthenticatedComponent1(props) {

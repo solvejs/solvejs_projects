@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router,
+import { /* BrowserRouter as Router, */
 Switch,
 Route,
-Link } from 'react-router-dom';
+/* Link */ } from 'react-router-dom';
 import './reset.css';
 import './style.css';
 import './grid-flex.css';
@@ -12,11 +12,11 @@ import Footer from './components/Footer';
 import LoginControl from './containers/Authentication/LoginControl';
 import Registration from './containers/Authentication/Register';
 import Login from './containers/Authentication/Login';
-import {users} from './containers/users/users';
+// import {users} from './containers/users/users';
 import Contact from './containers/Contact';
 import About from './components/About';
 import Categories from './components/Categories';
-import Aside from './containers/aside/Aside';
+// import Aside from './containers/aside/Aside';
 import Admin from './containers/bumpers/Admin';
 import {/* BumpersCreator */ BumperContextProvider} from './containers/bumpers/BumpersAndCats';
 import Cart from './containers/bumpers/Cart';

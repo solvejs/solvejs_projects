@@ -1,4 +1,4 @@
-import React, { useState, Fragment, Component } from 'react';
+import React, { useState, Component } from 'react';
 
 const arrList = ['state test 1', 'state test 2', 'state test 3', ];
 function About(props) {
@@ -13,7 +13,7 @@ function About(props) {
         setPass(e.target.value)
     }
     function submitForm() {
-        let data = new FormData;
+        let data = new FormData();
         fetch('/api/login',
         {
             method: "POST",

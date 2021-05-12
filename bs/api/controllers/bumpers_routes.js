@@ -20,7 +20,7 @@ bumpersRouter.all('/', (req, res, next) => {
 bumpersRouter.get('/', (req, res) => {
     // res.set('Content-Type', 'application/json')
     console.log('get: stringify');
-    console.log(bumpers[5], 'bumers -0')
+    console.log(bumpers[5], 'bumpers -0')
     res.send(bumpers);
 });
 bumpersRouter.post('/', (req, res) => {

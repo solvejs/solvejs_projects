@@ -101,8 +101,8 @@ export const catsRadioArrForForm = [
     checked: "props.selected === 'thoughtful'", onChange: "props.handleRadioCatChange", text: "Thoughtful"},
     {value: "health", id: "health", 
     checked: "props.selected === 'health'", onChange: "props.handleRadioCatChange", text: "Health"},
-    {value: "inappropriate", id: "inappropriate", 
-    checked: "props.selected === 'inappropriate'", onChange: "props.handleRadioCatChange", text: "Inappropriate"},
+    {value: "business", id: "business", 
+    checked: "props.selected === 'business'", onChange: "props.handleRadioCatChange", text: "Business"},
 ]
 const CategoryRadioList = (props) => {
     return (

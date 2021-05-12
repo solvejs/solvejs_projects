@@ -5,13 +5,13 @@
 ] */
 const bumpersArray = [
     { 
-        title: 'Almost ready to explode', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'In Cart'
+        title: 'Learning Lab On Wheels', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
-        title: 'Looking for a reason...keep tailing', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'Add to Cart'
+        title: 'Looking for a reason...to move over', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
-        title: 'Lost everything today. Come closer', category: 'inappropriate', cartButtonStyle: '', cartStatus: 'Add to Cart'
+        title: 'Don\'t Lose everything. Build.', category: 'business', cartButtonStyle: '', cartStatus: 'Add to Cart'
     },
     { 
         title: 'Texting and driving', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'Add to Cart'
@@ -20,13 +20,13 @@ const bumpersArray = [
         title: 'How is my driving?', category: 'drive-traffic', cartButtonStyle: '', cartStatus: 'In Cart'
     },
     { 
-        title: 'I love your wife', category: 'inappropriate'
+        title: 'Business is booming. Boom.', category: 'business'
     },
     { 
-        title: 'Looking at your wife', category: 'inappropriate'
+        title: 'Looking at starting. Action!', category: 'business'
     },
     { 
-        title: 'Been there. Done that. She mention it?', category: 'inappropriate'
+        title: 'Business. Been there. Done that.', category: 'business'
     },
     { 
         title: 'Brake check. 3, 2, 1...', category: 'drive-traffic'
@@ -35,37 +35,37 @@ const bumpersArray = [
         title: 'Get closer. I like insurance', category: 'drive-traffic'
     },
     { 
-        title: 'Almost sane. Come to me.', category: 'drive-traffic'
+        title: 'Almost at my destination.', category: 'drive-traffic'
     },
     { 
-        title: 'i\'m following you', category: 'drive-traffic'
+        title: 'I\'m following you', category: 'drive-traffic'
     },
     { 
-        title: 'kidnapper onboard', category: 'inappropriate'
+        title: 'Create. Invent. Rinse. Repeat. Evolve.', category: 'business'
     },
     { 
-        title: 'eat my [BLANK]', category: 'inappropriate'
+        title: 'Read business and growth topics.', category: 'business'
     },
     { 
-        title: 'Super soak you', category: 'inappropriate'
+        title: 'Super purpose business developer inside.', category: 'business'
     },
     { 
         title: 'How are the fumes??', category: 'drive-traffic'
     },
     { 
-        title: 'Nose plugger inside. See?', category: 'inappropriate'
+        title: 'Spy on competitors. Gain mastery.', category: 'business'
     },
     { 
-        title: 'Pipes \'R Us. Get some', category: 'inappropriate'
+        title: 'Pipes, bricks, cards, cups. All viable businesses.', category: 'business'
     },
     { 
-        title: 'Digging deep...since 19[you left]', category: 'inappropriate'
+        title: 'Digging ditches is a business.', category: 'business'
     },
     { 
         title: 'Bumper Sticker', category: 'drive-traffic'
     },
     { 
-        title: 'C U N The Mirror', category: 'inappropriate'
+        title: 'See you at the TOP!!', category: 'business'
     },
     { 
         title: 'Caution!! Taking an online test.', category: 'drive-traffic'
@@ -92,7 +92,7 @@ const bumpersArray = [
         title: 'Call Me. 305-555-0000', category: 'health'
     },
     { 
-        title: 'I &hearts; &#10085; &hearts; &#10085; U. Follow U home??',category: 'drive-traffic'
+        title: 'I &hearts; &#10085; &hearts; &#10085; U. ??',category: 'drive-traffic'
     },
     { 
         title: 'Nice Sunday drive behind me, right?', category: 'drive-traffic'
@@ -107,37 +107,37 @@ const bumpersArray = [
         title: 'Soda. Cost: 10 cents. Retail: $2-3.', category: 'health'
     },
     { 
-        title: 'As you work, I work your bedroom.', category: 'inappropriate'
+        title: 'As you work, I build...and build.', category: 'business'
     },
     { 
-        title: 'She called me last night', category: 'inappropriate'
+        title: 'She built her business from scratch.', category: 'business'
     },
     { 
-        title: 'He called me last night', category: 'inappropriate'
+        title: 'He built a small business, too.', category: 'business'
     },
     { 
-        title: 'Making contact at your home', category: 'inappropriate'
+        title: 'Making contacts all over town.', category: 'business'
     },
     { 
         title: 'Exercise for your health', category: 'health'
     },
     { 
-        title: 'Waiting for you to leave the house', category: 'inappropriate'
+        title: 'Waiting for you to start.', category: 'business'
     },
     { 
-        title: 'Awful. Just awful. Wow!', category: 'inappropriate'
+        title: 'Awful. Now, build a business.', category: 'business'
     },
     { 
-        title: 'I ran over your flowers.', category: 'inappropriate'
+        title: 'I ran around town to build.', category: 'business'
     },
     { 
-        title: 'Your friend did her a favor', category: 'inappropriate'
+        title: 'Your friend is doing business.', category: 'business'
     },
     { 
-        title: 'Your friend did him a favor', category: 'inappropriate'
+        title: 'Your friend runs a shop.', category: 'business'
     },
     { 
-        title: 'Your dad is cheating on you', category: 'inappropriate'
+        title: 'Your dad can help.', category: 'business'
     },
     { 
         title: 'Are you hungry or greedy??', category: 'health'
@@ -146,10 +146,10 @@ const bumpersArray = [
         title: 'My life. Centered around you.', category: 'thoughtful'
     },
     { 
-        title: 'Looking for you. I have pepper spray.', category: 'inappropriate'
+        title: 'Looking for you. Selling.', category: 'business'
     },
     { 
-        title: 'Nervous? I really am dangerous.', category: 'inappropriate'
+        title: 'Nervous? Start it anyway.', category: 'business'
     },
     { 
         title: 'Testing your brakes.', category: 'drive-traffic'
@@ -158,16 +158,16 @@ const bumpersArray = [
         title: 'Hit and Run Drive Master', category: 'drive-traffic'
     },
     { 
-        title: 'Caution. Difficulty driving.', category: 'inappropriate'
+        title: 'Caution. Difficulty driving.', category: 'drive-traffic'
     },
     { 
-        title: 'Passed you. Your mom needs me.', category: 'inappropriate'
+        title: 'Passed you. Your mom built a strong biz.', category: 'business'
     },
     { 
         title: 'Someone is watching you', category: 'thought-provoking'
     },
     { 
-        title: 'Night. Focus. Your window.', category: 'inappropriate'
+        title: 'Night. Focus. Building...not sleeping.', category: 'business'
     },
     { 
         title: 'D. I. Y. Network', category: 'diy'
@@ -185,10 +185,10 @@ const bumpersArray = [
         title: 'Use your resources.', category: 'thoughtful'
     },
     { 
-        title: 'Seeing the world through your window', category: 'inappropriate'
+        title: 'Seeing the world through your hard work.', category: 'business'
     },
     { 
-        title: 'I drive your car while you work', category: 'inappropriate'
+        title: 'I drive leads.', category: 'business'
     },
     { 
         title: 'I\'m you. You\'re me. Now what?', category: 'thoughtful'
@@ -203,7 +203,7 @@ const bumpersArray = [
         title: 'Logo is missing', category: 'logos'
     },
     { 
-        title: 'Your mom is cheating on you', category: 'inappropriate'
+        title: 'Your dog runs a treat store.', category: 'business'
     },
     { 
         title: 'Eating too many calories?', category: 'health'
@@ -212,10 +212,10 @@ const bumpersArray = [
         title: 'Excuses?? Is that all????', category: 'thoughtful'
     },
     { 
-        title: 'Your mom is cheating on your man', category: 'inappropriate'
+        title: 'Support your own local business.', category: 'business'
     },
     { 
-        title: 'Your dad is cheating on your girl', category: 'inappropriate'
+        title: 'Money. Business. More Money.', category: 'business'
     },
     { 
         title: 'He knows...', category: 'drive-traffic'

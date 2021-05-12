@@ -188,7 +188,7 @@ export class BumperContextProvider extends Component {
                 case 'health':
                     this.switchGenCreate(catPassed);
                     break;
-                case 'inappropriate':
+                case 'business':
                     this.switchGenCreate(catPassed);
                     break;
                 default:

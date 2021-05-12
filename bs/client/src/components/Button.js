@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM, { render } from 'react-dom';
+// import ReactDOM, { render } from 'react-dom';
 
 class TestDiv extends Component {
         render() {

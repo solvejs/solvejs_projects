@@ -1,7 +1,6 @@
-import React, { createContext, Children, Component, Fragment, useState } from 'react';
+import React, { Children, Component, Fragment } from 'react';
 import {SoloBumper} from '../bumpers/SoloBumper';
 import BumpersContext from './BumpersAndCats';
-import LoginControl from '../Authentication/LoginControl';
 import {randCol} from '../../utils/randColors';
 
 function checkLoggedIn() {

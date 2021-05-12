@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 // app.use(https);
+const fs = require('fs');
 const json = express.json(); // for parsing application/json
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3001;
@@ -26,6 +27,7 @@ bumpersRouter.get('/api/bumpers', (req, res) => res.json({'test': 'test'}))
     next();
 }); */
 
+app.use('/', express.static(path.resolve(__dirname, '../ssr-react-express/server/build/index.html')))
 const router = require('./controllers/site_routes');
 app.use(router);
 
@@ -172,9 +174,10 @@ app.post('/profile', (req, res) => {
 
 // will need to set page param to auto-generate pages and change the url path on changes
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-})
+// app.get('*', (req, res) => {
+//     fs.readFile()
+//     res.sendFile(path.join(__dirname, '../ssr-react-express/server/build', 'index.html'));
+// })
 
 app.listen(port, (req, res) => {
     console.log(`listening on port ${port}...using nodemon if green`)
